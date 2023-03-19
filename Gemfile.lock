@@ -181,7 +181,7 @@ GEM
     flex-slider-rails (2.7.0)
     font-awesome-rails (4.7.0.8)
       railties (>= 3.2, < 8.0)
-    font-awesome-sass (6.1.2)
+    font-awesome-sass (6.3.0)
       sassc (~> 2.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -476,7 +476,7 @@ DEPENDENCIES
   figaro
   flex-slider-rails
   font-awesome-rails
-  font-awesome-sass (~> 6.1.2)
+  font-awesome-sass (~> 6.3.0)
   htmlbeautifier
   image_processing (~> 1.12)
   importmap-rails
