@@ -104,7 +104,7 @@ group :development, :test do
   gem "rubocop-checkstyle_formatter", require: false
 end
 
-gem "bcrypt", "3.1.13"
+gem "bcrypt", "3.1.18"
 gem "htmlbeautifier"
 gem "net-imap", require: false
 gem "net-pop", require: false
