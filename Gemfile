@@ -46,7 +46,7 @@ gem "bundler-audit"
 gem "rubocop-rails"
 
 gem "active_model_serializers"
-gem "active_storage_validations", "0.8.2"
+gem "active_storage_validations", "1.0.3"
 gem "bootstrap-sass", "3.4.1"
 gem "bootstrap-timepicker-rails"
 gem "config"
