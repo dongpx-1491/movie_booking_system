@@ -10,50 +10,134 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_16_185503) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "action_text_rich_texts", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "body"
-    t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+ActiveRecord::Schema[7.0].define(version: 2023_03_23_161347) do
+  create_table "categories", charset: "utf8mb3", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "active_storage_attachments", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.bigint "blob_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
-    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  create_table "cinemas", charset: "utf8mb3", force: :cascade do |t|
+    t.string "location"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "active_storage_blobs", force: :cascade do |t|
-    t.string "key", null: false
-    t.string "filename", null: false
-    t.string "content_type"
-    t.text "metadata"
-    t.string "service_name", null: false
-    t.bigint "byte_size", null: false
-    t.string "checksum"
-    t.datetime "created_at", precision: 6, null: false
-    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  create_table "movie_categories", charset: "utf8mb3", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "movie_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_movie_categories_on_category_id"
+    t.index ["movie_id"], name: "index_movie_categories_on_movie_id"
   end
 
-  create_table "active_storage_variant_records", force: :cascade do |t|
-    t.bigint "blob_id", null: false
-    t.string "variation_digest", null: false
-    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  create_table "movies", charset: "utf8mb3", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.float "rating"
+    t.integer "duration_min"
+    t.datetime "release_time"
+    t.string "language"
+    t.string "director"
+    t.string "cast"
+    t.integer "age_range"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_movies_on_category_id"
   end
 
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "comments", "articles"
+  create_table "payments", charset: "utf8mb3", force: :cascade do |t|
+    t.integer "status"
+    t.decimal "total_cost", precision: 10
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_payments_on_user_id"
+  end
+
+  create_table "rates", charset: "utf8mb3", force: :cascade do |t|
+    t.text "comment"
+    t.integer "favorite"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "movie_id"
+    t.index ["movie_id"], name: "index_rates_on_movie_id"
+    t.index ["user_id"], name: "index_rates_on_user_id"
+  end
+
+  create_table "rooms", charset: "utf8mb3", force: :cascade do |t|
+    t.integer "row"
+    t.integer "length"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "cinema_id"
+    t.string "name"
+    t.index ["cinema_id"], name: "index_rooms_on_cinema_id"
+  end
+
+  create_table "seats", charset: "utf8mb3", force: :cascade do |t|
+    t.string "seat_number"
+    t.integer "status"
+    t.integer "seat_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "tickets_id"
+    t.index ["tickets_id"], name: "index_seats_on_tickets_id"
+  end
+
+  create_table "show_times", charset: "utf8mb3", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "movie_id"
+    t.bigint "room_id"
+    t.bigint "seat_id"
+    t.index ["movie_id"], name: "index_show_times_on_movie_id"
+    t.index ["room_id"], name: "index_show_times_on_room_id"
+    t.index ["seat_id"], name: "index_show_times_on_seat_id"
+  end
+
+  create_table "tickets", charset: "utf8mb3", force: :cascade do |t|
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "show_time_id"
+    t.bigint "payment_id"
+    t.index ["payment_id"], name: "index_tickets_on_payment_id"
+    t.index ["show_time_id"], name: "index_tickets_on_show_time_id"
+  end
+
+  create_table "users", charset: "utf8mb3", force: :cascade do |t|
+    t.string "user_name"
+    t.string "email"
+    t.integer "phone"
+    t.datetime "date_birth"
+    t.integer "sex"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.string "role", default: "0"
+    t.integer "activated"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["phone"], name: "index_users_on_phone", unique: true
+  end
+
+  add_foreign_key "movie_categories", "categories"
+  add_foreign_key "movie_categories", "movies"
+  add_foreign_key "movies", "categories"
+  add_foreign_key "payments", "users"
+  add_foreign_key "rates", "movies"
+  add_foreign_key "rates", "users"
+  add_foreign_key "rooms", "cinemas"
+  add_foreign_key "seats", "tickets", column: "tickets_id"
+  add_foreign_key "show_times", "movies"
+  add_foreign_key "show_times", "rooms"
+  add_foreign_key "show_times", "seats"
+  add_foreign_key "tickets", "payments"
+  add_foreign_key "tickets", "show_times"
 end

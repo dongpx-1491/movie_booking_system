@@ -1,26 +1,23 @@
 
 default: &default
-  adapter: postgresql
-  encoding: unicode
+  adapter: mysql2
+  encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username:  <%= ENV['PGUSER'] %>
-  password: <%= ENV['PGPASSWORD'] %>
+  username: <%= ENV['DATABASE_USER_NAME']  || "root" %>
+  password: <%= ENV['DATABASE_PASSWORD'] || "databasepass" %>
+  host: <%= ENV["DATABASE_HOST"] %>
   
 development:
   <<: *default
   database: booking_system_dev
-  username:  <%= ENV['PGUSER'] %>
-  password: <%= ENV['PGPASSWORD'] %>
+  username:  <%= ENV['DATABASE_USER_NAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 
 test:
   <<: *default
   database: booking_system_test
-  username:  <%= ENV['PGUSER'] %>
-  password: <%= ENV['PGPASSWORD'] %>
 
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
   database: booking_system
-  username:  <%= ENV['PGUSER'] %>
-  password: <%= ENV['PGPASSWORD'] %>
