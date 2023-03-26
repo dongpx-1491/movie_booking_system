@@ -1,11 +1,8 @@
 require "sidekiq/web"
 
 Rails.application.routes.draw do
-  get 'welcome/index'
-
-  resources :articles do
-    resources :comments
+  scope "(:locale)", locale: /en|vi/ do
+    get 'static_pages/home'
+    root "static_pages#home"
   end
-
-  root 'welcome#index'
 end
