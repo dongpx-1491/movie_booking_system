@@ -152,3 +152,6 @@ log/
 
 # Ignore application configuration
 /config/application.yml
+.cahe/
+/cache
+development_secret.txt
