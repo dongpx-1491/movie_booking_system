@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  include Pagy::Backend
+  
   before_action :set_locale
 
   rescue_from ActiveRecord::DeleteRestrictionError, with: :error_del_method
@@ -8,7 +10,7 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t "not_del"
     redirect_to root_path
   end
-  
+
   private
 
   def set_locale
