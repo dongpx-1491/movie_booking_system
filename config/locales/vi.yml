@@ -33,3 +33,17 @@ vi:
   static_pages:
     home:
       home: "Trang chủ"
+  movies:
+    film_not_found: Không tìm thấy phim
+    not_del: Không được xóa!
+    show:
+      booking: Đặt vé xem phim
+      rating: Đánh giá
+      min: phút
+      director: Đạo diễn
+      cast: Diễn viên
+      age_range: Giới hạn độ tuổi
+      language: Ngôn ngữ
+      category: Thể loại
+      release_time: Thời gian phát hành
+      main_content: Nội dung chính
