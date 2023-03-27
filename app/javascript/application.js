@@ -9,5 +9,3 @@ import "trix"
 import "@rails/actiontext"
 
 import "custom"
-
-console.log('Hello World from application.js');

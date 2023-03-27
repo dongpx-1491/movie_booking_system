@@ -1,6 +1,7 @@
 en:
   text:
     booking_system: Movie booking system
+    sign_in_message: Please sign in before you purchase your ticket to accumulate points, and get more incentives from the Winter Cinema membership program.
   layouts:
     header:
       find_box: Finding movie, actor,...

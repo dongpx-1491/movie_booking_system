@@ -27,5 +27,46 @@ names.each {|name|
                 category_id: Category.all.pluck(:id).sample,
                 img_link: img_link)
 end
+p "processing..."
+
+start = 1234567890
+
+20.times do |n|
+  user_name = "User #{n}"
+  email = "user#{n}@gmail.com"
+  password = "password"
+  sex = rand(0..1)
+  User.create!(user_name: user_name,
+    email: email,
+    phone: start,
+    password: password,
+    password_confirmation: password,
+    sex: sex
+  )
+
+  start = start + 1
+end
+
+
+cinemaNames = ["Galaxy Nguyễn Du", "Galaxy Tân Bình", "Galaxy Kinh Dương", "Galazy Quang Trung", "Galaxy Mipec Long Bien"]
+cinemaNames.each {|cinemaName|
+  Cinema.create!(location: "Cầu Giấy", name: cinemaName)
+}
+cinemas = Cinema.all
+10.times do
+  cinemas.each { |cinema| cinema.rooms.create!(row: 20, length: 30) }
+end
+
+movies = Movie.all
+rooms = Room.all
+movies.each{ |movie|
+  rooms.each{ |room|
+    start_time = "1/4/2023"
+    end_time = "15/4/2023"
+    ShowTime.create!(
+      start_time: start_time, end_time: end_time, movie_id: movie.id, room_id: room.id
+    )
+  }
+}
 
 p "inserted successful"
