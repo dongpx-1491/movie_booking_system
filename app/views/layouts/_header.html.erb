@@ -19,11 +19,25 @@
             </div>
             <div class="secondary-nav-wrapper">
               <ul class="secondary-nav">
-                <li>
-                  <%= link_to("#", id: "loginLink" ) do %>
-                    <i class="fa fa-user" aria-hidden="true"></i><%= t(".login") %>
-                  <% end %>
-                </li>
+                <% if logged_in? %>
+                  <li>
+                    <div class="dropdown">
+                      <%= link_to("#", class: "dropdown-toggle", data:{bs_toggle: "dropdown"}) do %>
+                        <i class="fa fa-user" aria-hidden="true"></i><span><%= @current_user.user_name %></span>
+                      <% end %>
+                      <div class="dropdown-menu">
+                        <%= link_to t(".account"), "#", class: "dropdown-item" %>
+                        <%= link_to t(".exit"), logout_path, method: :delete, class: "dropdown-item" %>
+                      </div>
+                    </div>
+                  </li>
+                <% else %>
+                  <li>
+                    <%= link_to(login_path, id: "loginLink", remote: true ) do %>
+                      <i class="fa-solid fa-user"></i> <%= t(".login") %>
+                    <% end %>
+                  </li>
+                <% end %>
                 <li class="language hidden-xs">
                   <%= link_to "EN", locale:"en" %>
                   <span>|</span>

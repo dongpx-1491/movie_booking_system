@@ -8,7 +8,11 @@ class SessionsController < ApplicationController
       redirect_to root_url
     else
       flash.now[:danger] = t("text.user_not_found")
-      render :new
+      respond_to do |format|
+        format.js do
+          render js: "window.location = '#{login_path}'"
+        end
+      end
     end
   end
 
