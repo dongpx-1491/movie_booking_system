@@ -33,3 +33,17 @@ en:
   static_pages:
     home:
       home: "Home"
+  movies:
+    film_not_found: Film not found
+    not_del: Not deleted!
+    show:
+      booking: Booking
+      rating: Rating
+      min: minutes
+      director: Director
+      cast: Cast
+      age_range: Age range
+      language: Language
+      category: Category
+      release_time: Release time
+      main_content: Main content

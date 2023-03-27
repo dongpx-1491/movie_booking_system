@@ -8,10 +8,12 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= render "layouts/shim" %>
+    <link rel="icon" href="<%= image_url "winter.png" %>">
   </head>
   <body>
     <div class = "wrapper">
       <%= render "layouts/header" %>
+      <%= render "shared/errors_alert" %>
       <%= yield %>
     </div>
     <%= render "layouts/footer" %>

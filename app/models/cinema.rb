@@ -7,4 +7,5 @@ class Cinema < ApplicationRecord
         [cinema.name, cinema.rooms.pluck(:name, :id)]
       end
     end
+  end
 end

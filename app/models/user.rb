@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_many :comments, :payments, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :payments, dependent: :destroy
 
   validates :name, presence: true,
             length: {maximum: Settings.digits.length_name_max_50}
@@ -14,7 +15,7 @@ class User < ApplicationRecord
             allow_nil: true
 
   validates :phone, presence: true,
-          length: Settings.digit.length_phone_numbers,
+          length: {maximum: Settings.digits.length_phone_number},
           format: {with: Settings.regex.phone},
           uniqueness: true
 

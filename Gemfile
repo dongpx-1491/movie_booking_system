@@ -47,7 +47,6 @@ gem "rubocop-rails"
 gem "active_model_serializers"
 gem "active_storage_validations", "1.0.3"
 gem 'bootstrap', '~> 5.1.3'
-gem "bootstrap-sass", "3.4.1"
 gem "bootstrap-timepicker-rails"
 gem "config"
 gem "date_validator"
