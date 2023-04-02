@@ -5,7 +5,9 @@ class MoviesController < ApplicationController
     @movie = Movie.new
   end
 
-  def show; end
+  def show
+    @cinemas = Cinema.get_info
+  end
 
   private
   def find_movie

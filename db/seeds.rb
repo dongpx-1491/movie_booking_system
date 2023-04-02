@@ -57,15 +57,17 @@ cinemas = Cinema.all
   cinemas.each { |cinema| cinema.rooms.create!(row: 20, length: 30) }
 end
 
+time = Time.now
 movies = Movie.all
 rooms = Room.all
 movies.each{ |movie|
-  rooms.each{ |room|
-    start_time = "1/4/2023"
-    end_time = "15/4/2023"
+  rooms.sample(10).each{ |room|
+    start_time = time
+    end_time = start_time + 2*60*60
     ShowTime.create!(
       start_time: start_time, end_time: end_time, movie_id: movie.id, room_id: room.id
     )
+    time = end_time
   }
 }
 

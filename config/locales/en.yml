@@ -2,6 +2,11 @@ en:
   text:
     booking_system: Movie booking system
     sign_in_message: Please sign in before you purchase your ticket to accumulate points, and get more incentives from the Winter Cinema membership program.
+    user_not_found: Cannot find user
+    forget_password: forget password?
+    login: Login
+    register: register
+    sub: 2D - Subtitle
   layouts:
     header:
       find_box: Finding movie, actor,...
@@ -48,3 +53,6 @@ en:
       category: Category
       release_time: Release time
       main_content: Main content
+   time:
+    formats:
+      default: "%d/%m/%Y"
