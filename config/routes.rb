@@ -9,5 +9,12 @@ Rails.application.routes.draw do
     root "static_pages#home"
 
     resources :movies
+
+    namespace :admin do
+      root "static_pages#home"
+      resources :movies
+      resources :categories
+      resources :users
+    end    
   end
 end

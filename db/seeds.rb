@@ -31,7 +31,7 @@ p "processing..."
 
 start = 1234567890
 
-20.times do |n|
+5.times do |n|
   user_name = "User #{n}"
   email = "user#{n}@gmail.com"
   password = "password"
@@ -47,8 +47,17 @@ start = 1234567890
   start = start + 1
 end
 
+User.create!(user_name: "Admin",
+  email: "admin@gmail.com",
+  phone: "1234567819",
+  password: "password",
+  password_confirmation: "password",
+  sex: 1,
+  role: 1
+)
 
-cinemaNames = ["Galaxy Nguyễn Du", "Galaxy Tân Bình", "Galaxy Kinh Dương", "Galazy Quang Trung", "Galaxy Mipec Long Bien"]
+
+cinemaNames = ["Galaxy Nguyễn Du", "Galaxy Tân Bình", "Galaxy Kinh Dương", "Galazy Quang Trung", "Galaxy Long Bien"]
 cinemaNames.each {|cinemaName|
   Cinema.create!(location: "Cầu Giấy", name: cinemaName)
 }

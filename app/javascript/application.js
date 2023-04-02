@@ -9,8 +9,4 @@ import "trix"
 import "@rails/actiontext"
 
 import "custom"
-
-require("jquery")
-Rails.start()
-Turbolinks.start()
-ActiveStorage.start()
+import "admin"
