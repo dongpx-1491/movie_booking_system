@@ -58,3 +58,17 @@ vi:
   time:
     formats:
       default: "%d/%m/%Y"
+  admin:
+    header:
+      toggle: Chuyển đổi thanh bên
+    sidebar:
+      management: Quản lý
+      movies: Quản lý phim
+      add: Thêm phim
+      remove: Xóa phim
+      edit: Sửa phim
+      users: Quản lý người dùng
+      list: Danh sách người dùng
+      find: Tìm kiếm người dùng
+      booking: Quản lý đặt vé
+      feedback: Quản lý phản hồi

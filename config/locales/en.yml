@@ -53,6 +53,20 @@ en:
       category: Category
       release_time: Release time
       main_content: Main content
-   time:
+  time:
     formats:
       default: "%d/%m/%Y"
+  admin:
+    header:
+      toggle: Toggle Sidebar
+    sidebar:
+      management: Management
+      movies: Movies Management
+      add: Add Movies
+      remove: Remove Movies
+      edit: Edit Movies
+      users: Users Management
+      list: Users List
+      find: Find User
+      booking: Booking Management
+      feedback: Feedback Management
