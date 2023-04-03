@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :payments, dependent: :destroy
 
   enum sex: {male: 0, female: 1}
-  enum role: {customer: 0, admin: 1}
+  enum :role, {customer: 0, admin: 1}
   validates :user_name, presence: true,
             length: {maximum: Settings.digits.length_name_max_50}
 

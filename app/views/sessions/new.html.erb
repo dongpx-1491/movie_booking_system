@@ -1,0 +1,13 @@
+
+                            <div class="login-form">
+                              <%= form_for(:session, url: login_path) do |f| %>
+                                <%= f.label :email %>
+                                <%= f.email_field :email, class: "login" %>
+                                <%= f.label :password %>
+                                <%= f.password_field :password, class: "login" %>
+                                <%= f.submit "Log in", class: "btn primary input" %>
+                                <div class="login-remember">
+                                  <div class="forget-pass"><a id="forgetPass"><%= t "text.forget_password" %></a></div>
+                                </div>
+                              <% end %>
+                            </div>

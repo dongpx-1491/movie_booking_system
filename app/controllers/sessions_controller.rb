@@ -1,18 +1,14 @@
 class SessionsController < ApplicationController
   def new; end
 
-  def create
+   def create
     @user = User.find_by(email: params[:session][:email].downcase)
     if @user&.authenticate(params[:session][:password])
       log_in @user
       redirect_to root_url
     else
       flash.now[:danger] = t("text.user_not_found")
-      respond_to do |format|
-        format.js do
-          render js: "window.location = '#{login_path}'"
-        end
-      end
+      render :new
     end
   end
 

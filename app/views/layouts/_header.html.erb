@@ -27,13 +27,16 @@
                       <% end %>
                       <div class="dropdown-menu">
                         <%= link_to t(".account"), "#", class: "dropdown-item" %>
+                        <% if current_user.admin? %>
+                          <%= link_to "Admin", admin_root_path, class: "dropdown-item" %>
+                        <% end %>
                         <%= link_to t(".exit"), logout_path, method: :delete, class: "dropdown-item" %>
                       </div>
                     </div>
                   </li>
                 <% else %>
                   <li>
-                    <%= link_to(login_path, id: "loginLink", remote: true ) do %>
+                    <%= link_to(login_path, id: "loginLink") do %>
                       <i class="fa-solid fa-user"></i> <%= t(".login") %>
                     <% end %>
                   </li>
