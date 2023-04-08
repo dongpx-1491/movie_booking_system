@@ -1,13 +1,57 @@
-
-                            <div class="login-form">
-                              <%= form_for(:session, url: login_path) do |f| %>
-                                <%= f.label :email %>
-                                <%= f.email_field :email, class: "login" %>
-                                <%= f.label :password %>
-                                <%= f.password_field :password, class: "login" %>
-                                <%= f.submit "Log in", class: "btn primary input" %>
-                                <div class="login-remember">
-                                  <div class="forget-pass"><a id="forgetPass"><%= t "text.forget_password" %></a></div>
-                                </div>
-                              <% end %>
-                            </div>
+<% provide :title, t(".login") %>
+<%= render partial: "shared/background_title", locals:{content: t(".log_in"), description: t(".p") } %>
+<section class="login spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="login__form">
+          <h3><%= t ".login"%></h3>
+          <%= form_for :session, url: login_path do |f| %>
+            <div class="input__item">
+              <%= f.email_field :email, placeholder: t(".email") %>
+              <span ><i class="fa-solid fa-envelope"></i></span>
+            </div>
+            <div class="input__item">
+              <%= f.password_field :password, placeholder: t(".password") %>
+              <span class="icon_key"><i class="fa-solid fa-key"></i></span>
+            </div>
+            <%= f.submit t(".login"), class: "site-btn" %>
+          <% end %>
+          <%= link_to t(".forgot_password"), "#", class: "forget_pass" %>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="login__register">
+          <h3><%= t ".new_user" %></h3>
+          <%= link_to t(".sign_up_now"), signup_path, class: "primary-btn" %>
+        </div>
+      </div>
+    </div>
+    <div class="login__social">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-6">
+          <div class="login__social__links">
+            <h3><%= t ".or" %></h3>
+            <ul>
+              <li>
+                <%= link_to "#", class: "facebook" do %>
+                  <i class="fa fa-facebook"></i> <%= t ".facebook" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#", class: "google" do %>
+                  <i class="fa fa-google"></i><%= t ".google" %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to "#", class: "twitter" do %>
+                  <i class="fa fa-twitter"></i><%= t ".twitter" %>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

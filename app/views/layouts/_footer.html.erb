@@ -1,134 +1,29 @@
-<div class="footer-content">
-  <footer class="footer-bg">
-    <div class="container">
-      <div class="row">
-        <div style="z-index:2" class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-          <ul class="list-unstyled clear-margins">
-            <li class="widget-container widget_nav_menu">
-              <h1 class="title-widget"><%= t(".about_us")%></h1>
-              <ul>
-                <li>
-                  <%= link_to("#") do %>
-                    <i class="fa fa-angle-double-right"></i> <%= t(".about_us") %>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to("#") do %>
-                    <i class="fa fa-angle-double-right"></i> <%= t(".terms_of_use") %>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to("#") do %>
-                    <i class="fa fa-angle-double-right"></i> <%= t(".operating_regulation") %>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to("#") do %>
-                    <i class="fa fa-angle-double-right"></i> <%= t(".privacy_policy") %>
-                  <% end %>
-                </li>
-              </ul>
-            </li>
-          </ul>
+<footer class="footer">
+  <div class="page-up">
+    <a href="#" id="scrollToTopButton"><i class="fa-solid fa-chevron-up"></i></a>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="footer__logo">
+          <%= link_to image_tag("galaxy-logo.png", class: "lazy hidden-xs hidden-sm loaded"), root_path %>
         </div>
-        <div style="z-index:2" class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-          <ul class="list-unstyled clear-margins">
-            <li class="widget-container widget_nav_menu">
-              <h1 class="title-widget"><%= t(".cinema_blog")%></h1>
-              <ul>
-                <li>
-                  <%= link_to("#") do %>
-                    <i class="fa fa-angle-double-right"></i> <%= t(".privacy_policy") %>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to("#") do %>
-                    <i class="fa fa-angle-double-right"></i> <%= t(".cinema_blog") %>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to("#") do %>
-                    <i class="fa fa-angle-double-right"></i> <%= t(".movie_genre") %>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to("#") do %>
-                    <i class="fa fa-angle-double-right"></i> <%= t(".movie_review") %>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to("#") do %>
-                    <i class="fa fa-angle-double-right"></i> <%= t(".movie_blog") %>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to("#") do %>
-                    <i class="fa fa-angle-double-right"></i> <%= t(".hot_movie") %>
-                  <% end %>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div style="z-index:2" class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-          <ul class="list-unstyled clear-margins">
-            <li class="widget-container widget_nav_menu">
-              <h1 class="title-widget"><%= t(".support")%></h1>
-              <ul>
-                <li>
-                  <%= link_to("#") do %>
-                    <i class="fa fa-angle-double-right"></i> <%= t(".feedback") %>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to("#") do %>
-                    <i class="fa fa-angle-double-right"></i> <%= t(".sale_services") %>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to("#") do %>
-                    <i class="fa fa-angle-double-right"></i> <%= t(".cinema/ticket") %>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to("#") do %>
-                    <i class="fa fa-angle-double-right"></i> <%= t(".career") %>
-                  <% end %>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div style="z-index:2" class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-          <ul class="list-unstyled clear-margins">
-            <li class="widget-container widget_nav_menu">
-              <h1 class="title-widget"><%= t(".cinema")%></h1>
-            </li>
-          </ul>
-          <ul class="list-unstyled clear-margins">
-            <li class="widget-container widget_nav_menu">
-              <h1 class="title-widget"><%= t(".download_app")%></h1>
-            </li>
+      </div>
+      <div class="col-lg-6">
+        <div class="footer__nav">
+          <ul>
+            <li class="active"><%= link_to t(".homepage"), root_path %></li>
+            <li><a href="./categories.html">Categories</a></li>
+            <li><a href="./blog.html">Our Blog</a></li>
+            <li><a href="#">Contacts</a></li>
           </ul>
         </div>
       </div>
-    </div>
-    <div style="z-index:1" class="container ano-trade">
-      <div class="wrap-icon">
-        <%= link_to image_tag("glx_trade.png", alt: "Galaxy Cinema", width: "150px", height: "100%", class: "loading"),"http://online.gov.vn/Home/WebDetails/5005" %>
-      </div>
-    </div>
-  </footer>
-  <div class="footer-bottom footer-line">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <%= link_to image_tag("galaxy-logo-footer.png", alt: "Galaxy Cinema", class: "loading"), "#" %>
-          <div class="copyright">
-            <p class="info"><%= t ".company_address" %></p>
-          </div>
-        </div>
+      <div class="col-lg-3">
+        <p>
+          <%= t ".copyright" %> &copy;<%= Time.now.year %> <%= t ".reserved" %> <i class="fa fa-heart" aria-hidden="true"></i> <%= t ".by" %>
+        </p>
       </div>
     </div>
   </div>
-</div>
+</footer>

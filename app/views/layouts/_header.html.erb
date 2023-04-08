@@ -1,69 +1,54 @@
-<div class="galaxy-header">
+<header class="header">
   <div class="container">
     <div class="row">
-      <div class="header-nav-wrapper row">
-        <div class="col-md-4 col-sm-4 col-xs-4">
-          <div class="logo">
-            <%= link_to image_tag("galaxy-logo.png", class: "lazy hidden-xs hidden-sm loaded"), root_path %>
-          </div>
-        </div>
-        <div class="col-md-8 col-sm-8 col-xs-8">
-          <div class="primary-nav-wrapper desktop hidden-xs hidden-sm">
-            <div class="search">
-              <form class="search-form">
-                <div class="input-append">
-                  <input placeholder="Tìm tên phim, diễn viên..." class="search-box" type="text" autocomplete="off">
-                  <button type="submit" class="search-btn"><i class="fa fa-thin fa-magnifying-glass"></i></button>
-                </div>
-              </form>
-            </div>
-            <div class="secondary-nav-wrapper">
-              <ul class="secondary-nav">
-                <% if logged_in? %>
-                  <li>
-                    <div class="dropdown">
-                      <%= link_to("#", class: "dropdown-toggle", data:{bs_toggle: "dropdown"}) do %>
-                        <i class="fa fa-user" aria-hidden="true"></i><span><%= @current_user.user_name %></span>
-                      <% end %>
-                      <div class="dropdown-menu">
-                        <%= link_to t(".account"), "#", class: "dropdown-item" %>
-                        <% if current_user.admin? %>
-                          <%= link_to "Admin", admin_root_path, class: "dropdown-item" %>
-                        <% end %>
-                        <%= link_to t(".exit"), logout_path, method: :delete, class: "dropdown-item" %>
-                      </div>
-                    </div>
-                  </li>
-                <% else %>
-                  <li>
-                    <%= link_to(login_path, id: "loginLink") do %>
-                      <i class="fa-solid fa-user"></i> <%= t(".login") %>
-                    <% end %>
-                  </li>
-                <% end %>
-                <li class="language hidden-xs">
-                  <%= link_to "EN", locale:"en" %>
-                  <span>|</span>
-                  <%= link_to "VN", class: "active", locale:"vi" %>
-                </li>
-              </ul>
-            </div>
-          </div>
+      <div class="col-lg-2">
+        <div class="header__logo">
+          <%= link_to image_tag("galaxy-logo.png", class: "lazy hidden-xs hidden-sm loaded"), root_path %>
         </div>
       </div>
+      <div class="col-lg-8">
+        <div class="header__nav">
+          <nav class="header__menu mobile-menu">
+            <ul>
+              <li class="active"><%= link_to t(".homepage"), root_path %></li>
+              <li><a href="./categories.html">Categories <i class="fa-solid fa-chevron-down"></i></span></a>
+              <ul class="dropdown">
+                <li><a href="./categories.html">Categories</a></li>
+                <li><a href="./anime-details.html">Anime Details</a></li>
+                <li><a href="./anime-watching.html">Anime Watching</a></li>
+                <li><a href="./blog-details.html">Blog Details</a></li>
+                <li><a href="./signup.html">Sign Up</a></li>
+                <li><a href="./login.html">Login</a></li>
+              </ul>
+            </li>
+            <li><a href="./blog.html">Our Blog</a></li>
+            <li><a href="#">Contacts</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="col-lg-2">
+      <div class="header__right">
+        <a href="#" class="search-switch"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <% if logged_in? %>
+          <span><i class="fa-solid fa-user"></i> Hi demo</span>
+          <ul class="dropdown">
+            <li><%= link_to t(".edit"), "#" %></li>
+            <li>
+              <%= link_to t(".log_out"), logout_path, method: :delete %>
+            </li>
+          </ul>
+        </li>
+      <% else %>
+        <%= link_to login_path do %>
+          <i class="fa-solid fa-user"></i>
+        <% end %>
+      <% end %>
+      <%= link_to t(".english"), locale: :en %>
+      <%= link_to t(".vietnamese"), locale: :vi %>
     </div>
   </div>
 </div>
-<div class="galaxy-nav">
-  <div class="container">
-    <nav>
-      <ul class="primary-nav">
-        <li><%= link_to t(".buy_ticket"), "#" %></li>
-        <li><%= link_to t(".movie"), "#", id: "dropdownMenuLink" %></li>
-        <li><%= link_to t(".event"), "#" %></li>
-        <li><%= link_to t(".cine_price"), "#" %></li>
-        <li><%= link_to t(".support"), "#" %></li>
-      </ul>
-    </nav>
-  </div>
+<div id="mobile-menu-wrap"></div>
 </div>
+</header>

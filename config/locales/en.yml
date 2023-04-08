@@ -1,44 +1,61 @@
 en:
   text:
-    booking_system: Movie booking system
-    sign_in_message: Please sign in before you purchase your ticket to accumulate points, and get more incentives from the Winter Cinema membership program.
-    user_not_found: Cannot find user
-    forget_password: forget password?
-    login: Login
-    register: register
-    sub: 2D - Subtitle
+    booking_system: Winter Cinema
   layouts:
+    application:
     header:
-      find_box: Finding movie, actor,...
-      login: Login
-      buy_ticket: Buying ticket
-      movie: Movie
-      onboard_movie: Onboard movie
-      upcomming_movie: Upcoming movie
-      event: Event
-      cine_price: Cinema/ Price
-      support: Support
+      english: "EN"
+      vietnamese: "VN"
+      homepage: "Homepage"
+      booking: "Booking"
+      blog: "Cinema Blog"
+      contact: "Contacts"
+      member: "Member"
+      edit: "Edit users"
+      log_out: "Log out"
     footer:
-      about_us: About us
-      terms_of_use: Terms of use
-      operating_regulation: Operating Regulation
-      privacy_policy: Privacy policy
-      cinema_blog: Cinema blog
-      movie_genre: Movie genre
-      movie_review: Movie review
-      movie_blog: Movie blog
-      hot_movie: Hot movie
-      support: Support
-      feedback: Feedback
-      sale_services: Sale and Services
-      cinema/ticket: Cinema/ Ticket
-      career: Career
-      cinema: Winter Cinema
-      download_app: Download APP
-      company_address: Winter Company, Floor 5, Landmark Tower, Phạm Hùng, Cầu Giấy, Hà Nội
+      copyright: "Copyright"
+      reserved: "All rights reserved | This template is made with"
+      by: "by"
   static_pages:
     home:
       home: "Home"
+  shared:
+    error_messages:
+      content: "The form contains"
+      error: "error"
+  sessions:
+    new:
+      login: "Log in"
+      p: "Welcome to Movie Booking App."
+      email: "Email"
+      password: "Password"
+      new_user: "Dont’t Have An Account?"
+      sign_up_now: "Register now!"
+      forgot_password: "Forgot Your Password?"
+      or: "Or"
+    create:
+      danger: "invalid email password combination"
+  users:
+    new:
+      sign_up: "Sign up"
+      p: "Welcome to Movie Booking App."
+      email: "Email address"
+      name: "Your name"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      date_of_birth: "Your date of birth"
+      phone_number: "Your phone number"
+      submit: "Sign up"
+      have_account: "Already have an account? "
+      log_in: "Log in!"
+      log_in_with: "Login With:"
+      facebook: "Sign in With Facebook"
+      google: "Sign in With Google"
+      twitter: "Sign in With Twitter"
+    create:
+      success: "Welcome to the Movie Booking App!"
+      danger: "Fail to create account"
   movies:
     film_not_found: Film not found
     not_del: Not deleted!
