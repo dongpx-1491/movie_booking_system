@@ -9,14 +9,11 @@
     <%= javascript_importmap_tags %>
     <%= render "layouts/shim" %>
     <link rel="icon" href="<%= image_url "winter.png" %>">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   </head>
   <body>
-    <div class = "wrapper">
-      <%= render "layouts/header" %>
-      <%= render "shared/errors_alert" %>
-      <div id="modal-holder"></div>
       <%= yield %>
-    </div>
-    <%= render "layouts/footer" %>
   </body>
 </html>
