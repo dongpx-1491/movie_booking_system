@@ -1,100 +1,127 @@
-<% provide(:title, t(".booking")) %>
-<div class = "block-wrapper">
-  <div class = "container">
+<% provide :title, t(".details") %>
+<div class="breadcrumb-option">
+  <div class="container">
     <div class="row">
-      <div class="col-md-8 col-sm-8 col-xs-12">
-        <section class="detail-feature">
-          <article>
-            <div class="row">
-              <% if @movie.image.attached? %>
-                <div class="col-md-4 col-sm-4 col-xs-8 col-xs-offset-2 col-md-offset-0">
-                  <div class="detail-feat-img">
-                    <img src=<%= "#{@movie.image}" %> class="loading" data-was-processed="true">
-                  </div>
-                </div>
-              <% else %>
-                <div class="col-md-4 col-sm-4 col-xs-8 col-xs-offset-2 col-md-offset-0">
-                  <div class="detail-feat-img">
-                    <img src=<%= "#{@movie.img_link}" %> class="loading" data-was-processed="true">
-                  </div>
-                </div>
-              <% end %>
-              <div class="details col-md-8 col-sm-8 col-xs-12">
-                <h2 class="detail-title upper-text"><%= @movie.title %></h2>
-                <div class="detail-rating">
-                  <div class="rating-wrap detail ng-scope">
-                    <div class="rating-movie detail">
-                      <div class="rating-value detail">
-                        <i class="fa-sharp fa-solid fa-star star-rating"></i>
-                        <strong class="ng-binding"><%= @movie.rating %></strong><span>/10</span>
-                      </div>
-                      <br>
-                      <div class="rating-bt">
-                        <button id="rating-click" type="submit" ng-click="showRaiting()" class="btn btn-primary btn-sm">
-                          <%= t ".rating" %></button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <br>
-                <div class="detail-rating">
-                  <span><i class="fa-regular fa-clock">&nbsp;</i><%= @movie.duration_min %>&nbsp;<%= t ".min" %></span>
-                </div>
-                <div class="detail-info">
-                  <div class="detail-info-row">
-                    <label><%= t ".director" %>:&nbsp;</label>
-                    <span class="detail-info-right"><%= @movie.director %></span>
-                  </div>
-                  <div class="detail-info-row">
-                    <label><%= t ".cast" %>:&nbsp;</label>
-                    <span class="detail-info-right"><%= @movie.cast %></span>
-                  </div>
-                  <div class="detail-info-row">
-                    <label><%= t ".age_range" %>:&nbsp;</label>
-                    <span class="detail-info-right"><%= @movie.age_range %></span>
-                  </div>
-                  <div class="detail-info-row">
-                    <label><%= t ".language" %>:&nbsp;</label>
-                    <span class="detail-info-right"><%= @movie.language %></span>
-                  </div>
-                  <div class="detail-info-row">
-                    <label><%= t ".category" %>:&nbsp;</label>
-                    <span class="detail-info-right"><%= @movie.category_name %></span>
-                  </div>
-                  <div class="detail-info-row">
-                    <label><%= t ".release_time" %>:&nbsp;</label>
-                    <span class="detail-info-right"><%= @movie.release_time.strftime("%d/%m/%Y") %></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row detail-description">
-              <div class="col-md-12 col sm-12 col-xs-12">
-                <div class="content-text">
-                  <section id="info">
-                    <h3><%= t ".main_content" %></h3>
-                    <div class="content-text-actors-info content-text">
-                      <br>
-                      <auto-folded folded-height="200">
-                        <div>
-                          <div class="description">
-                            <p><%= @movie.description %></p>
-                          </div>
-                          <div class="detail-group-cinema ">
-                            <%= render partial: "cinemas/cinema", locals: {cinemas: @cinemas, movie_id: @movie.id} %>
-                          </div>
-                        </div>
-                      </auto-folded>
-                    </div>
-                  </section>
-                </div>
-              </div>
-            </div>
-          </article>
-        </section>
-      </div>
-      <div class="col-md-4 col-sm-4 col-xs-12">
+      <div class="col-lg-12">
+        <div class="breadcrumb__links">
+          <%= link_to root_path do %>
+            <i class="fa fa-home"></i><%= t ".home" %>
+          <% end %>
+          <span><%= t ".movies" %></span>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<section class="anime-details spad">
+  <div class="container">
+    <div class="anime__details__content">
+      <div class="row">
+        <div class="col-lg-3">
+          <% if @movie.image.attached? %>
+            <div class="anime__details__pic set-bg" data-setbg=<%= url_for @movie.image %>>
+              <div class="comment"><i class="fa fa-comments"></i> 11</div>
+              <div class="view"><i class="fa fa-eye"></i> 9141</div>
+            </div>
+          <% else %>
+            <div class="anime__details__pic set-bg" data-setbg=<%= @movie.img_link %>>
+              <div class="comment"><i class="fa fa-comments"></i> 11</div>
+              <div class="view"><i class="fa fa-eye"></i> 9141</div>
+            </div>
+          <% end %>
+        </div>
+        <div class="col-lg-9">
+          <div class="anime__details__text">
+            <div class="anime__details__title">
+              <h3><%= @movie.title %></h3>
+              <span>フェイト／ステイナイト, Feito／sutei naito</span>
+            </div>
+            <div class="anime__details__rating">
+              <div class="rating">
+                <a href="#"><i class="fa-solid fa-star" style="color: #ffdd00;"></i></a>
+                <a href="#"><i class="fa-solid fa-star" style="color: #ffdd00;"></i></a>
+                <a href="#"><i class="fa-solid fa-star" style="color: #ffdd00;"></i></a>
+                <a href="#"><i class="fa-solid fa-star" style="color: #ffdd00;"></i></a>
+                <a href="#"><i class="fa-solid fa-star-half-stroke" style="color: #ffdd00;"></i></a>
+              </div>
+              <span>1.029 Votes</span>
+            </div>
+            <p><%= @movie.description %></p>
+            <div class="anime__details__widget">
+              <div class="row">
+                <div class="col-lg-6 col-md-6">
+                  <ul>
+                    <li><span><%= t ".release" %></span><%= l(@movie.release_time, format: :own) %></li>
+                    <li><span><%= t ".director" %></span><%= @movie.director %></li>
+                    <li><span><%= t ".cast" %></span><%= @movie.cast %></li>
+                    <li><span><%= t ".status" %></span><%= @movie.status %></li>
+                  </ul>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                  <ul>
+                    <li><span><%= t ".language" %></span><%= @movie.language %></li>
+                    <li><span><%= t ".age_range" %></span><%= @movie.age_range %></li>
+                    <li><span><%= t ".duration" %></span><%= @movie.duration_min %>&nbsp;<%= t ".min" %></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="anime__details__btn">
+              <a href="#" class="follow-btn"><i class="fa-regular fa-heart" style="color: #ffffff;"></i> <%= t ".favorite" %></a>
+              <% if @movie.active? %>
+                <a href="#" class="watch-btn"><span><%= t ".booking" %></span><i class="fa-solid fa-chevron-right" style="color: #ffffff;"></i></a>
+              <% else %>
+                <a class="watch-btn"><span><%= t ".comming" %></span> <i class="fa-solid fa-chevron-right" style="color: #ffffff;"></i></a>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-8 col-md-8">
+        <div class="anime__details__review">
+          <div class="section-title">
+            <h5><%= t ".reviews" %></h5>
+          </div>
+          <div class="anime__details__form">
+            <div class="section-title">
+              <h5><%= t ".comments" %></h5>
+            </div>
+            <form action="#">
+              <textarea placeholder="<%= t ".comments" %>"></textarea>
+              <button type="submit"><i class="fa fa-location-arrow"></i> <%= t ".review" %></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4">
+        <div class="anime__details__sidebar">
+          <div class="section-title">
+            <h5><%= t ".might_like" %></h5>
+          </div>
+          <div class="product__sidebar__view__item set-bg" data-setbg="img/sidebar/tv-1.jpg">
+            <div class="ep">18 / ?</div>
+            <div class="view"><i class="fa fa-eye"></i> 9141</div>
+            <h5><a href="#">Boruto: Naruto next generations</a></h5>
+          </div>
+          <div class="product__sidebar__view__item set-bg" data-setbg="img/sidebar/tv-2.jpg">
+            <div class="ep">18 / ?</div>
+            <div class="view"><i class="fa fa-eye"></i> 9141</div>
+            <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+          </div>
+          <div class="product__sidebar__view__item set-bg" data-setbg="img/sidebar/tv-3.jpg">
+            <div class="ep">18 / ?</div>
+            <div class="view"><i class="fa fa-eye"></i> 9141</div>
+            <h5><a href="#">Sword art online alicization war of underworld</a></h5>
+          </div>
+          <div class="product__sidebar__view__item set-bg" data-setbg="img/sidebar/tv-4.jpg">
+            <div class="ep">18 / ?</div>
+            <div class="view"><i class="fa fa-eye"></i> 9141</div>
+            <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

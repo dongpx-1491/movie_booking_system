@@ -1,4 +1,11 @@
 en:
+  date:
+    formats:
+      own: "%d-%m-%Y"
+  time:
+    formats:
+      own: "%H:%M:%Ss"
+      default: "%d/%m/%Y"
   text:
     booking_system: Winter Cinema
   layouts:
@@ -60,22 +67,28 @@ en:
       success: "Welcome to the Movie Booking App!"
       danger: "Fail to create account"
   movies:
-    film_not_found: Film not found
+    not_found: "Movie not found"
     not_del: Not deleted!
     show:
-      booking: Booking
-      rating: Rating
       min: minutes
-      director: Director
-      cast: Cast
       age_range: Age range
-      language: Language
-      category: Category
-      release_time: Release time
-      main_content: Main content
-  time:
-    formats:
-      default: "%d/%m/%Y"
+      details: "Details"
+      home: "Home"
+      movies: "Movies"
+      release: "Release Date:"
+      director: "Director:"
+      cast: "Cast:"
+      status: "Status:"
+      language: "Language:"
+      genre: "Genre:"
+      duration: "Duration:"
+      favorite: "Favorite"
+      booking: "Booking Now"
+      comming: "Coming soon"
+      reviews: "Reviews"
+      comments: "Your Comment"
+      review: "Review"
+      might_like: "You might like ...."
   admin:
     header:
       toggle: Toggle Sidebar

@@ -10,7 +10,8 @@ class CreateMovies < ActiveRecord::Migration[7.0]
       t.string :director
       t.string :cast
       t.integer :age_range
-
+      t.integer :status, default: 0
+      
       t.timestamps
     end
   end
