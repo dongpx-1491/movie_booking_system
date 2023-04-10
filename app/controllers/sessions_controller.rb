@@ -1,14 +1,15 @@
 class SessionsController < ApplicationController
   def new; end
 
-   def create
-    @user = User.find_by(email: params[:session][:email].downcase)
-    if @user&.authenticate(params[:session][:password])
-      log_in @user
-      redirect_to root_url
+  def create
+    user = User.find_by email: params[:session][:email].downcase
+
+    if user&.authenticate params[:session][:password]
+      log_in user
+      redirect_to root_path
     else
-      flash.now[:danger] = t("text.user_not_found")
-      render :new
+      flash.now[:danger] = t ".danger"
+      render :new, status: :unprocessable_entity
     end
   end
 

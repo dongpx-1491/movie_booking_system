@@ -17,4 +17,3 @@ import "controllers"
 import "custom"
 import "admin"
 import "main-layout"
-console.log('abc');

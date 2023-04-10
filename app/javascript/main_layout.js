@@ -7,10 +7,8 @@
     Created: Colorib
 ---------------------------------------------------------  */
 $(document).on('ready', function(){
-
     "use strict";
 
-    console.log('asha');
     $(".search-switch").on("click", function () {
       $(".search-model").fadeIn(400);
     });
@@ -26,7 +24,6 @@ $(document).on('ready', function(){
         return false;
      });
 
-     console.log('vendor');
      $(window).on('load', function () {
          $(".loader").fadeOut();
          $("#preloder").delay(200).fadeOut("slow");
@@ -81,7 +78,7 @@ $(document).on('ready', function(){
          items: 1,
          dots: true,
          nav: true,
-         navText: ["<span class='arrow_carrot-left'></span>", "<span class='arrow_carrot-right'></span>"],
+         navText: ["<i class='fa-solid fa-chevron-left'></i>", "<i class='fa-solid fa-chevron-right'></i>"],
          animateOut: 'fadeOut',
          animateIn: 'fadeIn',
          smartSpeed: 1200,

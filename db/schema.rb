@@ -146,7 +146,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_02_153147) do
     t.string "email"
     t.integer "phone"
     t.datetime "date_birth"
-    t.integer "sex"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"

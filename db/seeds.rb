@@ -35,13 +35,11 @@ start = 1234567890
   user_name = "User #{n}"
   email = "user#{n}@gmail.com"
   password = "password"
-  sex = rand(0..1)
   User.create!(user_name: user_name,
     email: email,
     phone: start,
     password: password,
     password_confirmation: password,
-    sex: sex
   )
 
   start = start + 1
@@ -52,7 +50,6 @@ User.create!(user_name: "Admin",
   phone: "1234567819",
   password: "password",
   password_confirmation: "password",
-  sex: 1,
   role: 1
 )
 

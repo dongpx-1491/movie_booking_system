@@ -17,6 +17,8 @@ services:
     depends_on:
       - db
       - redis
+    tty: true
+    stdin_open: true
   db:
     container_name: db
     image: mysql

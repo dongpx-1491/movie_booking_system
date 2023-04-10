@@ -1,46 +1,64 @@
 vi:
   text:
-    booking_system: Hệ thống đặt vé
-    user_not_found: Không tìm thấy người dùng
-    sign_in_message: Vui lòng đăng nhập trước khi mua vé để tích luỹ điểm, cơ hội nhận thêm nhiều ưu đãi từ chương trình thành viên Galaxy Cinema.
-    forget_password: Quên mật khẩu?
-    login: Đăng nhập
-    register: Đăng ký
-    sub: 2D - Phụ đề
+    booking_system: Winter Cinema
   layouts:
+    application:
     header:
-      account: Tài khoản
-      exit: Thoát
-      find_box: Tìm tên phim, diễn viên,...
-      login: Đăng nhập
-      buy_ticket: Mua vé
-      movie: Phim
-      onboard_movie: Phim đang chiếu
-      upcomming_movie: Phim sắp chiếu
-      event: Sự kiện
-      cine_price: Rạp/ Giá vé
-      support: Hỗ trợ
+      english: "EN"
+      vietnamese: "VN"
+      homepage: "Trang chủ"
+      booking: "Đặt vé"
+      blog: "Góc điện ảnh"
+      contact: "Hỗ trợ"
+      member: "Thành viên"
+      edit: "Sửa thông tin"
+      log_out: "Đăng xuất"
+      log_in: "Đăng nhập"
     footer:
-      about_us: Về chúng tôi
-      terms_of_use: Thỏa thuận sử dụng
-      operating_regulation: Quy chế hoạt động
-      privacy_policy: Chính sách bảo mật
-      cinema_blog: Góc điện ảnh
-      movie_genre: Thể loại phim
-      movie_review: Bình luận phim
-      movie_blog: Blog điện ảnh
-      hot_movie: Phim hay tháng
-      support: Hỗ trợ
-      feedback: Góp ý
-      sale_services: Sale và Services
-      cinema/ticket: Rạp/ Giá vé
-      career: Tuyển dụng
-      cinema: Kết nối Winter Cinema
-      download_app: Download
-      company_address: Công Ty Cổ Phần Phim Winter, Tầng 14, Toà Nhà Landmark Tower 72, Phạm Hùng, Cầu Giấy, Hà Nội
+      copyright: "Bản quyền"
+      reserved: "Đã đăng ký bản quyền  Phạm Xuân Đông"
   static_pages:
     home:
       home: "Trang chủ"
+    shared:
+    error_messages:
+      content: "Biểu mẫu chứa"
+      error: "Lỗi"
+  sessions:
+    new:
+      login: "Đăng nhập"
+      p: "Chào mừng bạn tới Movie Booking App."
+      email: "Email"
+      password: "Mật khẩu"
+      new_user: "Bạn chưa có tài khoản?"
+      sign_up_now: "Đăng kí ngay !"
+      forgot_password: "Quên mật khẩu ?"
+      or: "Hoặc"
+      facebook: "Đăng nhập bằng Facebook"
+      google: "Đăng nhập bằng Google"
+      twitter: "Đăng nhập bằng Twitter"
+    create:
+      danger: "Tài khoản và Mật khẩu không hợp lệ"
+  users:
+    new:
+      sign_up: "Đăng kí"
+      p: "Chào mừng bạn tới Movie Booking App."
+      email: "Địa chỉ Email"
+      name: "Tên của bạn"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
+      date_of_birth: "Ngày sinh"
+      phone_number: "Số điện thoại"
+      submit: "Đăng kí"
+      have_account: "Bạn đã có tài khoản? "
+      log_in: "Đăng nhập!"
+      log_in_with: "Đăng nhập với:"
+      facebook: "Đăng nhập bằng Facebook"
+      google: "Đăng nhập bằng Google"
+      twitter: "Đăng nhập bằng Twitter"
+    create:
+      success: "Chào mừng bạn tới Movie Booking App!"
+      danger: "Tạo tài khoản thất bại"
   movies:
     film_not_found: Không tìm thấy phim
     not_del: Không được xóa!
