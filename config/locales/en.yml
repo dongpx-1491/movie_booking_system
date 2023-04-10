@@ -13,10 +13,10 @@ en:
       member: "Member"
       edit: "Edit users"
       log_out: "Log out"
+      log_in: "Log in"
     footer:
       copyright: "Copyright"
-      reserved: "All rights reserved | This template is made with"
-      by: "by"
+      reserved: "All rights reserved Pham Xuan Dong"
   static_pages:
     home:
       home: "Home"
@@ -34,6 +34,9 @@ en:
       sign_up_now: "Register now!"
       forgot_password: "Forgot Your Password?"
       or: "Or"
+      facebook: "Sign in With Facebook"
+      google: "Sign in With Google"
+      twitter: "Sign in With Twitter"
     create:
       danger: "invalid email password combination"
   users:

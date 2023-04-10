@@ -6,7 +6,7 @@
       <div class="col-lg-6">
         <div class="login__form">
           <h3><%= t ".sign_up" %></h3>
-          <%= form_for(@user) do |f| %>
+          <%= form_for @user, data: {turbo: false} do |f| %>
             <%= render "shared/error_messages", object: f.object %>
             <div class="input__item">
               <%= f.email_field :email, placeholder: t(".email") %>

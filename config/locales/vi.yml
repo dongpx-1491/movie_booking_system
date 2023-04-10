@@ -13,10 +13,10 @@ vi:
       member: "Thành viên"
       edit: "Sửa thông tin"
       log_out: "Đăng xuất"
+      log_in: "Đăng nhập"
     footer:
       copyright: "Bản quyền"
-      reserved: "Đã đăng ký bản quyền | Mẫu này được làm bằng"
-      by: "bởi"
+      reserved: "Đã đăng ký bản quyền  Phạm Xuân Đông"
   static_pages:
     home:
       home: "Trang chủ"
@@ -34,6 +34,9 @@ vi:
       sign_up_now: "Đăng kí ngay !"
       forgot_password: "Quên mật khẩu ?"
       or: "Hoặc"
+      facebook: "Đăng nhập bằng Facebook"
+      google: "Đăng nhập bằng Google"
+      twitter: "Đăng nhập bằng Twitter"
     create:
       danger: "Tài khoản và Mật khẩu không hợp lệ"
   users:

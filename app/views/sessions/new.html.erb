@@ -6,7 +6,7 @@
       <div class="col-lg-6">
         <div class="login__form">
           <h3><%= t ".login"%></h3>
-          <%= form_for :session, url: login_path do |f| %>
+          <%= form_for :session, url: login_path, data: {turbo: false} do |f| %>
             <div class="input__item">
               <%= f.email_field :email, placeholder: t(".email") %>
               <span ><i class="fa-solid fa-envelope"></i></span>
@@ -35,7 +35,7 @@
             <ul>
               <li>
                 <%= link_to "#", class: "facebook" do %>
-                  <i class="fa fa-facebook"></i> <%= t ".facebook" %>
+                 <i class="fa-brands fa-facebook-f fa-beat-fade"></i><%= t ".facebook" %>
                 <% end %>
               </li>
               <li>
