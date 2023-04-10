@@ -1,4 +1,11 @@
 vi:
+  date:
+    formats:
+      own: "%d-%m-%Y"
+  time:
+    formats:
+      own: "%H:%M:%Ss"
+      default: "%d/%m/%Y"
   text:
     booking_system: Winter Cinema
   layouts:
@@ -60,22 +67,28 @@ vi:
       success: "Chào mừng bạn tới Movie Booking App!"
       danger: "Tạo tài khoản thất bại"
   movies:
-    film_not_found: Không tìm thấy phim
+    not_found: "Không tìm thấy phim"
     not_del: Không được xóa!
     show:
-      booking: Đặt vé xem phim
-      rating: Đánh giá
-      min: phút
-      director: Đạo diễn
-      cast: Diễn viên
       age_range: Giới hạn độ tuổi
-      language: Ngôn ngữ
-      category: Thể loại
-      release_time: Thời gian phát hành
-      main_content: Nội dung chính
-  time:
-    formats:
-      default: "%d/%m/%Y"
+      min: phút
+      details: "Chi tiết"
+      home: "Trang chủ"
+      movies: "Phim"
+      release: "Ngày khởi chiếu:"
+      director: "Đạo diễn:"
+      cast: "Diễn viên:"
+      status: "Trạng thái:"
+      language: "Ngôn ngữ:"
+      genre: "Thể loại:"
+      duration: "Độ dài:"
+      favorite: "Yêu thích"
+      booking: "Đặt vé"
+        
+      reviews: "Đánh giá"
+      comments: "Đánh giá của bạn"
+      review: "Đánh giá"
+      might_like: "Bạn có thể thích ..."
   admin:
     header:
       toggle: Chuyển đổi thanh bên

@@ -15,6 +15,7 @@ names.each {|name|
   age_range = 18
   category_id = 2
   img_link = "https://cdn.galaxycine.vn/media/2022/8/29/1200-x-1800_1661753251433.jpg"
+  status = rand(0..1)
   Movie.create!(title: title,
                 description: description,
                 rating: rating,
@@ -25,7 +26,8 @@ names.each {|name|
                 cast: cast,
                 age_range: age_range,
                 category_id: Category.all.pluck(:id).sample,
-                img_link: img_link)
+                img_link: img_link,
+                status: status )
 end
 p "processing..."
 

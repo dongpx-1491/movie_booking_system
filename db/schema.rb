@@ -71,6 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_02_153147) do
     t.string "director"
     t.string "cast"
     t.integer "age_range"
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id"
@@ -79,8 +80,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_02_153147) do
   end
 
   create_table "payments", charset: "utf8mb3", force: :cascade do |t|
-    t.integer "status"
-    t.decimal "total_cost", precision: 10
+    t.decimal "total_cost", precision: 10, scale: 2, default: "0.0", null: false
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"

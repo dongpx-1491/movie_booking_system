@@ -1314,9 +1314,8 @@ ol {
 	right: -14px;
 	top: 0;
 	content: "";
-	font-family: 'Oswald', sans-serif;
+	font-family: "FontAwesome";
 }
-
 .breadcrumb__links span {
 	font-size: 15px;
 	color: #b7b7b7;
