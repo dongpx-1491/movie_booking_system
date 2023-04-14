@@ -1,0 +1,1 @@
+$('#list-show-time').html("<%= j render partial: "cinemas/cinema", locals:{cinemas: @cinemas, show_times: @show_times, date: params[:start_time]&.to_date || Time.now} %>")

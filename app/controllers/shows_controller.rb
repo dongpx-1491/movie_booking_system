@@ -3,16 +3,22 @@ class ShowsController < ApplicationController
   before_action :logged_in_user, only: :show
 
   def index
-    @pagy, @shows = pagy @movie.shows.asc_date.asc_time
+    @filter_showtime = ShowTime.ransack({filter_date: [params[:movie_id], params[:start_time] || Time.now]})
+    @show_times = @filter_showtime.result.group_by(&:room_id)
+    @cinemas = Cinema.all
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show
     unless have_payment?
-      @payment = Payment.create user_id: session[:user_id]
+      @payment = Payment.create user_id: current_user.id
       init_payment @payment
     end
-    @show = @movie.shows.find_by id: params[:id]
-    @seats = @show.room.seats
+    @show = @movie.show_times.find_by id: params[:id]
   end
 
   private

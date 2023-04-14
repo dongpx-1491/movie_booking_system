@@ -8,7 +8,7 @@ class Movie < ApplicationRecord
   accepts_nested_attributes_for :movie_categories
 
   enum status: {inactive: 0, active: 1}
-  
+
   delegate :name, to: :category, prefix: true
-  scope :sort_list, ->{order :release_time}
+  scope :sort_list, ->{order release_time: :desc}
 end

@@ -1,20 +1,20 @@
-<% cinemas.each do |cinema, rooms| %>
-  <div class="cinema-block">
-    <div class = "title-cinema">
-      <h5><%= cinema.name %></h5>
-    </div>
-    <div class="item-cinema">
-      <label><%= t("text.sub") %></label>
-      <div class="showtime-block">
-        <% rooms.each do |room, show_times| %>
-          <% show_times.each do |show_time| %>
-            <% if show_time.movie_id == movie_id %>
-                <%= render partial: "showtimes/show_time", locals: {show_time: show_time} %>
-            <% end %>
+<div id="list-show-time">
+  <% cinemas.each do |cinema| %>
+    <div class="cinema-block">
+      <div class = "title-cinema">
+        <h5><%= cinema.name %></h5>
+      </div>
+      <div class="item-cinema set-bg" data-setbg=<%= asset_url('bg.jpg') %>>
+        <label class="display-date-shows"><%= l(date, format: :display)%></label>
+        <div class="showtime-block">
+          <% unless show_times.blank? %>
+            <%= render partial: "shows/show_time_for_cinema", locals: {show_times: show_times, cinema: cinema} %>
+          <% else %>
+            <span class="display-date-shows"><%= t "text.not_have_show" %></span>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
-  </div>
-  <br>
-<% end %>
+    <br>
+  <% end %>
+</div>

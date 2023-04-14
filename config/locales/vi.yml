@@ -2,12 +2,17 @@ vi:
   date:
     formats:
       own: "%d-%m-%Y"
+      display: "%b %d %Y"
   time:
     formats:
       own: "%H:%M:%Ss"
       default: "%d-%m-%Y"
+      search: "%Y-%m-%d"
+      display: "%d %B %Y"
+  not_del: Không được xóa!
   text:
     booking_system: Winter Cinema
+    not_have_show: "Không có lịch chiếu"
   layouts:
     application:
     header:
@@ -46,6 +51,16 @@ vi:
       twitter: "Đăng nhập bằng Twitter"
     create:
       danger: "Tài khoản và Mật khẩu không hợp lệ"
+  shows:
+    not_found: "Không tìm thấy phim"
+    index:
+      shows_list: "Danh sách suất chiếu"
+      shows: "Suất chiếu"
+      home: "Trang chủ"
+      search: "Tìm kiếm"
+    show:
+      seats_list: "Danh sách ghế:"
+      going: "Đi tới thanh toán"
   users:
     new:
       sign_up: "Đăng kí"
@@ -70,7 +85,7 @@ vi:
     not_found: "Không tìm thấy phim"
     not_del: Không được xóa!
     show:
-      age_range: Giới hạn độ tuổi
+      age_range: "Giới hạn độ tuổi:"
       min: phút
       details: "Chi tiết"
       home: "Trang chủ"

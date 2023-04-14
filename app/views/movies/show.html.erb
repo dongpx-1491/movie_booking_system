@@ -34,7 +34,7 @@
           <div class="anime__details__text">
             <div class="anime__details__title">
               <h3><%= @movie.title %></h3>
-              <span>フェイト／ステイナイト, Feito／sutei naito</span>
+              <%# <span>フェイト／ステイナイト, Feito／sutei naito</span> %>
             </div>
             <div class="anime__details__rating">
               <div class="rating">
@@ -69,9 +69,12 @@
             <div class="anime__details__btn">
               <a href="#" class="follow-btn"><i class="fa-regular fa-heart" style="color: #ffffff;"></i> <%= t ".favorite" %></a>
               <% if @movie.active? %>
-                <a href="#" class="watch-btn"><span><%= t ".booking" %></span><i class="fa-solid fa-chevron-right" style="color: #ffffff;"></i></a>
+                <%= link_to movie_shows_path(@movie), class: "watch-btn" do %>
+                  <span><%= t ".booking" %></span>
+                  <i class="fa-solid fa-chevron-right" style="color: #ffffff;"></i>
+                <% end %>
               <% else %>
-                <a class="watch-btn"><span><%= t ".comming" %></span> <i class="fa-solid fa-chevron-right" style="color: #ffffff;"></i></a>
+                <a class="watch-btn ban"><span><%= t ".comming" %></span> <i class="fa-solid fa-chevron-right" style="color: #ffffff;"></i></a>
               <% end %>
             </div>
           </div>
