@@ -21,6 +21,7 @@ pin "slicknav" , to: "jquery.slicknav.js", preload: true
 pin "nice-select", to: "jquery.nice-select.min.js", preload: true
 pin "player", to: "player.js", preload: true
 pin "mixi", to: "mixitup.min.js", preload: true
+pin "window-load", to: "window_load.js"
 pin "custom", to: "custom.js", preload: true
 pin "admin", to: "admin.js", preload: true
 pin "main-layout", to: "main_layout.js", preload: true

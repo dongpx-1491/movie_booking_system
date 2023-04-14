@@ -13,7 +13,6 @@ names.each {|name|
   director = "Faker"
   cast = Faker::Movies::Lebowski.actor
   age_range = 18
-  category_id = 2
   img_link = "https://cdn.galaxycine.vn/media/2022/8/29/1200-x-1800_1661753251433.jpg"
   status = rand(0..1)
   Movie.create!(title: title,
@@ -25,7 +24,7 @@ names.each {|name|
                 director: director,
                 cast: cast,
                 age_range: age_range,
-                category_id: Category.all.pluck(:id).sample,
+                category_ids: [Category.all.pluck(:id).sample],
                 img_link: img_link,
                 status: status )
 end
