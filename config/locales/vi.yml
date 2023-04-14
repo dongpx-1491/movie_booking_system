@@ -5,7 +5,7 @@ vi:
   time:
     formats:
       own: "%H:%M:%Ss"
-      default: "%d/%m/%Y"
+      default: "%d-%m-%Y"
   text:
     booking_system: Winter Cinema
   layouts:
@@ -84,7 +84,7 @@ vi:
       duration: "Độ dài:"
       favorite: "Yêu thích"
       booking: "Đặt vé"
-        
+
       reviews: "Đánh giá"
       comments: "Đánh giá của bạn"
       review: "Đánh giá"

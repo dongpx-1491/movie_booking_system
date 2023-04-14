@@ -74,9 +74,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_02_153147) do
     t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "category_id"
     t.string "img_link"
-    t.index ["category_id"], name: "index_movies_on_category_id"
   end
 
   create_table "payments", charset: "utf8mb3", force: :cascade do |t|
@@ -160,7 +158,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_02_153147) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "movie_categories", "categories"
   add_foreign_key "movie_categories", "movies"
-  add_foreign_key "movies", "categories"
   add_foreign_key "payments", "users"
   add_foreign_key "rates", "movies"
   add_foreign_key "rates", "users"

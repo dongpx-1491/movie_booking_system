@@ -609,11 +609,10 @@ ol {
 	margin: 0 auto;
 }
 
-.hero__slider.owl-carousel .owl-nav button span {
+.hero__slider.owl-carousel .owl-nav button svg {
 	-webkit-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
 	transform: rotate(-45deg);
-	display: block;
 	z-index: 1;
 }
 
