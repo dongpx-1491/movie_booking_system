@@ -3,15 +3,38 @@ names.each {|name|
   Category.create!(name: name)
 }
 
-20.times do
-  title = Faker::Movies::Lebowski.actor
+title = Faker::Movie.unique.title
   description = Faker::Movie.quote
   rating = 4.2
-  duration_min = 120
-  release_time = "9/9/2022"
-  language = "English"
-  director = "Faker"
-  cast = Faker::Movies::Lebowski.actor
+  duration_min = Faker::Number.between(from: 60, to: 300)
+  release_time = Faker::Date.between(from: "2023-04-01", to: "2023-06-01")
+  language = Faker::Nation.language
+  director = Faker::Artist.unique.name
+  cast = Faker::Artist.unique.name
+  age_range = 18
+  img_link = "https://cdn.galaxycine.vn/media/2022/8/29/1200-x-1800_1661753251433.jpg"
+  Movie.create!(title: title,
+                description: description,
+                rating: rating,
+                duration_min: duration_min,
+                release_time: "2023-05-02",
+                language: language,
+                director: director,
+                cast: cast,
+                age_range: age_range,
+                category_ids: [1],
+                img_link: img_link,
+                status: 1 )
+
+20.times do
+  title = Faker::Movie.unique.title
+  description = Faker::Movie.quote
+  rating = 4.2
+  duration_min = Faker::Number.between(from: 60, to: 300)
+  release_time = Faker::Date.between(from: "2023-04-01", to: "2023-05-01")
+  language = Faker::Nation.language
+  director = Faker::Artist.unique.name
+  cast = Faker::Artist.unique.name
   age_range = 18
   img_link = "https://cdn.galaxycine.vn/media/2022/8/29/1200-x-1800_1661753251433.jpg"
   status = rand(0..1)
@@ -55,7 +78,7 @@ User.create!(user_name: "Admin",
 )
 
 
-cinemaNames = ["Galaxy Nguyễn Du", "Galaxy Tân Bình", "Galaxy Kinh Dương", "Galazy Quang Trung", "Galaxy Long Bien"]
+cinemaNames = ["Winter Nguyễn Du", "Winter Thanh Xuân", "Winter Mễ Trì", "Winter Nguyễn Trãi ", "Winter Long Biên"]
 cinemaNames.each {|cinemaName|
   Cinema.create!(location: "Cầu Giấy", name: cinemaName)
 }

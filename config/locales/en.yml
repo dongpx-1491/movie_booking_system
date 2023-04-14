@@ -2,11 +2,16 @@ en:
   date:
     formats:
       own: "%d-%m-%Y"
+      display: "%b %d %Y"
   time:
     formats:
       own: "%H:%M:%Ss"
       default: "%d-%m-%Y"
+      search: "%Y-%m-%d"
+      display: "%b %d %Y"
+  not_del: Not deleted!
   text:
+    not_have_show: "Dont have any shows to booking"
     booking_system: Winter Cinema
   layouts:
     application:
@@ -46,6 +51,16 @@ en:
       twitter: "Sign in With Twitter"
     create:
       danger: "invalid email password combination"
+  shows:
+    index:
+      shows_list: "Shows list"
+      shows: "Shows"
+      home: "Home"
+      date: "Date"
+      search: "Search"
+    show:
+      seats_list: "Seats list:"
+      going: "Go to Payment"
   users:
     new:
       sign_up: "Sign up"
@@ -71,7 +86,7 @@ en:
     not_del: Not deleted!
     show:
       min: minutes
-      age_range: Age range
+      age_range: "Age range:"
       details: "Details"
       home: "Home"
       movies: "Movies"
