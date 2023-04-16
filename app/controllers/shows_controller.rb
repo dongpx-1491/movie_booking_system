@@ -18,7 +18,8 @@ class ShowsController < ApplicationController
       @payment = Payment.create user_id: current_user.id
       init_payment @payment
     end
-    @show = @movie.show_times.find_by id: params[:id]
+    @show = ShowTime.find_by id: params[:id]
+    @room = @show.room
   end
 
   private

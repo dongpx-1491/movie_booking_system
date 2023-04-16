@@ -1,7 +1,7 @@
 class Payment < ApplicationRecord
   has_many :tickets, dependent: :destroy
   belongs_to :user
-  enum status: {pending: 1, approve: 2}
+  enum status: {inactive: 0, active: 1}
 
   scope :sort_list, ->{order created_at: :desc}
   delegate :user_name, to: :user

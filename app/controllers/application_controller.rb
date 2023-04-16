@@ -3,6 +3,7 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
   include SessionsHelper
+  include TicketsHelper
   include PaymentsHelper
 
   before_action :set_locale
@@ -27,7 +28,7 @@ class ApplicationController < ActionController::Base
     return if logged_in?
 
     store_location
-    flash.now[:danger] = ".danger"
+    flash[:danger] = t "text.danger"
     redirect_to login_path
   end
 end

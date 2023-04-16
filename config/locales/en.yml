@@ -3,14 +3,17 @@ en:
     formats:
       own: "%d-%m-%Y"
       display: "%b %d %Y"
+      weekday: "%A | %d-%m-%Y"
   time:
     formats:
       own: "%H:%M:%Ss"
       default: "%d-%m-%Y"
       search: "%Y-%m-%d"
       display: "%b %d %Y"
+      weekday: "%A | %d-%m-%Y"
   not_del: Not deleted!
   text:
+    danger: "Please log in before do this action"
     not_have_show: "Dont have any shows to booking"
     booking_system: Winter Cinema
   layouts:
@@ -52,6 +55,7 @@ en:
     create:
       danger: "invalid email password combination"
   shows:
+    not_found: "Can not found show"
     index:
       shows_list: "Shows list"
       shows: "Shows"
@@ -89,7 +93,7 @@ en:
       age_range: "Age range:"
       details: "Details"
       home: "Home"
-      movies: "Movies"
+      movies: "Movie"
       release: "Release Date:"
       director: "Director:"
       cast: "Cast:"

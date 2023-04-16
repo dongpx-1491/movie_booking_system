@@ -80,11 +80,18 @@ User.create!(user_name: "Admin",
 
 cinemaNames = ["Winter Nguyễn Du", "Winter Thanh Xuân", "Winter Mễ Trì", "Winter Nguyễn Trãi ", "Winter Long Biên"]
 cinemaNames.each {|cinemaName|
-  Cinema.create!(location: "Cầu Giấy", name: cinemaName)
+  location = cinemaName.delete "Winter "
+  Cinema.create!(location: location, name: cinemaName)
 }
+
 cinemas = Cinema.all
-10.times do
-  cinemas.each { |cinema| cinema.rooms.create!(row: 20, length: 30) }
+
+5.times do
+  index = 1
+  cinemas.each do |cinema|
+    name = "Winter #{index}"
+    cinema.rooms.create!(row: 6, length: 10, name: name)
+  end
 end
 
 time = Time.now

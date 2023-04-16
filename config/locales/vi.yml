@@ -3,16 +3,19 @@ vi:
     formats:
       own: "%d-%m-%Y"
       display: "%b %d %Y"
+      weekday: "%A | %d-%m-%Y"
   time:
     formats:
       own: "%H:%M:%Ss"
       default: "%d-%m-%Y"
       search: "%Y-%m-%d"
       display: "%d %B %Y"
+      weekday: "%A | %d-%m-%Y"
   not_del: Không được xóa!
   text:
     booking_system: Winter Cinema
     not_have_show: "Không có lịch chiếu"
+    danger: "Vui lòng đăng nhập trước khi thực hiện"
   layouts:
     application:
     header:
@@ -52,7 +55,7 @@ vi:
     create:
       danger: "Tài khoản và Mật khẩu không hợp lệ"
   shows:
-    not_found: "Không tìm thấy phim"
+    not_found: "Không tìm thấy lịch chiếu"
     index:
       shows_list: "Danh sách suất chiếu"
       shows: "Suất chiếu"

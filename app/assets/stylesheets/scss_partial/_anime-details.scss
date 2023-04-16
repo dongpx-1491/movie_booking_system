@@ -181,6 +181,10 @@
         padding: 14px 20px;
         border-radius: 4px 0 0 4px;
         margin-right: 1px;
+
+        &:hover {
+            color: yellow !important;
+        }
     }
 
     svg {
@@ -225,8 +229,8 @@
     }
 }
 
-.anime__review__item__text{
-   overflow: hidden;
+.anime__review__item__text {
+    overflow: hidden;
     background: #1d1e39;
     padding: 18px 30px 16px 20px;
     border-radius: 10px;
