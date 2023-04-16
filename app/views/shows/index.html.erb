@@ -20,10 +20,10 @@
         <div class="blog__details__title">
           <%= form_tag(movie_shows_path(id: params[:movie_id]), class: "row d-flex justify-content-center", method: :get, remote: true) do |f| %>
             <%= hidden_field_tag :movie_id, @movie.id %>
-            <div class="col-md-10">
+            <div class="col-md-9">
               <%= date_field_tag :start_time, params[:start_time] || l(Time.now, format: :search) , class:"form-control", min: l(Time.now, format: :search) %>
             </div>
-            <div class="col col-lg-2">
+            <div class="col col-lg-3">
               <button type="submit" class="btn btn-danger w-100">
                 <i class="fas fa-search search-book"></i>
                 <span><%= t ".search" %></span>

@@ -102,8 +102,20 @@
     @include transition(all, .3s);
 
     &:hover {
-      color: $black-color;
+      color: $black-color !important;
       background: $white-color;
     }
   }
+}
+
+.seat-label {
+  display: inline-block;
+  font-size: 15px;
+  color: $white-color;
+  background: rgba(129, 143, 195, 0.38);
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+  @include transition(all, .3s);
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_02_153147) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_16_120314) do
   create_table "active_storage_attachments", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -52,6 +52,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_02_153147) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "favorites", charset: "utf8mb3", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "movie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_id"], name: "index_favorites_on_movie_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
   create_table "movie_categories", charset: "utf8mb3", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -88,7 +97,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_02_153147) do
 
   create_table "rates", charset: "utf8mb3", force: :cascade do |t|
     t.text "comment"
-    t.integer "favorite"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
@@ -107,16 +115,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_02_153147) do
     t.index ["cinema_id"], name: "index_rooms_on_cinema_id"
   end
 
-  create_table "seats", charset: "utf8mb3", force: :cascade do |t|
-    t.string "seat_number"
-    t.integer "status"
-    t.integer "seat_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "tickets_id"
-    t.index ["tickets_id"], name: "index_seats_on_tickets_id"
-  end
-
   create_table "show_times", charset: "utf8mb3", force: :cascade do |t|
     t.datetime "start_time"
     t.datetime "end_time"
@@ -124,18 +122,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_02_153147) do
     t.datetime "updated_at", null: false
     t.bigint "movie_id"
     t.bigint "room_id"
-    t.bigint "seat_id"
     t.index ["movie_id"], name: "index_show_times_on_movie_id"
     t.index ["room_id"], name: "index_show_times_on_room_id"
-    t.index ["seat_id"], name: "index_show_times_on_seat_id"
   end
 
   create_table "tickets", charset: "utf8mb3", force: :cascade do |t|
-    t.integer "price"
+    t.string "seat_position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "show_time_id"
     t.bigint "payment_id"
+    t.index ["payment_id", "show_time_id", "seat_position"], name: "index_tickets_on_payment_id_and_show_time_id_and_seat_position", unique: true
     t.index ["payment_id"], name: "index_tickets_on_payment_id"
     t.index ["show_time_id"], name: "index_tickets_on_show_time_id"
   end
@@ -156,16 +153,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_02_153147) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "favorites", "movies"
+  add_foreign_key "favorites", "users"
   add_foreign_key "movie_categories", "categories"
   add_foreign_key "movie_categories", "movies"
   add_foreign_key "payments", "users"
   add_foreign_key "rates", "movies"
   add_foreign_key "rates", "users"
   add_foreign_key "rooms", "cinemas"
-  add_foreign_key "seats", "tickets", column: "tickets_id"
   add_foreign_key "show_times", "movies"
   add_foreign_key "show_times", "rooms"
-  add_foreign_key "show_times", "seats"
   add_foreign_key "tickets", "payments"
   add_foreign_key "tickets", "show_times"
 end

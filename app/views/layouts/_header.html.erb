@@ -11,8 +11,8 @@
           <nav class="header__menu mobile-menu">
             <ul>
               <li class="active"><%= link_to t(".homepage"), root_path %></li>
-              <li><a href="./blog.html">Our Blog</a></li>
-              <li><a href="#">Contacts</a></li>
+              <li><a href="./blog.html">Favorites Movie</a></li>
+              <li><a href="#">Order History</a></li>
               <% if logged_in? %>
                 <li>
                   <a href="./categories.html"></i>Hi <%= current_user.user_name %> <i class="fa-solid fa-user fa-beat"></i></span></a>
