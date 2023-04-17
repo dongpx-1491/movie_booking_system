@@ -2,7 +2,7 @@
   <div class="container">
     <div class="anime__details__episodes">
       <div class="section-title">
-        <h5>List seat</h5>
+        <h5><%= t ".seats_list " %></h5>
       </div>
     </div>
     <div class="row">
@@ -50,7 +50,7 @@
               </div>
             </div>
             <div class="row d-flex justify-content-center">
-              <%= link_to movie_shows_path(@movie), class: "watch-btn" do %>
+              <%= link_to payment_path(current_payment), class: "watch-btn" do %>
                 <span><%= t ".going" %></span> <i class="fa fa-angle-right"></i>
               <% end %>
             </div>
@@ -80,7 +80,7 @@
                     <div class="ticket-price-total">
                       <p>
                         <%= t ".sum" %>: &nbsp;
-                        <span id="price-booking"><%= sum_price_show @show.id %></span>
+                        <span id="price-booking"><%= number_to_currency(sum_price_show(@show.id)) %></span>
                       </p>
                     </div>
                   </div>

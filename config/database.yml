@@ -3,15 +3,15 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV['DATABASE_USER_NAME']  || "root" %>
-  password: <%= ENV['DATABASE_PASSWORD'] || "databasepass" %>
-  host: <%= ENV["DATABASE_HOST"] %>
-  
+  username: root
+  password: databasepass
+  # host: <%= ENV["DATABASE_HOST"] %>
+
 development:
   <<: *default
   database: booking_system_dev
-  username:  <%= ENV['DATABASE_USER_NAME'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  # username:  <%= ENV['DATABASE_USER_NAME'] %>
+  # password: <%= ENV['DATABASE_PASSWORD'] %>
 
 test:
   <<: *default
@@ -19,5 +19,5 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  # url: <%= ENV['DATABASE_URL'] %>
   database: booking_system

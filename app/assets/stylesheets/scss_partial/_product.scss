@@ -302,7 +302,8 @@
 
 .product__pagination {
   padding-top: 15px;
-
+  display: flex;
+  justify-content: center;
   a {
     display: inline-block;
     font-size: 15px;
@@ -317,6 +318,7 @@
     @include transition(all, .3s);
 
     &:hover {
+      cursor: pointer;
       color: #ffffff;
     }
 

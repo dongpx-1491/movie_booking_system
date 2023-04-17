@@ -7,7 +7,10 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
-    
+    get "/activation", to: "payments#activation"
+    resources :payments
+    resources :order_historys
+    resources :payment_activations, only: :edit
     resources :tickets
     resources :users
     resources :movies, only: %i(show) do

@@ -102,7 +102,7 @@ movies.each{ |movie|
     start_time = time
     end_time = start_time + 2*60*60
     ShowTime.create!(
-      start_time: start_time, end_time: end_time, movie_id: movie.id, room_id: room.id
+      start_time: start_time, end_time: end_time, movie_id: movie.id, room_id: room.id, price: Settings.price.standard
     )
     time = end_time
   }

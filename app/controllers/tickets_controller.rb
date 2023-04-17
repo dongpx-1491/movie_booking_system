@@ -6,7 +6,7 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = Ticket.new payment_id: current_payment.id, show_time_id: params[:show_time_id], seat_position: params[:seat_position]
-    respond_to :js if @ticket.save
+    respond_to :js if @ticket.save && total_price
   end
 
   def destroy
@@ -14,7 +14,7 @@ class TicketsController < ApplicationController
     @show_id = @ticket.show_time.id
     @seat_position = @ticket.seat_position
 
-    respond_to :js if @ticket.destroy
+    respond_to :js if @ticket.destroy && total_price
   end
 
   private
@@ -23,7 +23,7 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find_by(payment_id: current_payment.id, show_time_id: params[:show_time_id], seat_position: params[:seat_position])
     return if @ticket
 
-    flash[:danger] = "cannot found seat"
+    flash[:danger] = t ".not_found"
     redirect_to root_path
   end
 end
