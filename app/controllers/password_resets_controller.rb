@@ -23,6 +23,7 @@ class PasswordResetsController < ApplicationController
       @user.errors.add :password, t(".empty")
       render :edit
     elsif @user.update user_params
+      @user.update reset_digest: nil
       flash[:success] = t ".success"
       redirect_to login_path
     else

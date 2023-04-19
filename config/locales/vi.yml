@@ -214,7 +214,7 @@ vi:
       danger: "Không tìm thấy địa chỉ email"
     edit:
       reset_password: "Đặt lại mật khẩu"
-      submit: "Cập nhật mật kgẩu"
+      submit: "Cập nhật mật khẩu"
       password: "Mật khẩu"
       confirm_password: "Xác nhận mật khẩu"
       danger: "Đã hết hạn đặt lại mật khẩu"

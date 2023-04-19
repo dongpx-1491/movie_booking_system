@@ -14,5 +14,6 @@ price:
   standard: 75000
 payment:
   expired: 25
-email:
-  expired: 3
+user:
+  email:
+    expired: 2
