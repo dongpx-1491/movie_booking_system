@@ -1,5 +1,5 @@
 class PaymentsController < ApplicationController
-  before_action :load_payment, :check_expiration
+  before_action :load_payment, :check_expiration, only: %i(show activation)
 
   def show
     @tickets = @payment.tickets
@@ -7,8 +7,7 @@ class PaymentsController < ApplicationController
   end
 
   def activation
-    @payment.create_activation_digest
-    @payment.send_activation_email
+    ActivePaymentWorker.perform_async @payment.id
 
     flash[:info] = t ".info"
     redirect_to root_path

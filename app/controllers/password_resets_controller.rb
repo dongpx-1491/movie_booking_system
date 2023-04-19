@@ -8,8 +8,8 @@ class PasswordResetsController < ApplicationController
     @user = User.find_by email: params[:password_reset][:email].downcase
 
     if @user
-      @user.create_reset_digest
-      @user.send_password_reset_email
+      SendMailResetPassWorker.perform_async @user.id
+
       flash[:info] = t ".info"
       redirect_to new_password_reset_path
     else
