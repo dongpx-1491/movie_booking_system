@@ -103,17 +103,6 @@ en:
     show:
       h5: "Your order"
       tickets: "Tickets"
-      movie_range: "(*) This film only for"
-      age_notice: "above"
-      cinema: "Cinema"
-      room: "Room"
-      seat: "Seat"
-      time: "Timw"
-      date: "Date"
-      screen: "Screen"
-      seat_selected: "Seat selected"
-      seat_unavailable: "Seat unavailable"
-      seat_normal: "Can be select"
       total: "Total:"
       danger: "Cannot find payments"
   sessions:
@@ -142,6 +131,17 @@ en:
     show:
       seats_list: "Seats list:"
       going: "Go to Payment"
+      movie_range: "(*) This film only for"
+      age_notice: "above"
+      cinema: "Cinema"
+      room: "Room"
+      seat: "Seat"
+      time: "Timw"
+      date: "Date"
+      screen: "Screen"
+      seat_selected: "Seat selected"
+      seat_unavailable: "Seat unavailable"
+      seat_normal: "Can be select"
   users:
     new:
       sign_up: "Sign up"
