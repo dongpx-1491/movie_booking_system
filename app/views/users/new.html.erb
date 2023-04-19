@@ -1,4 +1,5 @@
 <% provide :title, t(".sign_up") %>
+<% provide :button_text, t(".submit") %>
 <%= render partial: "shared/background_title", locals:{content: t(".sign_up"), description: t(".p") } %>
 <section class="signup spad">
   <div class="container">
@@ -6,34 +7,7 @@
       <div class="col-lg-6">
         <div class="login__form">
           <h3><%= t ".sign_up" %></h3>
-          <%= form_for @user, data: {turbo: false} do |f| %>
-            <%= render "shared/error_messages", object: f.object %>
-            <div class="input__item">
-              <%= f.email_field :email, placeholder: t(".email") %>
-              <span><i class="fa-solid fa-envelope"></i></span>
-            </div>
-            <div class="input__item">
-              <%= f.text_field :user_name, placeholder: t(".name") %>
-              <span class="icon_profile"><i class="fa-solid fa-user"></i></span>
-            </div>
-            <div class="input__item">
-              <%= f.password_field :password, placeholder: t(".password") %>
-              <span class="icon_lock"><i class="fa-solid fa-lock"></i></span>
-            </div>
-            <div class="input__item">
-              <%= f.password_field :password_confirmation, placeholder: t(".password_confirmation") %>
-              <span class="icon_key"><i class="fa-solid fa-key"></i></span>
-            </div>
-            <div class="input__item">
-              <%= f.date_field :date_birth, placeholder: t(".date_of_birth") %>
-              <span class="icon_id_alt"><i class="fa-solid fa-address-card"></i></span>
-            </div>
-            <div class="input__item">
-              <%= f.number_field :phone, placeholder: t(".phone_number") %>
-              <span class="icon_phone"><i class="fa-solid fa-phone"></i></span>
-            </div>
-            <%= f.submit t(".submit"), class: "site-btn" %>
-          <% end %>
+            <%= render "users/user_form" %>
           <h5><%= t ".have_account" %> <%= link_to t(".log_in"), login_path %></h5>
         </div>
       </div>

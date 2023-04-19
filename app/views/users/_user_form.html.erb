@@ -1,0 +1,28 @@
+<%= form_for @user, data: {turbo: false} do |f| %>
+            <%= render "shared/error_messages", object: f.object %>
+            <div class="input__item">
+              <%= f.email_field :email, placeholder: t(".email"), class: "input-box" %>
+              <span><i class="fa-solid fa-envelope"></i></span>
+            </div>
+            <div class="input__item">
+              <%= f.text_field :user_name, placeholder: t(".name"), class: "input-box" %>
+              <span class="icon_profile"><i class="fa-solid fa-user"></i></span>
+            </div>
+            <div class="input__item">
+              <%= f.password_field :password, placeholder: t(".password"), class: "input-box" %>
+              <span class="icon_lock"><i class="fa-solid fa-lock"></i></span>
+            </div>
+            <div class="input__item">
+              <%= f.password_field :password_confirmation, placeholder: t(".password_confirmation"), class: "input-box" %>
+              <span class="icon_key"><i class="fa-solid fa-key"></i></span>
+            </div>
+            <div class="input__item">
+              <%= f.date_field :date_birth, placeholder: t(".date_of_birth"), class: "input-box" %>
+              <span class="icon_id_alt"><i class="fa-solid fa-address-card"></i></span>
+            </div>
+            <div class="input__item">
+              <%= f.number_field :phone, placeholder: t(".phone_number"), class: "input-box" %>
+              <span class="icon_phone"><i class="fa-solid fa-phone"></i></span>
+            </div>
+            <%= f.submit yield(:button_text), class: "site-btn" %>
+          <% end %>

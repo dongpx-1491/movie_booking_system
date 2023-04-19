@@ -21,6 +21,7 @@ en:
         precision: 0
         format: "%n%u"
   not_del: Not deleted!
+  danger: "Please log in"
   text:
     danger: "Please log in before do this action"
     not_have_show: "Dont have any shows to booking"
@@ -143,6 +144,8 @@ en:
       seat_unavailable: "Seat unavailable"
       seat_normal: "Can be select"
   users:
+    warning: "Not found user"
+    danger: "Not correct user"
     new:
       sign_up: "Sign up"
       p: "Welcome to Movie Booking App."
@@ -159,6 +162,20 @@ en:
       facebook: "Sign in With Facebook"
       google: "Sign in With Google"
       twitter: "Sign in With Twitter"
+    edit:
+      h2: "Edit Information"
+      p: "Update your information"
+      submit: "Update profile"
+    update:
+      success: "Update your information successfully!"
+      danger: "Fail to update your information!"
+    user_form:
+      email: "Email address"
+      name: "Your name"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      date_of_birth: "Your date of birth"
+      phone_number: "Your phone number"
     create:
       success: "Welcome to the Movie Booking App!"
       danger: "Fail to create account"
