@@ -501,7 +501,7 @@ DEPENDENCIES
   rails-controller-testing
   rails-i18n
   ransack
-  redis (~> 5.0)
+  redis
   rubocop-checkstyle_formatter
   rubocop-rails
   sass-rails (>= 6)

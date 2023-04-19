@@ -1,5 +1,5 @@
 class PaymentsController < ApplicationController
-  before_action :load_payment, :check_expiration
+  before_action :load_payment, :check_expiration, only: %i(show activation)
 
   def show
     @tickets = @payment.tickets
