@@ -1,0 +1,19 @@
+<% provide :title, t(".reset") %>
+<section class="signup spad">
+  <div class="container">
+    <div class="row justify-content-center">
+        <div class="login__form edit_form">
+          <h3 class="tex_align_center"><%= t ".reset" %></h3>
+            <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+          <div class="input__item">
+            <%= f.email_field :email, placeholder: t(".email"), class: "input-box" %>
+            <span ><i class="fa-solid fa-envelope"></i></span>
+          </div>
+          <div class="d-flex justify-content-center">
+            <%= f.submit t(".submit"), class: "btn btn-primary" %>
+          </div>
+        <% end %>
+        </div>
+    </div>
+  </div>
+</section>

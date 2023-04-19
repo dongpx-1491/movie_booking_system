@@ -1,5 +1,6 @@
 <% provide :title, t(".sign_up") %>
 <% provide :button_text, t(".submit") %>
+<% provide :class_name, "login-submit" %>
 <%= render partial: "shared/background_title", locals:{content: t(".sign_up"), description: t(".p") } %>
 <section class="signup spad">
   <div class="container">
@@ -17,17 +18,17 @@
           <ul>
             <li>
               <%= link_to "#", class: "facebook" do %>
-               <i class="fa fa-facebook"></i> <%= t ".facebook" %>
+               </i> <%= t ".facebook" %>
               <% end %>
             </li>
             <li>
               <%= link_to "#", class: "google" do %>
-                <i class="fa fa-google"></i><%= t ".google" %>
+               <%= t ".google" %>
               <% end %>
             </li>
             <li>
               <%= link_to "#", class: "twitter" do %>
-                <i class="fa fa-twitter"></i><%= t ".twitter" %>
+                </i><%= t ".twitter" %>
               <% end %>
             </li>
           </ul>

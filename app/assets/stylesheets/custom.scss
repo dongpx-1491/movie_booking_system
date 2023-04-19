@@ -293,6 +293,10 @@ table {
   &:focus {
     color: #ad6060 !important;
   }
+
+  &:valid{
+    color: #ad6060 !important;
+  }
 }
 
 .edit_form {
@@ -304,4 +308,20 @@ table {
 
 .tex_align_center {
   text-align: center;
+}
+
+.white_a {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.margin-bot-h3 {
+  color: #ffffff;
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 30px;
+}
+
+.no-padding{
+  padding-top: 10px!important;
 }

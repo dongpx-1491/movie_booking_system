@@ -8,11 +8,11 @@
           <h3><%= t ".login"%></h3>
           <%= form_for :session, url: login_path, data: {turbo: false} do |f| %>
             <div class="input__item">
-              <%= f.email_field :email, placeholder: t(".email") %>
+              <%= f.email_field :email, placeholder: t(".email"), class: "input-box" %>
               <span ><i class="fa-solid fa-envelope"></i></span>
             </div>
             <div class="input__item">
-              <%= f.password_field :password, placeholder: t(".password") %>
+              <%= f.password_field :password, placeholder: t(".password"), class: "input-box" %>
               <span class="icon_key"><i class="fa-solid fa-key"></i></span>
             </div>
             <div>
@@ -23,7 +23,7 @@
             </div>
             <%= f.submit t(".login"), class: "site-btn" %>
           <% end %>
-          <%= link_to t(".forgot_password"), "#", class: "forget_pass" %>
+          <%= link_to t(".forgot_password"), new_password_reset_path, class: "forget_pass white_a" %>
         </div>
       </div>
       <div class="col-lg-6">
@@ -37,21 +37,21 @@
       <div class="row d-flex justify-content-center">
         <div class="col-lg-6">
           <div class="login__social__links">
-            <h3><%= t ".or" %></h3>
+            <h3 class="margin-bot-h3"><%= t ".or" %></h3>
             <ul>
               <li>
                 <%= link_to "#", class: "facebook" do %>
-                 <i class="fa-brands fa-facebook-f fa-beat-fade"></i><%= t ".facebook" %>
+                 <%= t ".facebook" %>
                 <% end %>
               </li>
               <li>
                 <%= link_to "#", class: "google" do %>
-                  <i class="fa fa-google"></i><%= t ".google" %>
+                  <%= t ".google" %>
                 <% end %>
               </li>
               <li>
                 <%= link_to "#", class: "twitter" do %>
-                  <i class="fa fa-twitter"></i><%= t ".twitter" %>
+                  <%= t ".twitter" %>
                 <% end %>
               </li>
             </ul>

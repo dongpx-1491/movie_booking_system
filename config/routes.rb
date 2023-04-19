@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     get "/activation", to: "payments#activation"
     resources :payments
     resources :order_historys
+    resources :account_activations, only: :edit
+    resources :password_resets, except: %i(show destroy index)
     resources :payment_activations, only: :edit
     resources :tickets
     resources :users
