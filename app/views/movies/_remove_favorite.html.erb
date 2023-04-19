@@ -1,0 +1,3 @@
+<%= link_to favorite_path(favorited(current_user, params[:id]).id), method: :delete, class: "follow-btn", remote: true do %>
+  <i class="fa-solid fa-heart" style="color: #ffffff;"></i> <%= t ".unfavorite" %>
+<% end %>

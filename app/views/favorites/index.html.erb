@@ -1,0 +1,49 @@
+<div class="breadcrumb-option">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="breadcrumb__links">
+          <%= link_to root_path do %>
+            <i class="fa fa-home"></i><%= t ".home" %>
+          <% end %>
+          <span><%= t ".fav_movie" %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="product-page spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="product__page__content">
+          <div class="product__page__title">
+            <div class="row">
+              <div class="col-lg-8 col-md-8 col-sm-6">
+                <div class="section-title">
+                  <h4><%= t ".h5" %></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="product__page__filter">
+                  <p><%= t ".order" %></p>
+                  <select>
+                    <option value="">ASC</option>
+                    <option value="">DESC</option>
+                    <option value="">A-Z</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <%= render @movies %>
+          </div>
+        </div>
+          <% if @movies.present? %>
+            <%= render partial: 'shared/pagy', locals: {pagy: @pagy} %>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</section>

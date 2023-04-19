@@ -11,7 +11,7 @@
           <nav class="header__menu mobile-menu">
             <ul>
               <li class="active"><%= link_to t(".homepage"), root_path %></li>
-              <li><a href="./blog.html"><%= t(".favorites") %></a></li>
+              <li><%= link_to t(".favorites"), favorites_path %></li>
               <li><%= link_to t(".orders_history"), order_historys_path %></li>
               <% if logged_in? %>
                 <li>

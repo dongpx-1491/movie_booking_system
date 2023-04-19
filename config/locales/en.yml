@@ -44,6 +44,11 @@ en:
     footer:
       copyright: "Copyright"
       reserved: "All rights reserved Pham Xuan Dong"
+  favorites:
+    index:
+      order: "Order by: "
+      fav_movie: "Favorite Movies"
+      h5: "Your Favorite Movies"
   static_pages:
     home:
       home: "Home"
@@ -248,6 +253,10 @@ en:
       comments: "Your Comment"
       review: "Review"
       might_like: "You might like ...."
+    add_favorite:
+      favorite: "Favorite"
+    remove_favorite:
+      unfavorite: "Unfavorite"
   admin:
     header:
       toggle: Toggle Sidebar

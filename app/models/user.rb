@@ -8,7 +8,9 @@ class User < ApplicationRecord
 
   has_many :rates, dependent: :destroy
   has_many :payments, dependent: :destroy
-
+  has_many :favorites, dependent: :destroy
+  has_many :movies, through: :favorites
+  
   enum :role, {customer: 0, admin: 1}
   validates :user_name, presence: true,
             length: {maximum: Settings.digits.length_name_max_50}
