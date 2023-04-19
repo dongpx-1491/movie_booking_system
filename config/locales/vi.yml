@@ -21,6 +21,7 @@ vi:
         precision: 0
         format: "%n%u"
   not_del: Không được xóa!
+  danger: "Vui lòng đăng nhập"
   text:
     booking_system: Winter Cinema
     not_have_show: "Không có lịch chiếu"
@@ -142,6 +143,8 @@ vi:
       total: "Tổng tiền:"
       danger: "Không tìm thấy đơn hàng này"
   users:
+    warning: "Không tìm thấy tài khoản"
+    danger: "Sai người dùng"
     new:
       sign_up: "Đăng kí"
       p: "Chào mừng bạn tới Movie Booking App."
@@ -158,6 +161,20 @@ vi:
       facebook: "Đăng nhập bằng Facebook"
       google: "Đăng nhập bằng Google"
       twitter: "Đăng nhập bằng Twitter"
+    edit:
+      h2: "Sửa thông tin"
+      p: "Cập nhật thông tin của bạn"
+      submit: "Cập nhật thông tin"
+    update:
+      success: "Cập nhật thông tin thành công!"
+      danger: "Cập nhật thông tin thất bại!"
+    user_form:
+      email: "Địa chỉ Email"
+      name: "Tên của bạn"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
+      date_of_birth: "Ngày sinh"
+      phone_number: "Số điện thoại"
     create:
       success: "Chào mừng bạn tới Movie Booking App!"
       danger: "Tạo tài khoản thất bại"

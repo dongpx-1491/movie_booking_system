@@ -169,7 +169,8 @@ a:hover {
   background-color: $primary-color !important;
   border-radius: 4px 4px 4px 4px !important;
 }
-.disabled{
+
+.disabled {
   display: none !important;
 }
 
@@ -286,4 +287,21 @@ table {
 
 .width-135 {
   width: 135px !important;
+}
+
+.input-box {
+  &:focus {
+    color: #ad6060 !important;
+  }
+}
+
+.edit_form {
+  padding: 0 !important;
+  &::after {
+    display: none !important;
+  }
+}
+
+.tex_align_center {
+  text-align: center;
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_16_220533) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_19_163119) do
   create_table "active_storage_attachments", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -150,6 +150,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_16_220533) do
     t.string "password_digest"
     t.integer "role", default: 0
     t.integer "activated"
+    t.string "remember_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["phone"], name: "index_users_on_phone", unique: true
   end
