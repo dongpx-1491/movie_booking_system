@@ -8,7 +8,7 @@ class Payment < ApplicationRecord
   scope :sort_list, ->{order created_at: :desc}
   scope :latest, ->{order activated_at: :desc}
   scope :show_active, ->{where status: :active}
-  
+
   delegate :user_name, to: :user
 
   def send_activation_email
@@ -33,7 +33,7 @@ class Payment < ApplicationRecord
   end
 
   def payment_expired?
-    created_at < Settings.payment.expired.minutes.ago
+    created_at < Settings.payment.expired.minutes.ago && inactive?
   end
 
   class << self
