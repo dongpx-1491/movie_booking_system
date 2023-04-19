@@ -11,8 +11,12 @@ module PaymentsHelper
     current_payment.present?
   end
 
+  def check_payment?
+    Payment.find_by(id: session[:payment_id]) && session[:payment_id]
+  end
+
   def delete_payment
-    current_payment.destroy if current_payment.inactive?
+    current_payment.destroy if current_payment&.inactive?
     session.delete :payment_id
     @current_payment = nil
   end
