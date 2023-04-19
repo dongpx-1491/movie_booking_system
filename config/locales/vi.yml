@@ -170,6 +170,7 @@ vi:
       details: "Chi tiết"
       home: "Trang chủ"
       movies: "Phim"
+      comming: "Sắp chiếu"
       release: "Ngày khởi chiếu:"
       director: "Đạo diễn:"
       cast: "Diễn viên:"
@@ -179,7 +180,6 @@ vi:
       duration: "Độ dài:"
       favorite: "Yêu thích"
       booking: "Đặt vé"
-
       reviews: "Đánh giá"
       comments: "Đánh giá của bạn"
       review: "Đánh giá"

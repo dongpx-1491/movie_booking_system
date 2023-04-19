@@ -2,7 +2,7 @@ class OrderHistorysController < ApplicationController
   def index
     @payments = current_user.payments
     if @payments.present?
-      @pagy, @payments = pagy current_user.payments.show_active.latest
+      @pagy, @payments = pagy current_user.payments.show_active.latest, items: 10
     else
       flash[:info] = t ".info"
     end

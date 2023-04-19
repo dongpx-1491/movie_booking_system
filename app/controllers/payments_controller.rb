@@ -8,10 +8,9 @@ class PaymentsController < ApplicationController
 
   def activation
     @payment.create_activation_digest
-    @payment.activate_payment
-    delete_payment if have_payment?
+    @payment.send_activation_email
 
-    flash[:info] = t ".activated"
+    flash[:info] = t ".info"
     redirect_to root_path
   end
 
