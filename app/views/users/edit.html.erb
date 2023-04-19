@@ -1,15 +1,14 @@
 <% provide :title, t(".h2") %>
 <% provide :button_text, t(".submit") %>
+<% provide :class_name, "d-flex justify-content-center" %>
 <%= render partial: "shared/background_title", locals:{content: t(".h2"), description: t(".p") } %>
 <section class="signup spad">
   <div class="container">
     <div class="row justify-content-center">
-
         <div class="login__form edit_form">
           <h3 class="tex_align_center"><%= t ".h2" %></h3>
             <%= render "users/user_form" %>
         </div>
-
     </div>
   </div>
 </section>

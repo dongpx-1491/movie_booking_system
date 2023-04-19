@@ -15,7 +15,7 @@
               <li><%= link_to t(".orders_history"), order_historys_path %></li>
               <% if logged_in? %>
                 <li>
-                  <a href="./categories.html"></i>Hi <%= current_user.user_name %> <i class="fa-solid fa-user fa-beat"></i></span></a>
+                  <a></i>Hi <%= current_user.user_name %> <i class="fa-solid fa-user fa-beat"></i></span></a>
               <ul class="dropdown">
                 <li><%= link_to t(".edit"), edit_user_path(current_user) %></li>
                 <li><%= link_to t(".log_out"), logout_path, method: :delete %></li>

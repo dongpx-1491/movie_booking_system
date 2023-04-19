@@ -24,5 +24,7 @@
               <%= f.number_field :phone, placeholder: t(".phone_number"), class: "input-box" %>
               <span class="icon_phone"><i class="fa-solid fa-phone"></i></span>
             </div>
-            <%= f.submit yield(:button_text), class: "site-btn" %>
+            <div class="<%= yield(:class_name) %>">
+              <%= f.submit yield(:button_text), class: "site-btn" %>
+            </div>
           <% end %>

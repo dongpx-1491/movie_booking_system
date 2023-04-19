@@ -64,6 +64,8 @@ start = 1234567890
     phone: start,
     password: password,
     password_confirmation: password,
+    activated: true,
+    activated_at: Time.zone.now
   )
 
   start = start + 1
@@ -74,7 +76,9 @@ User.create!(user_name: "Admin",
   phone: "1234567819",
   password: "password",
   password_confirmation: "password",
-  role: 1
+  role: 1,
+  activated: true,
+  activated_at: Time.zone.now
 )
 
 
