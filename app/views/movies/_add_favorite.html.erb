@@ -1,0 +1,3 @@
+<%= link_to favorites_path(id: params[:id]), method: :post, class: "follow-btn", remote: true do %>
+  <i class="fa-regular fa-heart" style="color: #ffffff;"></i> <%= t ".favorite" %>
+<% end %>

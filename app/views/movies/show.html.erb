@@ -67,7 +67,7 @@
               </div>
             </div>
             <div class="anime__details__btn">
-              <a href="#" class="follow-btn"><i class="fa-regular fa-heart" style="color: #ffffff;"></i> <%= t ".favorite" %></a>
+              <%= render "favorites_button" %>
               <% if @movie.active? %>
                 <%= link_to movie_shows_path(@movie), class: "watch-btn" do %>
                   <span><%= t ".booking" %></span>

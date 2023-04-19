@@ -44,6 +44,11 @@ vi:
     footer:
       copyright: "Bản quyền"
       reserved: "Đã đăng ký bản quyền  Phạm Xuân Đông"
+  favorites:
+    index:
+      h5: "Phim yêu thích của bạn"
+      order: "Sắp xếp: "
+      fav_movie: "Phim yêu thích"
   static_pages:
     home:
       home: "Trang chủ"
@@ -247,6 +252,10 @@ vi:
       comments: "Đánh giá của bạn"
       review: "Đánh giá"
       might_like: "Bạn có thể thích ..."
+    add_favorite:
+      favorite: "Yêu thích"
+    remove_favorite:
+      unfavorite: "Bỏ yêu thích"
   admin:
     header:
       toggle: Chuyển đổi thanh bên
