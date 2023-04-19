@@ -11,6 +11,15 @@ en:
       search: "%Y-%m-%d"
       display: "%b %d %Y"
       weekday: "%A | %d-%m-%Y"
+      details: "%d %b %Y, %H:%M:%S"
+  number:
+    currency:
+      format:
+        unit: " VND"
+        delimiter: ","
+        separator: "."
+        precision: 0
+        format: "%n%u"
   not_del: Not deleted!
   text:
     danger: "Please log in before do this action"
@@ -27,6 +36,8 @@ en:
       contact: "Contacts"
       member: "Member"
       edit: "Edit users"
+      favorites: "Favorite Movies"
+      orders_history: "Orders History"
       log_out: "Log out"
       log_in: "Log in"
     footer:
@@ -39,6 +50,61 @@ en:
     error_messages:
       content: "The form contains"
       error: "error"
+  tickets:
+    not_found: "Cannot find this ticket"
+    cant_create: "Cannot book this ticket for some reason"
+    ticket:
+      price: "Price:"
+      seat: "Seat name:"
+      see: "See"
+      confirm: "Confirm"
+  payment_activations:
+    not_found: "Cannot found your payment"
+    edit:
+      success: "Your payment has been successfully activated"
+      danger: "Cannot active your payment"
+  payments:
+    danger: "Your payment has been expired"
+    not_found: "Cannot found your payment"
+    activation:
+      info: "check your email to active your payment"
+      activated: "Your payment has been successfully activated"
+    destroy:
+      success: "Your Order has been successfully destroyed"
+      danger: "There was an error for deleting the Order."
+    payment:
+      details: "Detail"
+    non_payment:
+      h2: "Opps..."
+      p: "You dont have any order"
+    show:
+      h5: Your order
+      tickets: "Tickets"
+      total: "Total:"
+      cancel: "Cancel"
+      buy: "Buy now"
+      confirm: "Confirm"
+  payment_mailer:
+    payment_activation:
+      subject: "Confirm the payment"
+      h1: "Confirm the Payment"
+      hi: "Hi "
+      link: ", click the link below to confirm your payment: "
+      confirm: "Confirm your payment"
+  order_historys:
+    index:
+      h5: "Your order History"
+      payment_id: "Payment id"
+      numbers: "Number of tickets"
+      completed: "Completed at"
+      total: "Total"
+      details: "Details"
+      info: "You dont have any payments"
+    show:
+      h5: "Your order"
+      tickets: "Tickets"
+      total: "Total:"
+      danger: "Cannot find payments"
   sessions:
     new:
       login: "Log in"
@@ -65,6 +131,17 @@ en:
     show:
       seats_list: "Seats list:"
       going: "Go to Payment"
+      movie_range: "(*) This film only for"
+      age_notice: "above"
+      cinema: "Cinema"
+      room: "Room"
+      seat: "Seat"
+      time: "Timw"
+      date: "Date"
+      screen: "Screen"
+      seat_selected: "Seat selected"
+      seat_unavailable: "Seat unavailable"
+      seat_normal: "Can be select"
   users:
     new:
       sign_up: "Sign up"

@@ -12,16 +12,20 @@ module PaymentsHelper
   end
 
   def delete_payment
+    current_payment.destroy if current_payment.inactive?
     session.delete :payment_id
     @current_payment = nil
   end
 
   def sum_price_show show_time_id
-    Ticket.where(payment_id: current_payment.id, show_time_id: show_time_id).size * 50000
+    show_tickets = Ticket.where(payment_id: current_payment.id, show_time_id: show_time_id)
+    return 0 if show_tickets.blank?
+
+    show_tickets.size * show_tickets.first.show_time_price
   end
 
-  def total_price ticket
-    total = current_payment.tickets.size * 50000
-    current_payment.update_attribute(:total, total)
+  def total_price
+    total = current_payment.tickets.inject(0){|sum, ticket| sum + ticket.show_time_price}
+    current_payment.update_attribute(:total_cost, total)
   end
 end

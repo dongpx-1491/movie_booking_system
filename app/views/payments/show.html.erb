@@ -1,0 +1,43 @@
+<section class="product spad">
+  <div class="container payment_content">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="trending__product">
+          <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-8">
+              <div class="section-title">
+                <h4><%= t ".h5"%></h4>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="btn__all">
+                <a href="#" class="primary-btn"><span class="arrow_right"></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="row space-around">
+            <h2 id="total_payment"><%= t".total" %></h2>
+            <p id="payment"><%= number_to_currency(@payment.total_cost) %></p>
+          </div>
+          <div class="row d-flex justify-content-center margin-top-100">
+            <div class="login__register d-flex justify-content-center">
+              <%= link_to t(".cancel"), payment_path(current_payment),
+                  method: :delete, data: {confirm: t(".confirm")}, class: "red_button primary-btn margin-right-45" %>
+              <%= link_to t(".buy"), activation_path, class: "green_button primary-btn"%>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-8">
+        <div class="product__sidebar__comment">
+          <div class="section-title">
+            <h5><%= t ".tickets" %></h5>
+          </div>
+          <div class="padding-top-50">
+            <%= render @tickets %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

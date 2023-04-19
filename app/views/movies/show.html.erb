@@ -7,7 +7,7 @@
           <%= link_to root_path do %>
             <i class="fa fa-home"></i><%= t ".home" %>
           <% end %>
-          <span><%= t ".movies" %></span>
+          <span><%= @movie.title %></span>
         </div>
       </div>
     </div>
@@ -44,24 +44,24 @@
                 <a href="#"><i class="fa-solid fa-star" style="color: #ffdd00;"></i></a>
                 <a href="#"><i class="fa-solid fa-star-half-stroke" style="color: #ffdd00;"></i></a>
               </div>
-              <span>1.029 Votes</span>
+              <span></span>
             </div>
             <p><%= @movie.description %></p>
             <div class="anime__details__widget">
               <div class="row">
                 <div class="col-lg-6 col-md-6">
                   <ul>
-                    <li><span><%= t ".release" %></span><%= l(@movie.release_time, format: :default) %></li>
-                    <li><span><%= t ".director" %></span><%= @movie.director %></li>
-                    <li><span><%= t ".cast" %></span><%= @movie.cast %></li>
-                    <li><span><%= t ".status" %></span><%= @movie.status %></li>
+                    <li><span class="width-135"><%= t ".release" %></span><%= l(@movie.release_time, format: :default) %></li>
+                    <li><span class="width-135"><%= t ".director" %></span><%= @movie.director %></li>
+                    <li><span class="width-135"><%= t ".cast" %></span><%= @movie.cast %></li>
+                    <li><span class="width-135"><%= t ".status" %></span><%= @movie.status %></li>
                   </ul>
                 </div>
                 <div class="col-lg-6 col-md-6">
                   <ul>
-                    <li><span><%= t ".language" %></span><%= @movie.language %></li>
-                    <li><span><%= t ".age_range" %></span><%= @movie.age_range %></li>
-                    <li><span><%= t ".duration" %></span><%= @movie.duration_min %>&nbsp;<%= t ".min" %></li>
+                    <li><span class="width-135"><%= t ".language" %></span><%= @movie.language %></li>
+                    <li><span class="width-135"><%= t ".age_range" %></span><%= @movie.age_range %></li>
+                    <li><span class="width-135"><%= t ".duration" %></span><%= @movie.duration_min %>&nbsp;<%= t ".min" %></li>
                   </ul>
                 </div>
               </div>

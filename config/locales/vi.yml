@@ -11,6 +11,15 @@ vi:
       search: "%Y-%m-%d"
       display: "%d %B %Y"
       weekday: "%A | %d-%m-%Y"
+      details: "%d %b %Y, %H:%M:%S"
+  number:
+    currency:
+      format:
+        unit: " VND"
+        delimiter: ","
+        separator: "."
+        precision: 0
+        format: "%n%u"
   not_del: Không được xóa!
   text:
     booking_system: Winter Cinema
@@ -27,6 +36,8 @@ vi:
       contact: "Hỗ trợ"
       member: "Thành viên"
       edit: "Sửa thông tin"
+      favorites: "Phim yêu thích"
+      orders_history: "Lịch sử  thanh toán"
       log_out: "Đăng xuất"
       log_in: "Đăng nhập"
     footer:
@@ -64,6 +75,72 @@ vi:
     show:
       seats_list: "Danh sách ghế:"
       going: "Đi tới thanh toán"
+      movie_range: (*) Phim chỉ dành cho khán giả từ
+      age_notice: tuổi trở lên
+      cinema: Rạp
+      room: Phòng
+      seat: Ghế
+      time: "Thời gian"
+      date: "Ngày"
+      screen: Màn hình
+      seat_selected: Ghế đang chọn
+      seat_unavailable: Ghế đã đặt
+      seat_normal: Có thể chọn
+  tickets:
+    not_found: "Cannot find this ticket"
+    cant_create: "Không thể đặt vé này vì một vài lí do"
+    ticket:
+      price: "Giá:"
+      seat: "Ghế ngồi:"
+      see: "Xem"
+      confirm: "Xác nhận"
+  payment_activations:
+    not_found: "Không tìm thấy đơn hàng của bạn"
+    edit:
+      success: "Đơn hàng của bạn đã được thanh toán thành công"
+      danger: "Không thể thanh toán đơn hàngc của bạn"
+  payments:
+    danger: "Đơn đặt hàng của bạn đã hết hạn"
+    not_found: "Không tìm thấy đơn hàng của bạn"
+    activation:
+      info: "Kiểm tra email của bạn để thực hiện thanh toán"
+      activated: "Đơn hàng của bạn đã được thanh toán thành công"
+    destroy:
+      success: "Đơn hàng của bạn đã được hủy thành công"
+      danger: "Có lỗi xảy ra khi hủy đơn hàng."
+    payment:
+      details: "Chi tiết"
+    non_payment:
+      h2: "Opps..."
+      p: "Bạn chưa có đơn hàng nào"
+    show:
+      h5: Đơn hàng của bạn
+      tickets: "Vé phim"
+      total: "Tổng tiền:"
+      cancel: "Hủy đơn hàng"
+      buy: "Thanh toán"
+      confirm: "Xác nhận"
+  payment_mailer:
+    payment_activation:
+      subject: "Xác nhận thanh toán"
+      h1: "Xác nhận thanh toán"
+      hi: "xin chào "
+      link: ", click vào đường link dưới đây để thực hiện thanh toán: "
+      confirm: "Xác nhận thanh toán"
+  order_historys:
+    index:
+      h5: "Lịch sử hóa đơn"
+      payment_id: "Mã Hóa đơn"
+      numbers: "Số lượng vé"
+      completed: "Thanh toán lúc"
+      total: "Tổng tiền"
+      details: "Chi tiết"
+      info: "Bạn chưa có đơn hàng nào"
+    show:
+      h5: "Đơn hàng của bạn"
+      tickets: "Vé phim"
+      total: "Tổng tiền:"
+      danger: "Không tìm thấy đơn hàng này"
   users:
     new:
       sign_up: "Đăng kí"
@@ -93,6 +170,7 @@ vi:
       details: "Chi tiết"
       home: "Trang chủ"
       movies: "Phim"
+      comming: "Sắp chiếu"
       release: "Ngày khởi chiếu:"
       director: "Đạo diễn:"
       cast: "Diễn viên:"
@@ -102,7 +180,6 @@ vi:
       duration: "Độ dài:"
       favorite: "Yêu thích"
       booking: "Đặt vé"
-
       reviews: "Đánh giá"
       comments: "Đánh giá của bạn"
       review: "Đánh giá"
