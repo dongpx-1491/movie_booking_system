@@ -5,14 +5,15 @@
     <% else %>
       <div class="product__item__pic height-400 set-bg" data-setbg=<%= movie.img_link %>>
     <% end %>
-      <div class="ep">18 / 18</div>
+      <div class="ep"><%= movie.age_range %>+</div>
       <div class="comment"><i class="fa fa-comments"></i> 11</div>
       <div class="view"><i class="fa fa-eye"></i> 9141</div>
     </div>
     <div class="product__item__text">
       <ul>
-        <li>Active</li>
-        <li>Movie</li>
+       <% movie.categories&.pluck(:name).each do |categories_name|%>
+        <li><%= categories_name %></li>
+        <% end %>
       </ul>
       <h5><%= link_to movie.title, movie_path(id: movie.id) %></h5>
     </div>

@@ -9,12 +9,14 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
     get "/activation", to: "payments#activation"
     resources :payments
+    resources :searchs, only: :index
     resources :order_historys
     resources :account_activations, only: :edit
     resources :password_resets, except: %i(show destroy index)
     resources :payment_activations, only: :edit
     resources :tickets
     resources :users
+    resources :categories, only: :show
     resources :favorites, only: %i(index create destroy)
     resources :movies, only: %i(show) do
       resources :shows

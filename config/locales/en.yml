@@ -49,13 +49,25 @@ en:
       order: "Order by: "
       fav_movie: "Favorite Movies"
       h5: "Your Favorite Movies"
+      home: "Home"
+  categories:
+    not_found: "Cannot found category"
+    show:
+      home: "Home"
+      order: "Order by: "
+      hot_movie: "Hot Movie"
   static_pages:
     home:
       home: "Home"
+      hot_movie: "Hot Movie"
+    category_index:
+      view: "View All"
   shared:
     error_messages:
       content: "The form contains"
       error: "error"
+    search_model:
+      searching: "Search here....."
   tickets:
     not_found: "Cannot find this ticket"
     cant_create: "Cannot book this ticket for some reason"
@@ -97,6 +109,13 @@ en:
       hi: "Hi "
       link: ", click the link below to confirm your payment: "
       confirm: "Confirm your payment"
+  searchs:
+    index:
+      home: "Home"
+      search: "Search"
+      hot_movie: "Hot movies"
+      have_result: "Have %{number} result for: %{key_word}"
+      none_result: "Cannot found any result for: %{key_word}"
   order_historys:
     index:
       h5: "Your order History"
