@@ -49,13 +49,19 @@ vi:
       h5: "Phim yêu thích của bạn"
       order: "Sắp xếp: "
       fav_movie: "Phim yêu thích"
+      home: "Trang chủ"
+  categories:
+    not_found: "Không tìm thấy thể loại"
+    show:
+      home: "Trang chủ"
+      order: "Sắp xếp: "
+      hot_movie: "Phim đang hot"
   static_pages:
     home:
       home: "Trang chủ"
-    shared:
-    error_messages:
-      content: "Biểu mẫu chứa"
-      error: "Lỗi"
+      hot_movie: "Phim đang hot"
+    category_index:
+      view: "Xem thêm"
   sessions:
     new:
       login: "Đăng nhập"
@@ -209,6 +215,8 @@ vi:
     error_messages:
       content: "Biểu mẫu chứa"
       error: "Lỗi"
+    search_model:
+      searching: "Tìm kiếm....."
   password_resets:
     new:
       reset: "Quên mật khẩu"
@@ -229,6 +237,13 @@ vi:
       success: "Mật khẩu đã được đặt lại"
       danger: "Đặt lại mật khẩu thất bại"
       not_found: "Không tìm thấy địa chỉ emails"
+  searchs:
+    index:
+      home: "Trang chủ"
+      search: "Tìm kiếm"
+      hot_movie: "Phim đang hot"
+      have_result: "Có %{number} kết quả cho: %{key_word}"
+      none_result: "Không có kết quả nào cho: %{key_word}"
   movies:
     not_found: "Không tìm thấy phim"
     not_del: Không được xóa!

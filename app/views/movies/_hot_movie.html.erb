@@ -1,0 +1,9 @@
+<% if movie.image.attached? %>
+  <div class="product__sidebar__view__item set-bg mix day years" data-setbg=<%= url_for movie.image %>>
+<% else %>
+  <div class="product__sidebar__view__item set-bg mix day years" data-setbg=<%= movie.img_link %>>
+<% end %>
+  <div class="ep"><%= movie.age_range %>+</div>
+  <div class="view"><i class="fa fa-eye"></i> 9141</div>
+  <h5><%= link_to movie.title, movie_path(id: movie.id)%></h5>
+</div>

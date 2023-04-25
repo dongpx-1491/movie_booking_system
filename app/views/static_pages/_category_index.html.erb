@@ -7,11 +7,13 @@
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4">
       <div class="btn__all">
-        <a href="#" class="primary-btn">View All <span class="arrow_right"></span></a>
+        <%= link_to category, class: "primary-btn" do %>
+          <%=  t(".view") %>
+        <% end%>
       </div>
     </div>
   </div>
   <div class="row">
-    <%= render partial: "movies/movie_index", collection: category.movies.limit(6), as: :movie %>
+    <%= render partial: "movies/movie_index", collection: category.movies.sort_list.limit(6), as: :movie %>
   </div>
 </div>

@@ -8,19 +8,21 @@
   <table class="table table-striped b-t b-light">
     <thead>
       <tr>
-        <th><%= t ".payment_id" %></th>
+        <th><%= sort_link(@search_order, :id, t(".payment_id"), class: "th_orderhistory") %></th>
         <th><%= t ".numbers" %></th>
-        <th><%= t ".completed" %></th>
-        <th><%= t ".total" %></th>
+        <th><%= sort_link(@search_order, :activated_at, t(".completed"), class: "th_orderhistory") %></th>
+        <th><%= sort_link(@search_order, :total_cost, t(".total"), class: "th_orderhistory") %></th>
         <th><%= t ".details" %></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="payments_history">
       <%= render @payments %>
     </tbody>
   </table>
   <% if @payments.present? %>
-    <%== render partial: 'shared/pagy', locals: {pagy: @pagy} %>
+    <div id="pagy">
+      <%== render partial: "shared/pagy", locals: { pagy: @pagy } %>
+    </div>
   <% end %>
 </div>
 </div>

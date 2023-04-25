@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   include TicketsHelper
   include PaymentsHelper
 
-  before_action :set_locale
+  before_action :set_locale, :ransack_movie
 
   rescue_from ActiveRecord::DeleteRestrictionError, with: :error_del_method
   def error_del_method
@@ -30,5 +30,13 @@ class ApplicationController < ActionController::Base
     store_location
     flash[:danger] = t "text.danger"
     redirect_to login_url
+  end
+
+  def ransack_movie
+    @search = Movie.ransack(params[:m])
+  end
+
+  def hot_movie
+    @hot_movies = Movie.left_joins(:show_times).group('movies.id').order('COUNT(show_times.id) DESC').limit 5
   end
 end

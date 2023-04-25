@@ -36,6 +36,18 @@ class Payment < ApplicationRecord
     created_at < Settings.payment.expired.minutes.ago && inactive?
   end
 
+  ransacker :created_at, type: :date do
+    Arel.sql("date(created_at at time zone 'UTC' at time zone 'Hanoi')")
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["tickets", "user"]
+  end
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["activated_at", "activation_digest", "created_at", "id", "status", "total_cost", "updated_at", "user_id"]
+  end
+
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost
