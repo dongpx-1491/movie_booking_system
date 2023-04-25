@@ -1,0 +1,9 @@
+<% if @status %>
+  $("#comments_list").html(
+    "<%= j render @rates %>"
+  );
+<% else %>
+  $("#comment-error").html(
+    "<%= j (render("shared/error_messages", object: @rates)) %>"
+  );
+<% end %>

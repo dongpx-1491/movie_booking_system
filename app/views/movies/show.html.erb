@@ -87,14 +87,26 @@
           <div class="section-title">
             <h5><%= t ".reviews" %></h5>
           </div>
+          <div id="comments_list">
+            <%= render @rates %>
+          </div>
+          <% if @rates.present? %>
+            <div id="pagy">
+              <%== render partial: "shared/pagy", locals: { pagy: @pagy } %>
+            </div>
+          <% end %>
           <div class="anime__details__form">
             <div class="section-title">
               <h5><%= t ".comments" %></h5>
             </div>
-            <form action="#">
-              <textarea placeholder="<%= t ".comments" %>"></textarea>
+            <%= form_for(:rate, url: rates_path, remote: true) do |f| %>
+              <div id="comment-error"></div>
+              <div class="input__item">
+                <%= f.text_area :comment, placeholder: t(".comments") %>
+                <%= hidden_field_tag :movie_id, @movie.id %>
+              </div>
               <button type="submit"><i class="fa fa-location-arrow"></i> <%= t ".review" %></button>
-            </form>
+            <% end %>
           </div>
         </div>
       </div>

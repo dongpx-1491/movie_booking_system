@@ -2,7 +2,10 @@ class MoviesController < ApplicationController
   before_action :find_movie, only: :show
   before_action :related_movie
 
-  def show; end
+  def show
+    @pagy, @rates = pagy @movie.rates.latest,
+                           items: Settings.page.comment
+  end
 
   private
 
