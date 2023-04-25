@@ -17,3 +17,9 @@ payment:
 user:
   email:
     expired: 2
+rating:
+  comment:
+    max_length: 500
+    min_length: 3
+page:
+  comment: 5

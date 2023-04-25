@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :payment_activations, only: :edit
     resources :tickets
     resources :users
+    resources :rates, only: :create
     resources :categories, only: :show
     resources :favorites, only: %i(index create destroy)
     resources :movies, only: %i(show) do
