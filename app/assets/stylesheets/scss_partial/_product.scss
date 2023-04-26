@@ -263,7 +263,8 @@
 
   .product__page__filter {
     text-align: right;
-
+    display: flex;
+    justify-content: flex-end;
     p {
       color: $white-color;
       display: inline-block;

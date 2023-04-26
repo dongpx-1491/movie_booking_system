@@ -35,6 +35,8 @@ vi:
       booking: "Đặt vé"
       blog: "Góc điện ảnh"
       contact: "Hỗ trợ"
+      showing_movie: "Phim đang chiếu"
+      comming_movie: "Phim sắp chiếu"
       member: "Thành viên"
       edit: "Sửa thông tin"
       favorites: "Phim yêu thích"
@@ -50,6 +52,13 @@ vi:
       order: "Sắp xếp: "
       fav_movie: "Phim yêu thích"
       home: "Trang chủ"
+  specific_movies:
+    comming_movie:
+      home: "Trang chủ"
+      comming_movie: "Phim sắp chiếu"
+    showing_movie:
+      home: "Trang chủ"
+      showing_movie: "Phim đang chiếu"
   categories:
     not_found: "Không tìm thấy thể loại"
     show:
@@ -83,7 +92,7 @@ vi:
     not_found: "Không tìm thấy lịch chiếu"
     index:
       shows_list: "Danh sách suất chiếu"
-      shows: "Suất chiếu"
+      show_time: "Suất chiếu"
       home: "Trang chủ"
       search: "Tìm kiếm"
     show:

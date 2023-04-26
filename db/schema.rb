@@ -135,8 +135,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_19_174159) do
     t.datetime "updated_at", null: false
     t.bigint "show_time_id"
     t.bigint "payment_id"
-    t.index ["payment_id", "show_time_id", "seat_position"], name: "index_tickets_on_payment_id_and_show_time_id_and_seat_position", unique: true
     t.index ["payment_id"], name: "index_tickets_on_payment_id"
+    t.index ["show_time_id", "seat_position"], name: "index_tickets_on_show_time_id_and_seat_position", unique: true
     t.index ["show_time_id"], name: "index_tickets_on_show_time_id"
   end
 

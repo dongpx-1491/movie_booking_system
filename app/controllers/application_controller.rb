@@ -24,12 +24,19 @@ class ApplicationController < ActionController::Base
     {locale: I18n.locale}
   end
 
+  def store_show_time_url
+    session[:show_time_url] = request.original_url
+  end
+
   def logged_in_user
     return if logged_in?
 
     store_location
     flash[:danger] = t "text.danger"
-    redirect_to login_url
+    respond_to do |format|
+      format.html{redirect_to login_path}
+      format.js{render js: "window.location = '#{login_path}'"}
+    end
   end
 
   def ransack_movie

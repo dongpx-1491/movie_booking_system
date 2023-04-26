@@ -6,7 +6,7 @@
           <%= link_to root_path do %>
             <i class="fa fa-home"></i><%= t ".home" %>
           <% end %>
-          <span><%= @category.name %></span>
+          <span><%= t ".showing_movie" %></span>
         </div>
       </div>
     </div>
@@ -15,19 +15,19 @@
 <section class="product-page spad">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8">
+      <div class="col-lg-12">
         <div class="product__page__content">
           <div class="product__page__title">
             <div class="row">
               <div class="col-lg-8 col-md-8 col-sm-6">
                 <div class="section-title">
-                  <h4><%= @category.name %></h4>
+                  <h4><%= t ".showing_movie" %></h4>
                 </div>
               </div>
               <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="product__page__filter">
                   <p><%= t ".order" %></p>
-                  <%= search_form_for @search, url: @category do |f| %>
+                  <%= search_form_for @search, url: showing_movie_path do |f| %>
                     <% sort_fields = { "release_time asc" => 'ASC', "release_time desc" => 'DESC', "title asc" => 'A-Z' } %>
                     <%= f.collection_select :s, sort_fields.to_a, :first, :last, include_blank: false, selected: sort_value %>
                   <% end %>
@@ -36,26 +36,12 @@
             </div>
           </div>
           <div class="row">
-            <%= render partial: "movies/movie_index", collection: @movies, as: :movie %>
+            <%= render @movies %>
           </div>
         </div>
-        <% if @movies.present? %>
-          <%= render partial: 'shared/pagy', locals: {pagy: @pagy} %>
-        <% end %>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-8">
-        <div class="product__sidebar">
-          <div class="product__sidebar__view">
-            <div class="section-title">
-              <h5><%= t ".hot_movie" %></h5>
-            </div>
-            <ul class="filter__controls">
-            </ul>
-            <div class="filter__gallery">
-              <%= render partial: "movies/hot_movie", collection: @hot_movies, as: :movie %>
-            </div>
-          </div>
-        </div>
+          <% if @movies.present? %>
+            <%= render partial: 'shared/pagy', locals: {pagy: @pagy} %>
+          <% end %>
       </div>
     </div>
   </div>
