@@ -1,4 +1,4 @@
+
 $("#<%= @ticket.seat_position %>").html('<%= link_to params[:index], ticket_path(id: @ticket.id, show_time_id: @ticket.show_time.id, seat_position: @ticket.seat_position, payment_id: session[:payment_id], index: params[:index]), remote: true, method: :delete, class: "choosen" %>');
 $('#price-booking').html('<%= number_to_currency(sum_price_show(@ticket.show_time.id)) %>');
 $('#select-seat').html('<%= payment_seat_position @ticket.show_time.id %>');
-

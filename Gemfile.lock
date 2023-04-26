@@ -414,6 +414,8 @@ GEM
     tilt (2.1.0)
     timeliness (0.4.5)
     timeout (0.3.2)
+    toastr-rails (1.0.3)
+      railties (>= 3.1.0)
     turbo-rails (1.4.0)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
@@ -514,6 +516,7 @@ DEPENDENCIES
   spring
   sprockets-rails
   stimulus-rails
+  toastr-rails
   turbo-rails
   turbolinks (~> 5)
   tzinfo-data

@@ -16,6 +16,8 @@ class CategoriesController < ApplicationController
   end
 
   def load_movie
-    @pagy, @movies = pagy @category.movies.sort_list, items: 9
+    @search = @category.movies.ransack(params[:q])
+    @search.sorts = "release_time DESC" if @search.sorts.empty?
+    @pagy, @movies = pagy @search.result, items: 9
   end
 end

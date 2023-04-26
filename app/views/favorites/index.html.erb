@@ -27,11 +27,10 @@
               <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="product__page__filter">
                   <p><%= t ".order" %></p>
-                  <select>
-                    <option value="">ASC</option>
-                    <option value="">DESC</option>
-                    <option value="">A-Z</option>
-                  </select>
+                  <%= search_form_for @search, url: favorites_url do |f| %>
+                    <% sort_fields = { "release_time asc" => 'ASC', "release_time desc" => 'DESC', "title asc" => 'A-Z' } %>
+                    <%= f.collection_select :s, sort_fields.to_a, :first, :last, include_blank: false, selected: sort_value %>
+                  <% end %>
                 </div>
               </div>
             </div>

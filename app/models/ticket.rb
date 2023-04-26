@@ -3,4 +3,5 @@ class Ticket < ApplicationRecord
   belongs_to :show_time
 
   delegate :start_time, :price, :movie, :room, to: :show_time, prefix: true
+  validates :seat_position, uniqueness: {scope: :show_time_id}
 end

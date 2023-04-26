@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
     get "/activation", to: "payments#activation"
+    get "/showing_movie", to: "specific_movies#showing_movie"
+    get "/comming_movie", to: "specific_movies#comming_movie"
     resources :payments
     resources :searchs, only: :index
     resources :order_historys

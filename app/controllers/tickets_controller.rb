@@ -6,7 +6,10 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = Ticket.new payment_id: current_payment.id, show_time_id: params[:show_time_id], seat_position: params[:seat_position]
-    respond_to :js if @ticket.save && total_price
+    return respond_to :js if @ticket.save && total_price
+
+    flash[:danger] = "ve khong con ton tai"
+    render js: "window.location = '#{session[:show_time_url]}'"
   end
 
   def destroy

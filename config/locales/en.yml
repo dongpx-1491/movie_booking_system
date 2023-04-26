@@ -35,6 +35,8 @@ en:
       booking: "Booking"
       blog: "Cinema Blog"
       contact: "Contacts"
+      showing_movie: "Now Showing"
+      comming_movie: "Comming Soon"
       member: "Member"
       edit: "Edit users"
       favorites: "Favorite Movies"
@@ -50,6 +52,13 @@ en:
       fav_movie: "Favorite Movies"
       h5: "Your Favorite Movies"
       home: "Home"
+  specific_movies:
+    comming_movie:
+      home: "Home"
+      comming_movie: "Comming Soon"
+    showing_movie:
+      home: "Home"
+      showing_movie: "Now Showing"
   categories:
     not_found: "Cannot found category"
     show:

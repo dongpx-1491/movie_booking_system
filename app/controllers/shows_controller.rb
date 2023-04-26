@@ -1,6 +1,6 @@
 class ShowsController < ApplicationController
   before_action :find_movie
-  before_action :logged_in_user, only: :show
+  before_action :logged_in_user, :store_show_time_url, only: :show
 
   def index
     @filter_showtime = ShowTime.ransack({filter_date: [params[:movie_id], params[:start_time] || Time.now]})

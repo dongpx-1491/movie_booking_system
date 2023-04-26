@@ -73,6 +73,7 @@ gem "sidekiq"
 gem "turbolinks", "~> 5"
 gem "validates_timeliness", "~> 5.0"
 gem "whenever", require: false
+gem "toastr-rails"
 
 group :development do
   gem "listen", "~> 3.3"

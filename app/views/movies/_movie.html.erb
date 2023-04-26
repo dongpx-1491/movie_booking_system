@@ -6,8 +6,8 @@
       <div class="product__item__pic height-400 set-bg" data-setbg=<%= movie.img_link %>>
     <% end %>
       <div class="ep"><%= movie.age_range %>+</div>
-      <div class="comment"><i class="fa fa-comments"></i> 11</div>
-      <div class="view"><i class="fa fa-eye"></i> 9141</div>
+      <div class="comment" data-bs-toggle="tooltip" data-bs-placement="top" title="Số lượng đánh giá"><i class="fa fa-comments"></i> <%= movie.rates.size %></div>
+      <div class="view" data-bs-toggle="tooltip" data-bs-placement="top" title="Số lượng suất chiếu" ><i class="fa fa-eye"></i> <%= movie.show_times.size %></div>
     </div>
     <div class="product__item__text">
       <ul>

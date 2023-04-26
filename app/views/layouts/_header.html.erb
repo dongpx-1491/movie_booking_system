@@ -11,12 +11,14 @@
           <nav class="header__menu mobile-menu">
             <ul>
               <li class="active"><%= link_to t(".homepage"), root_path %></li>
-              <li><%= link_to t(".favorites"), favorites_path %></li>
-              <li><%= link_to t(".orders_history"), order_historys_path %></li>
+              <li><%= link_to t(".showing_movie"), showing_movie_path %></li>
+              <li><%= link_to t(".comming_movie"), comming_movie_path %></li>
               <% if logged_in? %>
                 <li>
                   <a></i>Hi <%= current_user.user_name %> <i class="fa-solid fa-user fa-beat"></i></span></a>
               <ul class="dropdown">
+                <li><%= link_to t(".favorites"), favorites_path %></li>
+                <li><%= link_to t(".orders_history"), order_historys_path %></li>
                 <li><%= link_to t(".edit"), edit_user_path(current_user) %></li>
                 <li><%= link_to t(".log_out"), logout_path, method: :delete %></li>
               </ul>
