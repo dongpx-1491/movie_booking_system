@@ -6,7 +6,7 @@
 Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( jquery.min.js jquery_ujs.js bootstrap.min.js popper.js )
 Rails.application.config.assets.paths << Rails.root.join("vendor", "lib", "public", "stylesheets")
-Rails.application.config.assets.precompile += %w( application.scss )
+Rails.application.config.assets.precompile += %w( application.scss admin.scss)
 # Add additional assets to the asset load path.
 # Rails.application.config.assets.paths << Emoji.images_path
 
