@@ -22,6 +22,14 @@ vi:
         format: "%n%u"
   not_del: Không được xóa!
   danger: "Vui lòng đăng nhập"
+  genre_update: "Cập nhật thể loại thành công"
+  genre_update_failed: "Cập nhật thất bại"
+  genre_delete: "Xóa thể loại thành công"
+  genre_delete_failed: "Xóa thất bại"
+  genre_create: "Tạo thể loại thành công"
+  genre_create_failed: "Tạo thất bại"
+  not_found: "Không tìm thấy"
+  delete_denied: "Không thể xóa do tìm thấy phim có liên kết với thể loại này"
   text:
     booking_system: Winter Cinema
     not_have_show: "Không có lịch chiếu"
@@ -281,16 +289,25 @@ vi:
     remove_favorite:
       unfavorite: "Bỏ yêu thích"
   admin:
-    header:
-      toggle: Chuyển đổi thanh bên
-    sidebar:
-      management: Quản lý
-      movies: Quản lý phim
-      add: Thêm phim
-      remove: Xóa phim
-      edit: Sửa phim
-      users: Quản lý người dùng
-      list: Danh sách người dùng
-      find: Tìm kiếm người dùng
-      booking: Quản lý đặt vé
-      feedback: Quản lý phản hồi
+    categories:
+      form:
+        genre: "Thể loại"
+        submit: "Chấp nhận"
+      genre:
+        confirm: "Bạn có chắc chắn không?"
+      edit:
+        edit: "Chỉnh sửa thể loại"
+      index:
+        genre: "Thể loại"
+        create: "Tạo thể loại mới"
+        action: "Các hành động"
+      new:
+        create: "Tạo thể loại mới"
+    layouts:
+      dashboard: "Trang chủ"
+      movies: "Phim"
+      users: "Người dùng"
+      genres: "Thể loại"
+      tickets: "Vé"
+      revenue: "Doanh thu"
+      signout: "Đăng xuất"

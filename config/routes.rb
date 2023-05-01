@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
     namespace :admin do
       root "static_pages#home"
+      get "/home", to: "static_pages#home"
       resources :movies
       resources :categories
       resources :users

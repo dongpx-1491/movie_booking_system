@@ -5,5 +5,4 @@
 //= link_tree ../../../vendor/stylesheets .css
 //= link bootstrap.min.js
 //= link jquery.min.js
-//= link application.css
 //= link_tree ../../../vendor/fonts
