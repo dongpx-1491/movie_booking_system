@@ -17,6 +17,9 @@
                 <li>
                   <a></i>Hi <%= current_user.user_name %> <i class="fa-solid fa-user fa-beat"></i></span></a>
               <ul class="dropdown">
+                <% if current_user.admin? %>
+                  <li><%= link_to "Admin", admin_root_path %></li>
+                <% end %>
                 <li><%= link_to t(".favorites"), favorites_path %></li>
                 <li><%= link_to t(".orders_history"), order_historys_path %></li>
                 <li><%= link_to t(".edit"), edit_user_path(current_user) %></li>

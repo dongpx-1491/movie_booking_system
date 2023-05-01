@@ -23,3 +23,8 @@ rating:
     min_length: 3
 page:
   comment: 5
+model:
+  limitation: 6
+category:
+  name:
+    max_length: 50
