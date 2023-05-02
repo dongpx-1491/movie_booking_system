@@ -1,5 +1,9 @@
-<%= form_for [:admin, @category] do |f| %>
-  <%= f.label :name, t(".genre") %>
-  <%= f.text_field :name, class: "form-control", id: "input-label" %>
-  <%= f.submit t ".submit", class: "btn btn-primary" %>
-<% end %>
+<div class="row justify-content-center">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [:admin, @category], html: {class: "form-admin"} do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <%= f.text_field :name, class: "form-control", id: "input-label", placeholder: t(".name") %>
+      <%= f.submit t(".submit"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

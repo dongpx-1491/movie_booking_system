@@ -1,14 +1,29 @@
 <% provide :title, t(".genre") %>
-<h1><%= t ".genre" %></h1>
-<%= link_to new_admin_category_path, class: "new-genre" do %>
-  <span class="fa fa-plus-circle circle"></span>
-  <%= t ".create" %>
-<% end %>
-<table>
-  <tr>
-    <th>STT</th>
-    <th><%= t ".genre" %></th>
-    <th><%= t ".action" %></th>
-  </tr>
-  <%= render partial: "category", collection: @categories %>
-</table>
+<div class="sales-boxes">
+  <div class="admin-manager box">
+    <div class="title">
+      <h1><%= t ".genre" %></h1>
+    </div>
+    <%= link_to new_admin_category_path, class: "new-genre" do %>
+      <span class="fa fa-plus-circle circle"></span>
+      <%= t ".create" %>
+    <% end %>
+    <div class="admin-data">
+      <table class="table table-categories table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">STT</th>
+            <th scope="col"><%= t ".genre" %></th>
+            <th scope="col"><%= t ".action" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @categories %>
+        </tbody>
+      </table>
+      <div id="pagy">
+        <%== render partial: "shared/pagy", locals: { pagy: @pagy } %>
+      </div>
+    </div>
+  </div>
+</div>
