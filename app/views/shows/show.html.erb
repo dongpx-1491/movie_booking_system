@@ -26,68 +26,72 @@
                   <ul class="seat-col">
                     <% index = 1 %>
                     <% @room.length.times do %>
-                    <% seat_position =  seat_letter + index.to_s %>
-                    <span id=<%= "#{seat_position}"%> >
-                      <% if is_booking? @show.id, seat_position %>
-                        <li>
-                          <%= link_to index, ticket_path(show_time_id: @show.id, seat_position: seat_position, payment_id: session[:payment_id], index: index, seat_letter: seat_letter), remote: true, method: :delete, class: "choosen" %>
-                        </li>
-                      <% elsif was_taken? @show.id, seat_position %>
-                        <li><a class="taken"><%= index %></a></li>
-                      <% else %>
-                      <li>
-                        <%= link_to index, tickets_path(show_time_id: @show.id, seat_position: seat_position, payment_id: session[:payment_id], index: index), remote: true, method: :post %>
-                      </li>
-                      <%end%>
-                    </span>
-                          <% index += 1 %>
-                        <% end %>
-                      </ul>
-                    </li>
-                    <li class="seat-label"><%= seat_letter %></li>
+                      <% seat_position =  seat_letter + index.to_s %>
+                      <span id=<%= "#{seat_position}"%> >
+                        <% if is_booking? @show.id, seat_position %>
+                          <li>
+                            <%= link_to index, ticket_path(show_time_id: @show.id, seat_position: seat_position, payment_id: session[:payment_id], index: index, seat_letter: seat_letter), remote: true, method: :delete, class: "choosen" %>
+                          </li>
+                        <% elsif was_taken? @show.id, seat_position %>
+                          <li><a class="taken"><%= index %></a></li>
+                        <% else %>
+                          <li>
+                            <%= link_to index, tickets_path(show_time_id: @show.id, seat_position: seat_position, payment_id: session[:payment_id], index: index), remote: true, method: :post %>
+                          </li>
+                        <%end%>
+                      </span>
+                      <% index += 1 %>
+                    <% end %>
                   </ul>
-                <% end %>
-              </div>
-            </div>
-            <div class="row d-flex justify-content-center">
-              <%= link_to payment_path(current_payment), class: "watch-btn" do %>
-                <span><%= t ".going" %></span> <i class="fa fa-angle-right"></i>
-              <% end %>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div>
-              <section>
-                <article class="row">
-                  <div class="col-md-12 image-div" style="margin-bottom: 15px;">
-                    <%= image_tag @movie.img_link %>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="ticket-detail">
-                      <h2 class="ticket-title vn upper-text"><%= @movie.title %></h2>
-                      <h2 class="ticket-title upper-text"><%= @movie.title %></h2>
-                      <div class="ticket-icon"></i><span class="notice"> <%= t ".movie_range" %> <%= @movie.age_range %> <%= t ".age_notice" %></span></div>
-                    <div class="ticket-info">
-                      <div class="dotted-line"><b><%= t ".cinema" %>: &nbsp;</b><%=  @room.cinema.name %></div>
-                      <div class="dotted-line"><b><%= t ".room" %>: &nbsp;</b><%= @room.name %></div>
-                      <div class="dotted-line"><b><%= t ".time" %>: &nbsp;</b><%=@show.start_time.to_fs(:time) %></div>
-                      <div class="dotted-line"><b><%= t ".date" %>: &nbsp;</b><%= l(@show.start_time, format: :weekday)%></div>
-                      <div class="dotted-line">
-                        <b><%= t ".seat" %>: &nbsp;</b>
-                        <span id="select-seat"><%= payment_seat_position @show.id %></span>
-                      </div>
-                    </div>
-                    <div class="ticket-price-total">
-                      <p>
-                        <%= t ".sum" %>: &nbsp;
-                        <span id="price-booking"><%= number_to_currency(sum_price_show(@show.id)) %></span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </section>
+                </li>
+                <li class="seat-label"><%= seat_letter %></li>
+              </ul>
+            <% end %>
           </div>
         </div>
+        <div class="row d-flex justify-content-center">
+          <%= link_to payment_path(current_payment), class: "watch-btn" do %>
+            <span><%= t ".going" %></span> <i class="fa fa-angle-right"></i>
+          <% end %>
+        </div>
       </div>
-    </section>
+      <div class="col-md-3">
+        <div>
+          <section>
+            <article class="row">
+              <div class="col-md-12 image-div" style="margin-bottom: 15px;">
+                <% if @movie.image %>
+                  <%= image_tag @movie.image_url %>
+                <% else %>
+                  <%= image_tag @movie.img_link %>
+                <% end %>
+              </div>
+              <div class="col-md-12">
+                <div class="ticket-detail">
+                  <h2 class="ticket-title vn upper-text"><%= @movie.title %></h2>
+                  <h2 class="ticket-title upper-text"><%= @movie.title %></h2>
+                  <div class="ticket-icon"></i><span class="notice"> <%= t ".movie_range" %> <%= @movie.age_range %> <%= t ".age_notice" %></span></div>
+                <div class="ticket-info">
+                  <div class="dotted-line"><b><%= t ".cinema" %>: &nbsp;</b><%=  @room.cinema.name %></div>
+                  <div class="dotted-line"><b><%= t ".room" %>: &nbsp;</b><%= @room.name %></div>
+                  <div class="dotted-line"><b><%= t ".time" %>: &nbsp;</b><%=@show.start_time.to_fs(:time) %></div>
+                  <div class="dotted-line"><b><%= t ".date" %>: &nbsp;</b><%= l(@show.start_time, format: :weekday)%></div>
+                  <div class="dotted-line">
+                    <b><%= t ".seat" %>: &nbsp;</b>
+                    <span id="select-seat"><%= payment_seat_position @show.id %></span>
+                  </div>
+                </div>
+                <div class="ticket-price-total">
+                  <p>
+                    <%= t ".sum" %>: &nbsp;
+                    <span id="price-booking"><%= number_to_currency(sum_price_show(@show.id)) %></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>

@@ -155,3 +155,4 @@ log/
 .cahe/
 /cache
 development_secret.txt
+/public/uploads

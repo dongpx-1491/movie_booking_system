@@ -2,6 +2,7 @@
   <th scope="row"><%= movie.id %></th>
   <td><%= movie.title %></td>
   <td><%= l(movie.release_time, formats: :default)%></td>
+  <td><%= movie.categories&.pluck(:name).join(", ") %></td>
   <td><%= movie.duration_min %></td>
   <td><%= movie.language %></td>
   <td><%= movie.cast %></td>

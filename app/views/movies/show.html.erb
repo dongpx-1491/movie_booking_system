@@ -18,8 +18,8 @@
     <div class="anime__details__content">
       <div class="row">
         <div class="col-lg-3">
-          <% if @movie.image.attached? %>
-            <div class="anime__details__pic set-bg" data-setbg=<%= url_for @movie.image %>>
+          <% if @movie.image %>
+            <div class="anime__details__pic set-bg" data-setbg=<%= url_for @movie.image_url %>>
               <div class="comment" data-bs-toggle="tooltip" data-bs-placement="top" title="Số lượng đánh giá"><i class="fa fa-comments"></i> <%= @movie.rates.size %></div>
               <div class="view" data-bs-toggle="tooltip" data-bs-placement="top" title="Số lượng suất chiếu"><i class="fa fa-eye"></i> <%= @movie.show_times.size %></div>
             </div>

@@ -1,5 +1,8 @@
 class Movie < ApplicationRecord
-  MOVIE_ATTRS = %i(title description rating image
+  include ImageUploader[:image]
+  include BannerUploader[:banner]
+
+  MOVIE_ATTRS = %i(title description rating image banner
     duration_min release_time language
     director cast age_range).freeze
 
@@ -7,7 +10,6 @@ class Movie < ApplicationRecord
   has_many :show_times, dependent: :destroy
   has_many :movie_categories, dependent: :destroy
   has_many :categories, through: :movie_categories
-  has_one_attached :image
 
   accepts_nested_attributes_for :movie_categories
 
@@ -22,8 +24,6 @@ class Movie < ApplicationRecord
   length: {maximum: 550}
   validates :release_time, presence: true,
   date: {after: proc{Time.zone.now}}, on: :save
-  validates :image, content_type: {in: Settings.image.format,
-    message: I18n.t("valid_img_format")}
 
   delegate :name, to: :category, prefix: true
   ransack_alias :categories, :categories_name

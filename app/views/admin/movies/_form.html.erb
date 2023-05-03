@@ -21,7 +21,12 @@
       <%= f.label :category_ids, t(".genre") %>
       <%= f.select :category_ids, Category.pluck(:name, :id),{prompt: "Please select"}, {class: "form-control", multiple: true} %>
       <%= f.label :image, t(".image") %>
+      <%= f.hidden_field :image, value: f.object.cached_image_data %>
       <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+      <%= f.hidden_field :banner, value: f.object.cached_banner_data %>
+      <%= f.label :banner, t(".banner") %>
+      <%= f.file_field :banner, accept: "image/jpeg,image/gif,image/png" %>
+
       <%= f.submit t(".submit"), class: "button btn btn-primary" %>
     <% end %>
   </div>

@@ -11,7 +11,6 @@ class Admin::MoviesController < AdminController
 
   def create
     @movie = Movie.new movie_params
-    @movie.image.attach(params[:movie][:image])
     if @movie.save
       flash[:success] = t "movie_create"
       redirect_to admin_movies_path
@@ -24,8 +23,7 @@ class Admin::MoviesController < AdminController
   def edit; end
 
   def update
-    @movie.image.attach(params[:movie][:image])
-    if @movie.update(movie_params) && @movie.save
+    if @movie.update(movie_params)
       flash[:success] = t "movie_update"
       redirect_to admin_movies_path
     else
@@ -47,7 +45,7 @@ class Admin::MoviesController < AdminController
 
   private
   def movie_params
-    params.require(:movie).permit(Movie::MOVIE_ATTRS, :image, category_ids: [],
+    params.require(:movie).permit(Movie::MOVIE_ATTRS, :image, :banner, category_ids: [],
       movie_categories_attributes:
           [:id, :movie_id, :category_id])
   end

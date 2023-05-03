@@ -1,7 +1,7 @@
 <div class="col-lg-3 col-md-4 col-sm-4">
   <div class="product__item">
-    <% if movie.image.attached? %>
-      <div class="product__item__pic height-400 set-bg"  data-setbg=<%= url_for movie.image %>>
+    <% if movie.image %>
+      <div class="product__item__pic height-400 set-bg"  data-setbg=<%= url_for movie.image_url %>>
     <% else %>
       <div class="product__item__pic height-400 set-bg" data-setbg=<%= movie.img_link %>>
     <% end %>
