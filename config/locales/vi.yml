@@ -293,6 +293,7 @@ vi:
       director: "Đạo diễn:"
       cast: "Diễn viên:"
       status: "Trạng thái:"
+      categories: "Thể loại"
       language: "Ngôn ngữ:"
       genre: "Thể loại:"
       duration: "Độ dài:"

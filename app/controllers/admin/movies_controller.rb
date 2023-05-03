@@ -12,9 +12,6 @@ class Admin::MoviesController < AdminController
   def create
     @movie = Movie.new movie_params
     @movie.image.attach(params[:movie][:image])
-
-    binding.pry
-
     if @movie.save
       flash[:success] = t "movie_create"
       redirect_to admin_movies_path
@@ -28,7 +25,7 @@ class Admin::MoviesController < AdminController
 
   def update
     @movie.image.attach(params[:movie][:image])
-    if @movie.update movie_params
+    if @movie.update(movie_params) && @movie.save
       flash[:success] = t "movie_update"
       redirect_to admin_movies_path
     else

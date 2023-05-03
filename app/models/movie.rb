@@ -19,7 +19,7 @@ class Movie < ApplicationRecord
   validates :title, presence: true,
   length: {maximum: 50}
   validates :description, presence: true,
-  length: {maximum: 50}
+  length: {maximum: 550}
   validates :release_time, presence: true,
   date: {after: proc{Time.zone.now}}, on: :save
   validates :image, content_type: {in: Settings.image.format,

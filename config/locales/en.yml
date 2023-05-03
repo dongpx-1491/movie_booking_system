@@ -297,6 +297,7 @@ en:
       director: "Director:"
       cast: "Cast:"
       status: "Status:"
+      categories: "Categories"
       language: "Language:"
       genre: "Genre:"
       duration: "Duration:"

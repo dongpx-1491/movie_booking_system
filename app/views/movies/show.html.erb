@@ -54,7 +54,7 @@
                     <li><span class="width-135"><%= t ".release" %></span><%= l(@movie.release_time, format: :default) %></li>
                     <li><span class="width-135"><%= t ".director" %></span><%= @movie.director %></li>
                     <li><span class="width-135"><%= t ".cast" %></span><%= @movie.cast %></li>
-                    <li><span class="width-135"><%= t ".status" %></span><%= @movie.status %></li>
+                    <li><span class="width-135"><%= t ".categories" %></span><%= @movie.categories&.pluck(:name).join(", ") %></li>
                   </ul>
                 </div>
                 <div class="col-lg-6 col-md-6">
