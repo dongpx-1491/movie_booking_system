@@ -1,10 +1,10 @@
-<% provide :title, t(".genre") %>
+<% provide :title, t(".show") %>
 <div class="sales-boxes">
   <div class="admin-manager box">
     <div class="title">
-      <h1><%= t ".genre" %></h1>
+      <h1><%= t ".show" %></h1>
     </div>
-    <%= link_to new_admin_category_path, class: "new-genre" do %>
+    <%= link_to new_admin_show_time_path, class: "new-genre" do %>
       <span class="fa fa-plus-circle circle"></span>
       <%= t ".create" %>
     <% end %>
@@ -12,13 +12,18 @@
       <table class="table table-categories table-striped">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">STT</th>
-            <th scope="col"><%= t ".name" %></th>
+            <th scope="col"><%= t ".id" %></th>
+            <th scope="col"><%= t ".movie" %></th>
+            <th scope="col"><%= t ".cinema" %></th>
+            <th scope="col"><%= t ".room" %></th>
+            <th scope="col"><%= t ".start_time" %></th>
+            <th scope="col"><%= t ".end_time" %></th>
+            <th scope="col"><%= t ".price" %></th>
             <th scope="col"><%= t ".action" %></th>
           </tr>
         </thead>
         <tbody>
-          <%= render @categories %>
+          <%= render partial: "show", collection: @shows %>
         </tbody>
       </table>
       <div id="pagy">

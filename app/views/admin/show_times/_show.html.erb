@@ -1,0 +1,18 @@
+<tr>
+  <th scope="row"><%= show.id %></th>
+  <td><%= show.movie_title %></td>
+  <td><%= show.room.cinema_name %></td>
+  <td><%= show.room_name %></td>
+  <td><%= l(show.start_time, format: :admin_show_time) %></td>
+  <td><%= l(show.end_time, format: :admin_show_time) %></td>
+  <td><%= number_to_currency show.price %></td>
+  <td>
+    <%= link_to edit_admin_show_time_path(show) do %>
+      <span class="fa fa-pencil"></span>
+    <% end %>
+    <%= link_to admin_show_time_path(show), method: :delete,
+          data: { confirm: t(".confirm")} do %>
+      <span class="fa fa-trash"></span>
+    <% end %>
+  </td>
+</tr>

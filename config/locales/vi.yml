@@ -12,6 +12,7 @@ vi:
       display: "%d %B %Y"
       weekday: "%A | %d-%m-%Y"
       details: "%d %b %Y, %H:%M:%S"
+      admin_show_time: "%H:%M | %d-%m-%Y"
   number:
     currency:
       format:
@@ -20,6 +21,7 @@ vi:
         separator: "."
         precision: 0
         format: "%n%u"
+  time_overlap: Thời gian trùng lặp với một giờ chiếu khác
   not_del: Không được xóa!
   danger: "Vui lòng đăng nhập"
   genre_update: "Cập nhật thể loại thành công"
@@ -39,12 +41,15 @@ vi:
   valid_img_format: phải là một định dạng hình ảnh hợp lệ
   valid_img_volume: phải nhỏ hơn 5MB
   delete_denied: "Không thể xóa do tìm thấy phim có liên kết với thể loại này"
+  ticket_present: "Không thể xóa vì suất chiếu này đã có một số vé đã được đặt"
   text:
     booking_system: Winter Cinema
     not_have_show: "Không có lịch chiếu"
     danger: "Vui lòng đăng nhập trước khi thực hiện"
   layouts:
     admin:
+      english: "English"
+      vietnamese: "Vietnamese"
       sidebar:
         dashboard: "Trang chủ"
         movies: "Quản Lý Phim"
@@ -311,13 +316,14 @@ vi:
     categories:
       form:
         name: "Tên thể loại"
-        submit: "Chấp nhận"
+        submit: "Xác nhận"
       category:
         confirm: "Bạn có chắc chắn không?"
       edit:
         edit: "Chỉnh sửa thể loại"
       index:
-        genre: "Thể loại"
+        genre: "Quản lý Thể loại"
+        name: "Tên thể loại"
         create: "Tạo thể loại mới"
         action: "Các hành động"
       new:
@@ -331,8 +337,45 @@ vi:
         shows: "Suất chiếu"
         revenue: "Doanh thu"
         signout: "Đăng xuất"
+    show_times:
+      edit:
+        edit: "Chỉnh sửa suất chiếu"
+      new:
+        create: "Tạo suất chiếu mới"
+      index:
+        show: "Quản lý suất chiếu"
+        create: "Tạo suất chiếu mới"
+        id: "Mã suất chiếu"
+        movie: "Tên phim"
+        cinema: "Rạp Chiếu"
+        room: "Phòng chiếu"
+        start_time: "Thời gian bắt đầu"
+        end_time: "Thời gian kết thúc"
+        price: "Giá vé"
+        action: "Các hành động"
+      show:
+        confirm: "Xác nhận xóa suất chiếu này"
+      form:
+        movie: "Phim:"
+        start_time: "Thời gian bắt đầu:"
+        room: "Phòng:"
+        price: "Giá vé:"
+        submit: "Xác nhận"
+      update:
+        show_update: "Cập nhật suất chiếu thành công"
+        show_update_failed: "Cập nhật thất bại"
+        ticket_present: "Không thể cập nhật vì suất chiếu này đã có một số vé đã được đặt"
+      destroy:
+        show_delete: "Xóa suất chiếu thành công"
+        show_delete_failed: "Xóa thất bại"
+        show_delete_denied: "Không thể xóa do đang có vé đã được bán cho suất chiếu này"
+        ticket_present: "Không thể xóa vì suất chiếu này đã có một số vé đã được đặt"
+      create:
+        show_create: "Tạo suất chiếu thành công"
+        show_create_failed: "Tạo suất chiếu thất bại"
     movies:
       index:
+        movie_management: "Quản lý phim"
         id: "Mã phim"
         movie: "Phim"
         release_date: "Ngày công chiếu"
@@ -344,11 +387,11 @@ vi:
         status: "Trạng thái"
         action: "Các hành động"
         age_range: "Độ tuổi"
-        create: "Tạo mới"
+        create: "Tạo phim mới"
       edit:
-        edit: "Chỉnh sửa"
+        edit: "Chỉnh sửa Phim"
       form:
-        submit: "Chấp nhận"
+        submit: "Xác nhận"
         movie: "Phim"
         title: "Tiêu đề:"
         description: "Mô tả:"
@@ -362,6 +405,6 @@ vi:
         banner: "Banner:"
         age_range: "Độ tuổi:"
       new:
-        create: "Tạo mới"
+        create: "Tạo mới phim"
       movie:
         confirm: "Bạn có chắc chắn không?"

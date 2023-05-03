@@ -31,6 +31,7 @@ Rails.application.routes.draw do
       resources :movies
       resources :categories
       resources :users
+      resources :show_times
     end
     mount Sidekiq::Web => "/sidekiq"
   end

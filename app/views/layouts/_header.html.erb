@@ -50,8 +50,8 @@
           <i class="fa-solid fa-right-from-bracket"></i>
         <% end %>
       <% end %>
-      <%= link_to t(".english"), locale: :en %>
-      <%= link_to t(".vietnamese"), locale: :vi %>
+      <%= link_to t(".english"), {locale: :en}, class: (I18n.locale == :en ? "current-i18n" : "") %>
+      <%= link_to t(".vietnamese"), {locale: :vi}, class: (I18n.locale == :vi ? "current-i18n" : "") %>
     </div>
   </div>
 </div>

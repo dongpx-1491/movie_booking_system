@@ -3,23 +3,23 @@
     <%= form_for [:admin, @movie], html: {class: "form-admin"} do |f| %>
       <%= render "shared/error_messages", object: f.object %>
       <%= f.label :title, t(".title") %>
-      <%= f.text_field :title, class: "form-control", id: "input-label" %>
+      <%= f.text_field :title, class: "form-control" %>
       <%= f.label :description, t(".description") %>
-      <%= f.text_field :description, class: "form-control", id: "input-label" %>
+      <%= f.text_field :description, class: "form-control" %>
       <%= f.label :release_date, t(".release_date") %>
-      <%= f.date_field :release_time, class: "form-control", id: "input-label" %>
+      <%= f.date_field :release_time, class: "form-control" %>
       <%= f.label :duration_min, t(".duration") %>
-      <%= f.number_field :duration_min, class: "form-control", id: "input-label" %>
+      <%= f.number_field :duration_min, class: "form-control" %>
       <%= f.label :language, t(".language") %>
-      <%= f.text_field :language, class: "form-control", id: "input-label" %>
+      <%= f.text_field :language, class: "form-control" %>
       <%= f.label :cast, t(".cast") %>
-      <%= f.text_field :cast, class: "form-control", id: "input-label" %>
+      <%= f.text_field :cast, class: "form-control" %>
       <%= f.label :director, t(".director") %>
-      <%= f.text_field :director, class: "form-control", id: "input-label" %>
+      <%= f.text_field :director, class: "form-control" %>
       <%= f.label :director, t(".age_range") %>
       <%= f.number_field :age_range, size: "20x1", class: "form-control" %>
       <%= f.label :category_ids, t(".genre") %>
-      <%= f.select :category_ids, Category.pluck(:name, :id),{prompt: "Please select"}, {class: "form-control", multiple: true} %>
+      <%= f.select :category_ids, Category.pluck(:name, :id), {}, {class: "form-control", multiple: true} %>
       <%= f.label :image, t(".image") %>
       <%= f.hidden_field :image, value: f.object.cached_image_data %>
       <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
@@ -33,7 +33,6 @@
 </div>
 <script>
     $('#movie_category_ids').select2({
-    placeholder: "Chọn thể loại phim",
     multiple: true,
     allowClear: true
   });
