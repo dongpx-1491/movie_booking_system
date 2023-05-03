@@ -90,11 +90,13 @@ cinemaNames.each {|cinemaName|
 
 cinemas = Cinema.all
 
-5.times do
+
+cinemas.each do |cinema|
   index = 1
-  cinemas.each do |cinema|
+  5.times do
     name = "Winter #{index}"
     cinema.rooms.create!(row: 6, length: 10, name: name)
+    index += 1
   end
 end
 
@@ -104,11 +106,9 @@ rooms = Room.all
 movies.each{ |movie|
   rooms.sample(10).each{ |room|
     start_time = time
-    end_time = start_time + 2*60*60
     ShowTime.create!(
-      start_time: start_time, end_time: end_time, movie_id: movie.id, room_id: room.id, price: Settings.price.standard
+      start_time: start_time, movie_id: movie.id, room_id: room.id, price: Settings.price.standard
     )
-    time = end_time
   }
 }
 

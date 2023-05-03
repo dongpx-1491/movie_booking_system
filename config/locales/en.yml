@@ -12,6 +12,7 @@ en:
       display: "%b %d %Y"
       weekday: "%A | %d-%m-%Y"
       details: "%d %b %Y, %H:%M:%S"
+      admin_show_time: "%H:%M | %d-%m-%Y"
   number:
     currency:
       format:
@@ -20,6 +21,7 @@ en:
         separator: "."
         precision: 0
         format: "%n%u"
+  time_overlap: Times overlap another showtime
   not_del: Not deleted!
   danger: "Please log in"
   genre_updated: "Category updated"
@@ -39,13 +41,16 @@ en:
   movie_create_failed: "Create failed"
   movie_delete_denied: "Cannot delete because there were shows associated to this movie"
   delete_denied: "Cannot delete because there were movies associated to this Category"
+  ticket_present: "Cannot delete because there were some tickets have been booking"
   text:
     danger: "Please log in before do this action"
     not_have_show: "Dont have any shows to booking"
     booking_system: Winter Cinema
   layouts:
     admin:
-        sidebar:
+      english: "English"
+      vietnamese: "Vietnamese"
+      sidebar:
         dashboard: "Dashboard"
         movies: "Movies Management"
         users: "Users Management"
@@ -322,7 +327,8 @@ en:
       edit:
         edit: "Edit Category"
       index:
-        genre: "Category"
+        genre: "Category Management"
+        name: "Category Name"
         create: "Create new Category"
         action: "Action"
       new:
@@ -336,8 +342,43 @@ en:
         shows: "Shows"
         revenue: "Revenue"
         signout: "Sign Out"
+    show_times:
+      edit:
+        edit: "Edit show times"
+      new:
+        create: "Create new show times"
+      index:
+        show: "Show times Management"
+        create: "Create new show time"
+        id: "ID Show Time"
+        movie: "Movie Name"
+        cinema: "Cinema Name"
+        room: "Room name"
+        start_time: "Start Time"
+        end_time: "End Time"
+        price: "Price"
+        action: "Action"
+      form:
+        movie: "Movie Name"
+        start_time: "Start Time"
+        room: "Room"
+        price: "Price"
+        submit: "Submit"
+      update:
+        show_update: "Show updated"
+        show_update_failed: "Update failed"
+        ticket_present: "Cannot update because there were some tickets have been booking"
+      destroy:
+        show_delete: "Show deleted"
+        show_delete_failed: "Delete failed"
+        show_delete_denied: "Cannot delete because there were tickets sold for this show"
+        ticket_present: "Cannot delete because there were some tickets have been booking"
+      create:
+        show_create: "Show create successfully"
+        show_create_failed: "Create failed"
     movies:
       index:
+        movie_management: "Movies Management"
         id: "ID"
         movie: "Movie"
         release_date: "Release Date"
@@ -349,9 +390,11 @@ en:
         status: "Status"
         action: "Action"
         age_range: "Age range"
-        create: "Create"
+        create: "Create new movie"
       edit:
-        edit: "Edit"
+        edit: "Edit Movie"
+      show:
+        confirm: "Delete this show time"
       form:
         submit: "Submit"
         movie: "Movie"
@@ -367,6 +410,6 @@ en:
         banner: "Banner:"
         age_range: "Age range:"
       new:
-        create: "Create"
+        create: "Create Movie"
       movie:
         confirm: "Are you sure?"

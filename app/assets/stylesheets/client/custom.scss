@@ -294,13 +294,14 @@ table {
     color: #ad6060 !important;
   }
 
-  &:valid{
+  &:valid {
     color: #ad6060 !important;
   }
 }
 
 .edit_form {
   padding: 0 !important;
+
   &::after {
     display: none !important;
   }
@@ -322,11 +323,11 @@ table {
   margin-bottom: 30px;
 }
 
-.no-padding{
-  padding-top: 10px!important;
+.no-padding {
+  padding-top: 10px !important;
 }
 
-.height-400{
+.height-400 {
   height: 400px !important;
 }
 
@@ -347,4 +348,6 @@ table {
   }
 }
 
-
+.current-i18n {
+  color: red !important;
+}

@@ -44,9 +44,9 @@
         </div>
         <div class="profile-details">
           <span class="admin_name">Hi <%= current_user.user_name %></span>
-          <%= link_to t(".english"), locale: :en %>
+          <%= link_to t(".english"), {locale: :en}, {class: (I18n.locale == :en ? "current-i18n" : "")} %>
           <span> &nbsp | &nbsp</span>
-          <%= link_to t(".vietnamese"), locale: :vi %>
+          <%= link_to t(".vietnamese"), {locale: :vi}, {class: (I18n.locale == :vi ? "current-i18n" : "")} %>
         </div>
       </nav>
       <div class="home-content">

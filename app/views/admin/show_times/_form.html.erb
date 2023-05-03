@@ -1,0 +1,19 @@
+<div class="row justify-content-center">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for [:admin, @show], html: {class: "form-admin"} do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <%= f.label :movie_id, t(".movie") %>
+      <%= f.select :movie_id, Movie.pluck(:title, :id), {}, {class: "form-control"} %>
+      <%= f.label :room_id, t(".room") %>
+      <%= f.select :room_id, grouped_options_for_select(Cinema.grouped_options), {}, {class: "form-control"} %>
+      <%= f.label :start_time, t(".start_time"), class: "margin-top-10" %>
+      <%= f.datetime_field :start_time, class: "form-control" %>
+      <%= f.label :price, t(".price") %>
+      <%= f.number_field :price, class: "form-control" %>
+      <%= f.submit t(".submit"), class: "button btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<script>
+    $('#show_time_movie_id').select2();
+</script>

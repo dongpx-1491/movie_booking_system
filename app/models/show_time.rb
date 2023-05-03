@@ -1,7 +1,13 @@
 class ShowTime < ApplicationRecord
-  has_many :seats, dependent: :restrict_with_exception
+  SHOW_ATTR = %i(price start_time movie_id room_id end_time).freeze
+
+  has_many :tickets, dependent: :restrict_with_exception
   belongs_to :movie
   belongs_to :room
+
+  before_validation :update_end_time
+  validates :start_time, :price, :movie_id, :room_id, presence: true
+  validate :valid_overlap_showtime
 
   delegate :cinema_name, to: :room
   delegate :title, to: :movie, prefix: :movie
@@ -12,14 +18,33 @@ class ShowTime < ApplicationRecord
           movie_id,
           date.to_datetime.beginning_of_day
   }
-
-
+  scope :incre_order, ->{order id: :asc}
+  scope :find_room, ->(room_id){where "room_id = ?", room_id}
+  scope :overlap, lambda {|start_time, end_time|
+                    where "((start_time <= ? AND end_time > ?)
+                            OR (end_time >= ? AND start_time < ?)
+                            OR (start_time >= ? AND end_time <= ?)
+                            )",
+                          end_time + 5.minutes, end_time + 5.minutes,
+                          start_time - 5.minutes, start_time - 5.minutes,
+                          start_time - 5.minutes, end_time + 5.minutes
+                  }
 
   ransacker :start_time, type: :date do
     Arel.sql("date(start_time)")
   end
 
+  def valid_overlap_showtime
+    return if ShowTime.find_room(room_id).overlap(start_time, end_time).blank?
+
+    errors.add(:start_time, message: I18n.t("time_overlap"))
+  end
+
   def self.ransackable_scopes _auth_object = nil
     %i(filter_date)
+  end
+
+  def update_end_time
+    self.end_time = start_time + movie.duration_min.minutes
   end
 end
