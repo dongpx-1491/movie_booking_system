@@ -25,6 +25,14 @@ page:
   comment: 5
 model:
   limitation: 6
+  limited: 10
 category:
   name:
     max_length: 50
+movie:
+  name:
+    max_length: 50
+  content:
+    max_length: 1000
+image:
+  format: ["image/jpeg", "image/jpg", "image/png"]

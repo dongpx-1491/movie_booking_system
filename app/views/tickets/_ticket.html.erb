@@ -1,7 +1,7 @@
 <div class="product__sidebar__comment__item">
   <div class="product__sidebar__comment__item__pic">
-    <% if ticket.show_time_movie.image.attached? %>
-      <%= image_tag ticket.show_time_movie.image , class: "max-width-100" %>
+    <% if ticket.show_time_movie.image %>
+      <%= image_tag ticket.show_time_movie.image_url , class: "max-width-100" %>
     <% else %>
       <%= image_tag ticket.show_time_movie.img_link, class: "max-width-100" %>
     <% end %>

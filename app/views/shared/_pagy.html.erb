@@ -7,17 +7,17 @@
   Usage: link.call( page_number [, text [, extra_attributes_string ]])
 -%>
 <% link = pagy_link_proc(pagy) -%>
-<%#                            -%><div class="product__pagination">
-<% if pagy.prev                -%>  <a><%== link.call(pagy.prev, pagy_t('pagy.nav.prev'), 'aria-label="previous"') %></a>
-<% else                        -%>  <a class="disabled"><%== pagy_t('pagy.nav.prev') %></a>
+<%#                            -%><ul class="product__pagination">
+<% if pagy.prev                -%>  <li><%== link.call(pagy.prev, pagy_t('pagy.nav.prev'), 'aria-label="previous"') %></li>
+<% else                        -%>  <li class="disabled"><%== pagy_t('pagy.nav.prev') %></li>
 <% end                         -%>
 <% pagy.series.each do |item| # series example: [1, :gap, 7, 8, "9", 10, 11, :gap, 36] -%>
-<%   if    item.is_a?(Integer) -%>  <a class="page"><%== link.call(item) %></a>
-<%   elsif item.is_a?(String)  -%>  <a class="current-page"><%= item %></a>
-<%   elsif item == :gap        -%>  <a class="page gap"><%== pagy_t('pagy.nav.gap') %></a>
+<%   if    item.is_a?(Integer) -%>  <li class="page"><%== link.call(item) %></li>
+<%   elsif item.is_a?(String)  -%>  <li class="current-page"><%= item %></li>
+<%   elsif item == :gap        -%>  <li class="page gap"><%== pagy_t('pagy.nav.gap') %></li>
 <%   end                       -%>
 <% end                         -%>
-<% if pagy.next                -%>  <a class="page next"><%== link.call(pagy.next, pagy_t('pagy.nav.next'), 'aria-label="next"') %><i class="fa fa-angle-double-right"></i></a>
-<% else                        -%>  <a class="page next disabled"><%== pagy_t('pagy.nav.next') %></a>
+<% if pagy.next                -%>  <li class="page next"><%== link.call(pagy.next, pagy_t('pagy.nav.next'), 'aria-label="next"') %></li>
+<% else                        -%>  <li class="page next disabled"><%== pagy_t('pagy.nav.next') %></li>
 <% end                         -%>
-<%#                            -%></div>
+<%#                            -%></ul>

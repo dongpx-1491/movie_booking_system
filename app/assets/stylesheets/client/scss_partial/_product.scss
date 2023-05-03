@@ -3,6 +3,7 @@
 -----------------------*/
 @import "variable";
 @import "mixins";
+
 .product {
   padding-bottom: 60px;
   padding-top: 80px;
@@ -108,7 +109,7 @@
 
   .section-title {
 
-      h5 {
+    h5 {
       color: $white-color;
       font-weight: 600;
       font-family: 'Oswald', sans-serif;
@@ -265,6 +266,7 @@
     text-align: right;
     display: flex;
     justify-content: flex-end;
+
     p {
       color: $white-color;
       display: inline-block;
@@ -284,13 +286,13 @@
       height: 32px;
       line-height: 32px;
 
-        &:after {
-          border-bottom: 2px solid #111;
-          border-right: 2px solid #111;
-          height: 8px;
-          top: 47%;
-          width: 8px;
-          right: 15px;
+      &:after {
+        border-bottom: 2px solid #111;
+        border-right: 2px solid #111;
+        height: 8px;
+        top: 47%;
+        width: 8px;
+        right: 15px;
       }
 
       .list {
@@ -305,7 +307,8 @@
   padding-top: 15px;
   display: flex;
   justify-content: center;
-  a {
+
+  li {
     display: inline-block;
     font-size: 15px;
     color: #b7b7b7;
@@ -327,7 +330,7 @@
       border: 1px solid #ffffff;
     }
 
-    i {
+    a {
       color: #b7b7b7;
       font-size: 15px;
     }

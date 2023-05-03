@@ -1,10 +1,7 @@
 <tr>
-  <th><%= category_counter + 1 %></th>
-  <th><%= category.name %></th>
-  <th>
-    <%= link_to "#" do %>
-      <span class="fa fa-eye"></span>
-    <% end %>
+  <th scope="row"><%= category_counter + 1 %></th>
+  <td><%= category.name %></td>
+  <td>
     <%= link_to edit_admin_category_path(category) do %>
       <span class="fa fa-pencil"></span>
     <% end %>
@@ -12,5 +9,5 @@
           data: { confirm: t(".confirm")} do %>
       <span class="fa fa-trash"></span>
     <% end %>
-  </th>
+  </td>
 </tr>

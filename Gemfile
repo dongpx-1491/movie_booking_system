@@ -43,6 +43,7 @@ gem "image_processing", "~> 1.12"
 gem "brakeman"
 gem "bundler-audit"
 gem "rubocop-rails"
+gem "shrine"
 
 gem "active_model_serializers"
 gem "active_storage_validations", "1.0.3"

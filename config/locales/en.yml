@@ -22,19 +22,37 @@ en:
         format: "%n%u"
   not_del: Not deleted!
   danger: "Please log in"
-  genre_update: "Genre updated"
+  genre_updated: "Category updated"
   genre_update_failed: "Update failed"
-  genre_delete: "Genre deleted"
+  genre_delete: "Category deleted"
   genre_delete_failed: "Delete failed"
-  genre_create: "Genre create successfu"
+  genre_create: "Category create successfully"
   genre_create_failed: "Create failed"
   not_found: "Not found"
-  delete_denied: "Cannot delete because there were movies associated to this genre"
+  movie_update: "Movie updated"
+  movie_update_failed: "Update failed"
+  movie_delete: "Movie deleted"
+  movie_delete_failed: "Delete failed"
+  valid_img_format: Must be a valid image format
+  valid_img_volume: Should be less than 5MB
+  movie_create: "Movie create successfully"
+  movie_create_failed: "Create failed"
+  movie_delete_denied: "Cannot delete because there were shows associated to this movie"
+  delete_denied: "Cannot delete because there were movies associated to this Category"
   text:
     danger: "Please log in before do this action"
     not_have_show: "Dont have any shows to booking"
     booking_system: Winter Cinema
   layouts:
+    admin:
+        sidebar:
+        dashboard: "Dashboard"
+        movies: "Movies Management"
+        users: "Users Management"
+        genres: "Categories Management"
+        shows: "Shows Management"
+        revenue: "Revenue Management"
+        signout: "Sign Out"
     application:
     header:
       english: "EN"
@@ -279,6 +297,7 @@ en:
       director: "Director:"
       cast: "Cast:"
       status: "Status:"
+      categories: "Categories"
       language: "Language:"
       genre: "Genre:"
       duration: "Duration:"
@@ -296,23 +315,58 @@ en:
   admin:
     categories:
       form:
-        genre: "Genre"
+        name: "Category Name"
         submit: "Submit"
-      genre:
+      category:
         confirm: "Are you sure?"
       edit:
-        edit: "Edit genre"
+        edit: "Edit Category"
       index:
-        genre: "Genre"
-        create: "Create new genre"
+        genre: "Category"
+        create: "Create new Category"
         action: "Action"
       new:
-        create: "Create new genre"
+        create: "Create new Category"
     layouts:
-      dashboard: "Dashboard"
-      movies: "Movies"
-      users: "Users"
-      genres: "Genres"
-      tickets: "Tickets"
-      revenue: "Revenue"
-      signout: "Sign Out"
+      sidebar:
+        dashboard: "Dashboard"
+        movies: "Movies"
+        users: "Users"
+        genres: "Genres"
+        shows: "Shows"
+        revenue: "Revenue"
+        signout: "Sign Out"
+    movies:
+      index:
+        id: "ID"
+        movie: "Movie"
+        release_date: "Release Date"
+        duration: "Duration(mins)"
+        language: "Language"
+        categories: "Categories"
+        cast: "Cast"
+        director: "Director"
+        status: "Status"
+        action: "Action"
+        age_range: "Age range"
+        create: "Create"
+      edit:
+        edit: "Edit"
+      form:
+        submit: "Submit"
+        movie: "Movie"
+        title: "Title:"
+        description: "Description:"
+        release_date: "Release date:"
+        duration: "Duration(mins):"
+        language: "Language:"
+        cast: "Cast:"
+        director: "Director:"
+        genre: "Categories:"
+        image: "Image:"
+        banner: "Banner:"
+        age_range: "Age range:"
+      new:
+        create: "Create"
+      movie:
+        confirm: "Are you sure?"

@@ -1,0 +1,20 @@
+<tr>
+  <th scope="row"><%= movie.id %></th>
+  <td><%= movie.title %></td>
+  <td><%= l(movie.release_time, formats: :default)%></td>
+  <td><%= movie.categories&.pluck(:name).join(", ") %></td>
+  <td><%= movie.duration_min %></td>
+  <td><%= movie.language %></td>
+  <td><%= movie.cast %></td>
+  <td><%= movie.director %></td>
+  <td><%= movie.age_range %></td>
+  <td>
+    <%= link_to edit_admin_movie_path(movie) do %>
+      <span class="fa fa-pencil"></span>
+    <% end %>
+    <%= link_to admin_movie_path(movie), method: :delete,
+          data: { confirm: t(".confirm")} do %>
+      <span class="fa fa-trash"></span>
+    <% end %>
+  </td>
+</tr>
