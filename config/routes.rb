@@ -30,8 +30,9 @@ Rails.application.routes.draw do
       get "/home", to: "static_pages#home"
       resources :movies
       resources :categories
-      resources :users
       resources :show_times
+      resources :payments
+      resources :users, only: %i(index show)
     end
     mount Sidekiq::Web => "/sidekiq"
   end

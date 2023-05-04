@@ -53,9 +53,10 @@ en:
       sidebar:
         dashboard: "Dashboard"
         movies: "Movies Management"
-        users: "Users Management"
+        users: "Users Infomation"
         genres: "Categories Management"
         shows: "Shows Management"
+        payments: "Payments Infomation"
         revenue: "Revenue Management"
         signout: "Sign Out"
     application:
@@ -122,7 +123,7 @@ en:
       success: "Your payment has been successfully activated"
       danger: "Cannot active your payment"
   payments:
-    danger: "Your payment has been expired"
+    danger: "Your payment has been empty"
     not_found: "Cannot found your payment"
     activation:
       info: "check your email to active your payment"
@@ -376,6 +377,54 @@ en:
       create:
         show_create: "Show create successfully"
         show_create_failed: "Create failed"
+    users:
+      not_found_user: "Cannot found user"
+      not_found_payment: "Cannot found Payment"
+      index:
+        id: "ID"
+        user_name: "User name"
+        email: "Email"
+        phone: "Phone number"
+        total: "Total"
+        action: "Action"
+        user_management: "Users Infomation"
+      show:
+        payment: "Payments"
+        payment_id: "Payment ID"
+        numbers: "Number of tickets"
+        completed: "Completed at"
+        total: "Total"
+      total:
+        total: "Total"
+      users_detail:
+        pending: "pending ..."
+    payments:
+      not_found_payment: "Cannot found Payment"
+      not_found_ticket: "Cannot found ticket"
+      destroy:
+        payment_delete: "Delete payment successfully!"
+        payment_delete_failed: "Cannot deleted this payment"
+      payment:
+        pending: "Pending..."
+        paid: "Paid"
+      show:
+        title: "Movie Name"
+        seat: "Seat Position"
+        cinema: "Cinema Name"
+        room: "Room Name"
+        date: "Date"
+        start_time: "Start Time"
+        price: "Price"
+      total:
+        total: "Total"
+      index:
+        id: "ID"
+        user_name: "User name"
+        create_at: "Created at"
+        status: "Status"
+        total: "Total"
+        action: "Action"
+        payment_management: "Payments Infomation"
     movies:
       index:
         movie_management: "Movies Management"

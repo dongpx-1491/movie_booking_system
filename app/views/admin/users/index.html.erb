@@ -1,0 +1,29 @@
+<% provide :title, t(".user_management") %>
+<div class="sales-boxes">
+  <div class="admin-manager box">
+    <div class="title">
+      <h1><%= t ".user_management" %></h1>
+    </div>
+    <div class="admin-data">
+      <table class="table table-categories table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col"><%= t ".id" %></th>
+            <th scope="col"><%= t ".user_name" %></th>
+            <th scope="col"><%= t ".email" %></th>
+            <th scope="col"><%= t ".phone" %></th>
+            <th scope="col"><%= t ".total" %></th>
+            <th scope="col"><%= t ".action" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @users %>
+        </tbody>
+      </table>
+      <div id="pagy">
+        <%== render partial: "shared/pagy", locals: { pagy: @pagy } %>
+      </div>
+      <div id="user-content"></div>
+    </div>
+  </div>
+</div>

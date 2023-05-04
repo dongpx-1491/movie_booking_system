@@ -1,5 +1,6 @@
 /* Googlefont Poppins CDN Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import "./color.scss";
 
 * {
   margin: 0;
@@ -687,4 +688,16 @@ a {
 
 .select2-selection--single{
   min-height: 35px;
+}
+
+.ticket-price-total {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 50px;
+  
+  h4 {
+    padding: 10px 0;
+    font-weight: bolder;
+  }
+
 }

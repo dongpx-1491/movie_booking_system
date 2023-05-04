@@ -1,74 +1,74 @@
 <div class="sidebar">
-    <div class="logo-details">
-      <i class='bx bxs-camera-movie' ></i>
-      <span class="logo_name">Admin page</span>
-    </div>
-      <ul class="nav-links">
-        <li>
-          <a href="#" class="active">
-            <i class='bx bx-grid-alt' ></i>
-            <span class="links_name"><%= t ".dashboard" %></span>
-          </a>
-        </li>
-        <li>
-          <%= link_to admin_categories_path, class: "nav_link" do %>
-            <i class='bx bxs-category-alt'></i>
-            <span class="links_name"><%= t ".genres" %></span>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to admin_movies_path, class: "nav_link" do %>
-            <i class='bx bxs-movie-play' ></i>
-            <span class="links_name"><%= t ".movies" %></span>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to admin_show_times_path, class: "nav_link" do %>
-            <i class='bx bxs-slideshow'></i>
-            <span class="links_name"><%= t ".shows" %></span>
-          <% end %>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-pie-chart-alt-2' ></i>
-            <span class="links_name"><%= t ".shows" %></span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-book-alt' ></i>
-            <span class="links_name">Total order</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-user' ></i>
-            <span class="links_name">Team</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-message' ></i>
-            <span class="links_name">Messages</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-heart' ></i>
-            <span class="links_name">Favrorites</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-cog' ></i>
-            <span class="links_name">Setting</span>
-          </a>
-        </li>
-        <li class="log_out">
-          <%= link_to logout_path, method: :delete do %>
-            <i class='bx bx-log-out'></i>
-            <span class="links_name"><%= t(".log_out")%></span>
-          <% end %>
-        </li>
-      </ul>
+  <div class="logo-details">
+    <i class='bx bxs-camera-movie' ></i>
+    <span class="logo_name">Admin page</span>
   </div>
+  <ul class="nav-links">
+    <li>
+      <a href="#" class="active">
+        <i class='bx bx-grid-alt' ></i>
+        <span class="links_name"><%= t ".dashboard" %></span>
+      </a>
+    </li>
+    <li>
+      <%= link_to admin_categories_path, class: "nav_link" do %>
+        <i class='bx bxs-category-alt'></i>
+        <span class="links_name"><%= t ".genres" %></span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to admin_movies_path, class: "nav_link" do %>
+        <i class='bx bxs-movie-play' ></i>
+        <span class="links_name"><%= t ".movies" %></span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to admin_show_times_path, class: "nav_link" do %>
+        <i class='bx bxs-slideshow'></i>
+        <span class="links_name"><%= t ".shows" %></span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to admin_payments_path, class: "nav_link" do %>
+        <i class='bx bx-pie-chart-alt-2' ></i>
+        <span class="links_name"><%= t ".payments" %></span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to admin_users_path, class: "nav_link" do %>
+        <i class='bx bxs-user-account'></i>
+        <span class="links_name"><%= t ".users" %></span>
+      <% end %>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-user' ></i>
+        <span class="links_name">Team</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-message' ></i>
+        <span class="links_name">Messages</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-heart' ></i>
+        <span class="links_name">Favrorites</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class='bx bx-cog' ></i>
+        <span class="links_name">Setting</span>
+      </a>
+    </li>
+    <li class="log_out">
+      <%= link_to logout_path, method: :delete do %>
+        <i class='bx bx-log-out'></i>
+        <span class="links_name"><%= t(".log_out")%></span>
+      <% end %>
+    </li>
+  </ul>
+</div>

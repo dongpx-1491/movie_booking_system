@@ -1,0 +1,16 @@
+<tr>
+  <th><%= payment.id %></th>
+  <td><%= payment.user_user_name %></td>
+  <td><%=l(payment.created_at, format: :details) %></td>
+  <td> <%= number_to_currency(payment.total_cost) %></td>
+  <% if payment.inactive? %>
+    <td><%= t ".pending" %></td>
+  <% else %>
+    <td><%= t ".paid" %></td>
+  <% end %>
+  <td>
+    <%= link_to admin_payment_path(payment.id), remote: true do %>
+      <span class="fa fa-eye"></span>
+    <% end %>
+  </td>
+</tr>

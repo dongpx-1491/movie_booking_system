@@ -1,0 +1,10 @@
+<tr>
+  <th><%= ticket_counter + 1 %></th>
+  <th><%= ticket.show_time_movie.title %></th>
+  <th><%= ticket.seat_position %></th>
+  <th><%= ticket.show_time_room.cinema_name %></th>
+  <th><%= ticket.show_time_room.name %></th>
+  <th><%= l(ticket.show_time_start_time, format: :weekday) %></th>
+  <th><%= ticket.show_time_start_time.to_fs(:time) %></th>
+  <th><%= number_to_currency ticket.show_time_price %></th>
+</tr>
