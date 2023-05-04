@@ -29,6 +29,12 @@
       <% end %>
     </li>
     <li>
+      <%= link_to admin_cinemas_path, class: "nav_link" do %>
+        <i class='bx bxs-building-house' ></i>
+        <span class="links_name"><%= t ".cinemas" %></span>
+      <% end %>
+    </li>
+    <li>
       <%= link_to admin_payments_path, class: "nav_link" do %>
         <i class='bx bx-pie-chart-alt-2' ></i>
         <span class="links_name"><%= t ".payments" %></span>
@@ -39,30 +45,6 @@
         <i class='bx bxs-user-account'></i>
         <span class="links_name"><%= t ".users" %></span>
       <% end %>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bx-user' ></i>
-        <span class="links_name">Team</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bx-message' ></i>
-        <span class="links_name">Messages</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bx-heart' ></i>
-        <span class="links_name">Favrorites</span>
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class='bx bx-cog' ></i>
-        <span class="links_name">Setting</span>
-      </a>
     </li>
     <li class="log_out">
       <%= link_to logout_path, method: :delete do %>

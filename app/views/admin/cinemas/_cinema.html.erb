@@ -1,0 +1,14 @@
+<tr>
+  <th scope="row"><%= cinema_counter + 1 %></th>
+  <td><%= cinema.name %></td>
+  <td><%= cinema.location %></td>
+  <td>
+    <%= link_to edit_admin_cinema_path(cinema) do %>
+      <span class="fa fa-pencil"></span>
+    <% end %>
+    <%= link_to admin_cinema_path(cinema), method: :delete,
+          data: { confirm: t(".confirm")} do %>
+      <span class="fa fa-trash"></span>
+    <% end %>
+  </td>
+</tr>

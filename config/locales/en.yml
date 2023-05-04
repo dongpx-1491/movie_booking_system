@@ -42,6 +42,7 @@ en:
   movie_delete_denied: "Cannot delete because there were shows associated to this movie"
   delete_denied: "Cannot delete because there were movies associated to this Category"
   ticket_present: "Cannot delete because there were some tickets have been booking"
+  show_times_present: "Show times been presented"
   text:
     danger: "Please log in before do this action"
     not_have_show: "Dont have any shows to booking"
@@ -56,6 +57,7 @@ en:
         users: "Users Infomation"
         genres: "Categories Management"
         shows: "Shows Management"
+        cinemas: "Cinemas Management"
         payments: "Payments Infomation"
         revenue: "Revenue Management"
         signout: "Sign Out"
@@ -398,6 +400,44 @@ en:
         total: "Total"
       users_detail:
         pending: "pending ..."
+    cinemas:
+      not_found_cinema: "Cannot found cinema"
+      update:
+        updated: "Cinema has been updated successfully!"
+        update_failed: "Cannot update this cinema"
+        restric: "Cannot remove room because it have shows establish"
+      destroy:
+        deleted: "Cinema has been deleted successfully!"
+        delete_failed: "Cannot delete this cinema!"
+        restric: "Cannot delete this cinema because its rooms have show establish"
+      create:
+        created: "Cinema create successfully"
+        create_failed: "Create cinema has been failed!"
+      cinema:
+        confirm: "Delete this cinema?"
+      form:
+        name: "Cinema Name:"
+        place_name: "Enter Cinema Name ..."
+        place_location: "Enter Cinema Location ..."
+        location: "Cinema Location:"
+        add: "Create room"
+        submit: "Submit"
+      room_fields:
+        name: "Room Name:"
+        place_name: "Enter Room Name ..."
+        row: "Number row of seats: "
+        length: "Number length: "
+        remove: "Remove room"
+      edit:
+        edit: "Edit Cinema"
+      new:
+        create: "Create new Cinema"
+      index:
+        name: "Cinema Name"
+        location: "Cinema Location"
+        action: "Action"
+        create: "Add new Cinema"
+        cinema_management: "Cinemas Management"
     payments:
       not_found_payment: "Cannot found Payment"
       not_found_ticket: "Cannot found ticket"

@@ -84,7 +84,7 @@ User.create!(user_name: "Admin",
 
 cinemaNames = ["Winter Nguyễn Du", "Winter Thanh Xuân", "Winter Mễ Trì", "Winter Nguyễn Trãi ", "Winter Long Biên"]
 cinemaNames.each {|cinemaName|
-  location = cinemaName.delete "Winter "
+  location = cinemaName.delete_prefix "Winter "
   Cinema.create!(location: location, name: cinemaName)
 }
 
