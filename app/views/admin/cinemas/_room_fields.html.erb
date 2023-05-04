@@ -1,0 +1,19 @@
+<div class="nested-fields">
+  <div class="row">
+    <div class="col col-lg-5">
+      <%= f.label :name, t(".name") %>
+      <%= f.text_field :name, class: "form-control", id: "input-label", placeholder: t(".place_name") %>
+    </div>
+    <div class="col col-lg-3">
+      <%= f.label :row, t(".row") %>
+      <%= f.number_field :row, class: "form-control " %>
+    </div>
+    <div class="col col-lg-3">
+      <%= f.label :length, t(".length") %>
+      <%= f.number_field :length, class: "form-control" %>
+    </div>
+    <div class="col col-lg-1 padding-top-32 text-align-center">
+      <%= link_to_remove_association t(".remove"), f, class: "btn btn-danger" %>
+    </div>
+  </div>
+</div>

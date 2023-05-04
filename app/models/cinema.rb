@@ -1,6 +1,9 @@
 class Cinema < ApplicationRecord
   has_many :rooms, dependent: :destroy
+  accepts_nested_attributes_for :rooms, allow_destroy: true
+  validates :name, :location, presence: true
 
+  scope :asc_name, ->{order name: :asc}
   class << self
     def grouped_options
       all.map do |cinema|

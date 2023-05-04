@@ -53,6 +53,6 @@ class Admin::CategoriesController < AdminController
     return if @category
 
     flash[:danger] = t "not_found"
-    redirect_to root_path
+    redirect_to admin_root_path
   end
 end
