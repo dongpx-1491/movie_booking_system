@@ -5,10 +5,10 @@
   </div>
   <ul class="nav-links">
     <li>
-      <a href="#" class="active">
+      <%= link_to admin_root_path, class: "active" do %>
         <i class='bx bx-grid-alt' ></i>
         <span class="links_name"><%= t ".dashboard" %></span>
-      </a>
+      <% end %>
     </li>
     <li>
       <%= link_to admin_categories_path, class: "nav_link" do %>
