@@ -53,9 +53,10 @@ vi:
       sidebar:
         dashboard: "Trang chủ"
         movies: "Quản Lý Phim"
-        users: "Quản Lý Người dùng"
+        users: "Thông tin Người dùng"
         genres: "Quản Lý Thể loại"
         shows: "Quản Lý Suất chiếu"
+        payments: "Thông Tin Hóa Đơn"
         revenue: "Quản Lý Doanh thu"
         signout: "Đăng xuất"
     application:
@@ -154,7 +155,7 @@ vi:
       success: "Đơn hàng của bạn đã được thanh toán thành công"
       danger: "Không thể thanh toán đơn hàngc của bạn"
   payments:
-    danger: "Đơn đặt hàng của bạn đã hết hạn"
+    danger: "Đơn đặt hàng của bạn không còn tồn tại"
     not_found: "Không tìm thấy đơn hàng của bạn"
     activation:
       info: "Kiểm tra email của bạn để thực hiện thanh toán"
@@ -373,6 +374,54 @@ vi:
       create:
         show_create: "Tạo suất chiếu thành công"
         show_create_failed: "Tạo suất chiếu thất bại"
+    users:
+      not_found_user: "Không thể tìm thấy người dùng"
+      not_found_payment: "Không thể tìm thấy hóa đơn"
+      index:
+        id: "ID Người dùng"
+        user_name: "Tên"
+        email: "Email"
+        phone: "Số điện thoại"
+        total: "Tổng tiền"
+        action: "Các hành động"
+        user_management: "Thông tin người dùng"
+      show:
+        payment: "Danh sách hóa đơn"
+        payment_id: "ID hóa đơn"
+        numbers: "Số lượng vé đặt"
+        completed: "Thanh toán lúc"
+        total: "Tổng tiền"
+      total:
+        total: "Tổng tiền"
+      users_detail:
+        pending: "đang chờ thanh toán ..."
+    payments:
+      not_found_payment: "Không thể tìm thấy hóa đơn"
+      not_found_ticket: "Không thể tìm thấy danh sách vé"
+      destroy:
+        payment_delete: "Hủy đơn hàng thành công!"
+        payment_delete_failed: "Không thể hủy đơn hàng này"
+      payment:
+        pending: "Đang thanh toán..."
+        paid: "Đã thanh toán"
+      show:
+        title: "Tên phim"
+        seat: "Vị trí ghế"
+        cinema: "Tên rạp"
+        room: "Tên phòng"
+        date: "Ngày"
+        start_time: "Thời gian chiếu"
+        price: "Giá vé"
+      total:
+        total: "Tổng tiền"
+      index:
+        id: "ID Hóa Đơn"
+        user_name: "Tên Người Dùng"
+        create_at: "Thời Gian Tạo"
+        status: "Trạng Thái"
+        total: "Tổng tiền"
+        action: "Các Hành Động"
+        payment_management: "Thông tin hóa đơn"
     movies:
       index:
         movie_management: "Quản lý phim"

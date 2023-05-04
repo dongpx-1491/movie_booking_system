@@ -100,15 +100,16 @@ cinemas.each do |cinema|
   end
 end
 
-time = Time.now
 movies = Movie.all
 rooms = Room.all
-movies.each{ |movie|
-  rooms.sample(10).each{ |room|
-    start_time = time
-    ShowTime.create!(
-      start_time: start_time, movie_id: movie.id, room_id: room.id, price: Settings.price.standard
+
+rooms.sample(10).each{ |room|
+  @start_time = Time.now
+  movies.each{ |movie|
+    st = ShowTime.create!(
+      start_time: @start_time, movie_id: movie.id, room_id: room.id, price: Settings.price.standard
     )
+    @start_time = st.end_time + 10.minutes
   }
 }
 

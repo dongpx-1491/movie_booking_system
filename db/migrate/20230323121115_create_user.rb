@@ -4,7 +4,7 @@ class CreateUser < ActiveRecord::Migration[7.0]
       t.string :user_name
       t.string :email
       t.integer :phone
-      t.datetime :date_birth, unique: true
+      t.datetime :dob
 
       t.timestamps
     end

@@ -1,0 +1,10 @@
+<tr>
+  <td><%= payment.id %></td>
+  <td><%= payment.tickets.count %></td>
+  <% if payment.inactive? %>
+    <td><%= t ".pending" %></td>
+  <% else %>
+    <td><%= l(payment.activated_at, format: :details) %></td>
+  <% end %>
+  <td><%= number_to_currency(payment.total_cost) %></td>
+</tr>

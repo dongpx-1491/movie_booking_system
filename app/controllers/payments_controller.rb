@@ -35,7 +35,7 @@ class PaymentsController < ApplicationController
   end
 
   def check_expiration
-    return unless @payment.payment_expired?
+    return unless @payment.payment_expired? || @payment.active?
 
     delete_payment
     flash[:danger] = t ".danger"
