@@ -40,6 +40,7 @@ vi:
   movie_delete_denied: "Không thể xóa do tìm thấy suất chiếu có liên kết với phim này"
   valid_img_format: phải là một định dạng hình ảnh hợp lệ
   valid_img_volume: phải nhỏ hơn 5MB
+  show_times_present: "Tồn tại suất chiếu"
   delete_denied: "Không thể xóa do tìm thấy phim có liên kết với thể loại này"
   ticket_present: "Không thể xóa vì suất chiếu này đã có một số vé đã được đặt"
   text:
@@ -56,6 +57,7 @@ vi:
         users: "Thông tin Người dùng"
         genres: "Quản Lý Thể loại"
         shows: "Quản Lý Suất chiếu"
+        cinemas: "Quản Lý Rạp Phim"
         payments: "Thông Tin Hóa Đơn"
         revenue: "Quản Lý Doanh thu"
         signout: "Đăng xuất"
@@ -422,6 +424,44 @@ vi:
         total: "Tổng tiền"
         action: "Các Hành Động"
         payment_management: "Thông tin hóa đơn"
+    cinemas:
+      not_found_cinema: "Không thể tìm thấy rạp"
+      update:
+        updated: "Cập nhật rạp chiếu phim thành công"
+        update_failed: "Không thể cập nhật"
+        restric: "Không thể loại bỏ phòng vì đã tồn tại suất chiếu"
+      destroy:
+        deleted: "Xóa rạp chiếu phim thành công!"
+        delete_failed: "Không thể xóa rạp chiếu phim này!"
+        restric: "Không thể xóa vì chứa một số phòng đang tồn tại suất chiếu"
+      create:
+        created: "Thêm rạp chiếu phim thành công"
+        create_failed: "Thêm rạp chiếu phim thất bại!"
+      cinema:
+        confirm: "Xóa rạp chiếu phim này?"
+      form:
+        name: "Tên Rạp Phim:"
+        place_name: "Nhập tên rạp phim ..."
+        place_location: "Nhập vị trí rạp phim ..."
+        location: "Vị Trí Rạp Phim:"
+        add: "Tạo phòng"
+        submit: "Xác nhận"
+      room_fields:
+        name: "Tên Phòng:"
+        place_name: "Nhập tên phòng ..."
+        row: "Số lượng ghế mỗi hàng "
+        length: "Số lượng hàng ghế: "
+        remove: "Bỏ phòng"
+      edit:
+        edit: "Chỉnh sửa rạp phim"
+      new:
+        create: "thêm mới rạp phim"
+      index:
+        name: "Tên Rạp Phim:"
+        location: "Vị Trí Rạp Phim:"
+        action: "Các hành động"
+        create: "Thêm mới rạp phim"
+        cinema_management: "Quản lý Rạp Phim"
     movies:
       index:
         movie_management: "Quản lý phim"

@@ -29,3 +29,4 @@ pin "main-layout", to: "main_layout.js", preload: true
 pin "@fortawesome/fontawesome-free", to: "https://ga.jspm.io/npm:@fortawesome/fontawesome-free@6.4.0/js/all.js", preload: true
 pin "toastr", to: "https://ga.jspm.io/npm:toastr@2.1.4/toastr.js"
 pin "select2", to: "https://ga.jspm.io/npm:select2@4.1.0-rc.0/dist/js/select2.js"
+pin "@nathanvda/cocoon", to: "https://ga.jspm.io/npm:@nathanvda/cocoon@1.2.14/cocoon.js"

@@ -31,6 +31,7 @@ Rails.application.routes.draw do
       resources :movies
       resources :categories
       resources :show_times
+      resources :cinemas
       resources :payments
       resources :users, only: %i(index show)
     end
