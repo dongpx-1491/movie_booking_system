@@ -10,6 +10,7 @@ class Movie < ApplicationRecord
   has_many :show_times, dependent: :destroy
   has_many :movie_categories, dependent: :destroy
   has_many :categories, through: :movie_categories
+  has_many :tickets, through: :show_times
 
   accepts_nested_attributes_for :movie_categories
 
@@ -35,10 +36,17 @@ class Movie < ApplicationRecord
   scope :incre_order, ->{order(id: :asc)}
 
   def self.ransackable_attributes(auth_object = nil)
-    ["age_range", "cast", "categories", "created_at", "description", "director", "duration_min", "id", "img_link", "language", "rating", "release_time", "status", "title", "updated_at"]
+    ["age_range", "cast", "categories", "revenue", "created_at", "description", "director", "duration_min", "id", "img_link", "language", "rating", "release_time", "status", "title", "updated_at"]
   end
 
   def self.ransackable_associations(auth_object = nil)
     ["categories", "image_attachment", "image_blob", "movie_categories", "rates", "show_times"]
+  end
+
+  def update_revenue
+    total = 0
+    tickets.each{|ticket|
+     total += ticket.show_time_price if ticket.payment.active?}
+    update_attribute :revenue, total
   end
 end

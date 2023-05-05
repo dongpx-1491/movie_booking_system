@@ -371,6 +371,11 @@ en:
         room: "Room"
         price: "Price"
         submit: "Submit"
+      search:
+        search_by_movie: "Search by movie name:"
+        search: "Search"
+        search_by_id: "Search by id:"
+        search_by_id_show: "Enter id to find ..."
       update:
         show_update: "Show updated"
         show_update_failed: "Update failed"
@@ -483,6 +488,8 @@ en:
         status: "Status"
         action: "Action"
         age_range: "Age range"
+        tickets_sold: "Tickets been booked"
+        revenue: "Total revenue"
         create: "Create new movie"
       edit:
         edit: "Edit Movie"

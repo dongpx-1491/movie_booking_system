@@ -8,4 +8,10 @@ module MoviesHelper
       [@search.sorts.first.name, @search.sorts.first.dir].join(' ')
     end
   end
+
+  def movie_revenue movie
+    total = 0
+    movie.tickets.each{|ticket| total += ticket.show_time_price}
+    total
+  end
 end

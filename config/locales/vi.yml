@@ -371,6 +371,8 @@ vi:
       search:
         search_by_movie: "Tìm kiếm theo tên phim:"
         search: "Tìm kiếm"
+        search_by_id: "Tìm kiếm theo id:"
+        search_by_id_show: "Nhập id ..."
       update:
         show_update: "Cập nhật suất chiếu thành công"
         show_update_failed: "Cập nhật thất bại"
@@ -483,6 +485,8 @@ vi:
         status: "Trạng thái"
         action: "Các hành động"
         age_range: "Độ tuổi"
+        tickets_sold: "Số vé được đặt"
+        revenue: "Doanh thu vé"
         create: "Tạo phim mới"
       edit:
         edit: "Chỉnh sửa Phim"

@@ -1,7 +1,8 @@
 class AdminController < ApplicationController
   include Admin::PaymentsHelper
   include Admin::UsersHelper
-  
+  include Admin::MoviesHelper
+
   before_action :require_admin
 
   layout "admin"

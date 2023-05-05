@@ -45,6 +45,8 @@ gem "bundler-audit"
 gem "rubocop-rails"
 gem "shrine"
 gem "cocoon"
+gem "chartkick"
+gem "hightop"
 gem "active_model_serializers"
 gem "active_storage_validations", "1.0.3"
 gem 'bootstrap', '~> 5.1.3'

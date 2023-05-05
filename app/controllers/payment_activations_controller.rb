@@ -4,7 +4,8 @@ class PaymentActivationsController < ApplicationController
   def edit
     if !@payment.active? && @payment.authenticated?(params[:id])
       @payment.activate_payment
-      delete_payment if have_payment?
+      @payment.tickets.
+      delete_payment if have_payment? && current_payment.id == params[:payment_id]
       flash[:success] = t ".success"
     else
       flash[:danger] = t ".danger"

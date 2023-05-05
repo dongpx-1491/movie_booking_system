@@ -16,13 +16,17 @@
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"
 # end
+# whenever --update-crontab
 
-# Learn more: http://github.com/javan/whenever
 set :environment, "development"
 set :output, "log/cron_log.log"
 env :PATH, ENV["PATH"]
 
-#check_expiration of payments every 15 minutes
+#check_expiration of payments every 5 minutes
 every 5.minutes do
   rake "delete_namespace:delete_payments_expired", environment: "development"
+end
+
+every 5.minutes do
+  rake "update_namespace:update_movie_revenue", environment: "development"
 end

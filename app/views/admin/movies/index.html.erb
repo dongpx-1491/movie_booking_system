@@ -13,15 +13,15 @@
       <table class="table table-categories table-striped">
         <thead class="thead-dark">
           <tr>
-            <th scope="col"><%= t ".id" %></th>
-            <th scope="col"><%= t ".movie" %></th>
-            <th scope="col"><%= t ".release_date" %></th>
-            <th scope="col"><%= t ".categories" %></th>
-            <th scope="col"><%= t ".duration" %></th>
-            <th scope="col"><%= t ".language" %></th>
-            <th scope="col"><%= t ".cast" %></th>
-            <th scope="col"><%= t ".director" %></th>
-            <th scope="col"><%= t ".age_range" %></th>
+            <th scope="col"><%= sort_link @search, :id, t(".id") %></th>
+            <th scope="col"><%= sort_link @search, :title, t(".movie") %></th>
+            <th scope="col"><%= t(".release_date") %></th>
+            <th scope="col"><%= t(".categories") %></th>
+            <th scope="col"><%= t(".duration") %></th>
+            <th scope="col"><%= sort_link @search, :language, t(".language") %></th>
+            <th scope="col"><%= sort_link @search, :age_range, t(".age_range") %></th>
+            <th scope="col"><%= t ".tickets_sold" %></th>
+            <th scope="col"><%= sort_link @search, :revenue, t(".revenue") %></th>
             <th scope="col"><%= t ".action" %></th>
           </tr>
         </thead>

@@ -8,5 +8,5 @@ class Rate < ApplicationRecord
   delegate :user_name, to: :user, prefix: :user
 
   scope :latest, ->{order(created_at: :desc)}
-  scope :top, ->{limit 5}
+  scope :top_five, ->{limit 5}
 end
