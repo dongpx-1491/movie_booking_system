@@ -4,6 +4,11 @@ class Cinema < ApplicationRecord
   validates :name, :location, presence: true
 
   scope :asc_name, ->{order name: :asc}
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["created_at", "id", "location", "name", "updated_at"]
+    end
+    
   class << self
     def grouped_options
       all.map do |cinema|

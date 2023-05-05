@@ -1,0 +1,26 @@
+<div class="overview-boxes">
+  <div class="box-search">
+    <div class="search-box">
+      <%= search_form_for [:admin, @search], class: "input-group-form", method: "get" do |f| %>
+      <div class="row justify-content-center width-100 padding-top-10">
+        <div class="col-md-3 col-md-offset-3">
+        <%= f.label :movie_title_eq, t(".search_by_movie") %>
+        <%= f.select :movie_title_eq, Movie.all.pluck(:title), {:include_blank => true}, { class: "form-control title-input" } %>
+        </div>
+      </div>
+        <div class="row justify-content-center width-100 padding-top-10">
+        <div class="col-md-1 col-md-offset-3">
+          <%= f.submit t(".search"), class: "btn btn-primary" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+    $('#q_movie_title_eq').select2({
+      allowClear: true,
+      placeholder: "Chọn tên một phim"
+    });
+</script>

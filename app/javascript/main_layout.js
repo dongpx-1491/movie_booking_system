@@ -59,7 +59,7 @@ $(document).on('ready', function(){
      /*------------------
          Niceselect
      --------------------*/
-     $('select').niceSelect();
+    //  $('select').niceSelect();
 
      /*------------------
          Scroll To Top

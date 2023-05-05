@@ -1,5 +1,5 @@
 class RatesController < ApplicationController
-  before_action :find_movie
+  before_action :logged_in_user, :find_movie
 
   def create
     @rate = current_user.rates.build(movie_id: params[:movie_id],

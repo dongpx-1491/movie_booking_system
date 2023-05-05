@@ -105,6 +105,8 @@ vi:
       hot_movie: "Phim đang hot"
     category_index:
       view: "Xem thêm"
+    banner_movie:
+      watch: "Xem ngay"
   sessions:
     new:
       login: "Đăng nhập"
@@ -146,6 +148,8 @@ vi:
   tickets:
     not_found: "Cannot find this ticket"
     cant_create: "Không thể đặt vé này vì một vài lí do"
+    create:
+      unavailable_ticket: "Vé không còn tồn tại!"
     ticket:
       price: "Giá:"
       seat: "Ghế ngồi:"
@@ -364,6 +368,9 @@ vi:
         room: "Phòng:"
         price: "Giá vé:"
         submit: "Xác nhận"
+      search:
+        search_by_movie: "Tìm kiếm theo tên phim:"
+        search: "Tìm kiếm"
       update:
         show_update: "Cập nhật suất chiếu thành công"
         show_update_failed: "Cập nhật thất bại"
@@ -455,7 +462,7 @@ vi:
       edit:
         edit: "Chỉnh sửa rạp phim"
       new:
-        create: "thêm mới rạp phim"
+        create: "Thêm mới rạp phim"
       index:
         name: "Tên Rạp Phim:"
         location: "Vị Trí Rạp Phim:"
@@ -497,3 +504,9 @@ vi:
         create: "Tạo mới phim"
       movie:
         confirm: "Bạn có chắc chắn không?"
+      search:
+        search_by_name_or_description: "Tìm kiếm theo tên hoặc mô tả:"
+        search_by_name: "Tìm kiếm theo tên hoặc mô tả ..."
+        search_by_genre: "Tìm kiếm theo thể loại:"
+        search_by_release_date: "Tìm kiếm theo ngày công chiếu:"
+        search: "Tìm kiếm"

@@ -1,0 +1,15 @@
+<div class="hero__items set-bg" data-setbg=<%= url_for movie.banner_url %>>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="hero__text">
+        <div class="label"><%= movie.categories.first.name %></div>
+        <h2><%= movie.title %></h2>
+        <p><%= movie.description %></p>
+        <%= link_to movie_path(movie.id), class: "watch-btn" do %>
+          <span><%= t ".watch" %></span>
+          <i class="fa-solid fa-chevron-right" style="color: #ffffff;"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

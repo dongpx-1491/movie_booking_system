@@ -8,7 +8,7 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new payment_id: current_payment.id, show_time_id: params[:show_time_id], seat_position: params[:seat_position]
     return respond_to :js if @ticket.save && total_price
 
-    flash[:danger] = "ve khong con ton tai"
+    flash[:danger] = t ".unavailable_ticket"
     render js: "window.location = '#{session[:show_time_url]}'"
   end
 

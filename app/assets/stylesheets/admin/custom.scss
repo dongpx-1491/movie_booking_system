@@ -225,6 +225,15 @@ nav .profile-details i {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
+.overview-boxes .box-search {
+
+  width: 100%;
+  background: #fff;
+  padding: 15px 14px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
 .overview-boxes .box-topic {
   font-size: 20px;
   font-weight: 500;
@@ -708,4 +717,28 @@ a {
 
 .text-align-center {
   text-align: center;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.padding-top-10 {
+  padding-top: 10px;
+}
+
+.input-group-form{
+  label{
+    font-weight: bolder;
+  }
+}
+
+.sort_link {
+  text-decoration: none;
+  color: white;
+}
+
+.sort_link:hover {
+  text-decoration: none;
+  color: #f08282;
 }
