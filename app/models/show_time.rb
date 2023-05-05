@@ -34,6 +34,14 @@ class ShowTime < ApplicationRecord
     Arel.sql("date(start_time)")
   end
 
+  def self.ransackable_attributes(auth_object = nil)
+    ["created_at", "end_time", "id", "movie_id", "price", "room_id", "start_time", "updated_at"]
+  end
+  
+  def self.ransackable_associations(auth_object = nil)
+    ["movie", "room", "tickets"]
+  end
+
   def valid_overlap_showtime
     return if ShowTime.find_room(room_id).overlap(start_time, end_time).blank?
 

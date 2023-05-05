@@ -351,3 +351,17 @@ table {
 .current-i18n {
   color: red !important;
 }
+
+.title-movie {
+  a {
+    color: $white-color;
+    font-weight: 700;
+    line-height: 26px;
+  }
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+
+.hot-movie{
+  padding-bottom: 5px;
+}

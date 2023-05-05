@@ -1,4 +1,6 @@
 <% provide :title, t(".show") %>
+<%= render partial: "search"%>
+
 <div class="sales-boxes">
   <div class="admin-manager box">
     <div class="title">
@@ -12,13 +14,13 @@
       <table class="table table-categories table-striped">
         <thead class="thead-dark">
           <tr>
-            <th scope="col"><%= t ".id" %></th>
-            <th scope="col"><%= t ".movie" %></th>
-            <th scope="col"><%= t ".cinema" %></th>
-            <th scope="col"><%= t ".room" %></th>
-            <th scope="col"><%= t ".start_time" %></th>
-            <th scope="col"><%= t ".end_time" %></th>
-            <th scope="col"><%= t ".price" %></th>
+            <th scope="col"><%= sort_link @search, :id, t(".id") %></th>
+            <th scope="col"><%= sort_link @search, :movie_title, t(".movie") %></th>
+            <th scope="col"><%= sort_link @search, :room_cinema_name, t(".cinema") %></th>
+            <th scope="col"><%= sort_link @search, :room_name, t(".room") %></th>
+            <th scope="col"><%= sort_link @search, :start_time, t(".start_time") %></th>
+            <th scope="col"><%= sort_link @search, :end_time, t(".end_time") %></th>
+            <th scope="col"><%= sort_link @search, :price, t(".price") %></th>
             <th scope="col"><%= t ".action" %></th>
           </tr>
         </thead>

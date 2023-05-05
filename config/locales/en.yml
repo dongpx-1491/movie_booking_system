@@ -105,6 +105,8 @@ en:
       hot_movie: "Hot Movie"
     category_index:
       view: "View All"
+    banner_movie:
+      watch: "Watch Now"
   shared:
     error_messages:
       content: "The form contains"
@@ -114,6 +116,8 @@ en:
   tickets:
     not_found: "Cannot find this ticket"
     cant_create: "Cannot book this ticket for some reason"
+    create:
+      unavailable_ticket: "Ticket is unavailable!"
     ticket:
       price: "Price:"
       seat: "Seat name:"
@@ -502,3 +506,9 @@ en:
         create: "Create Movie"
       movie:
         confirm: "Are you sure?"
+      search:
+        search_by_name_or_descption: "Search by name or description:"
+        search_by_name: "Search by name or description ..."
+        search_by_genre: "Search by Category:"
+        search_by_release_date: "Search by Release Time"
+        search: "Search"

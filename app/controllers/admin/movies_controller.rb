@@ -2,7 +2,9 @@ class Admin::MoviesController < AdminController
   before_action :find_movie, only: %i(edit update destroy)
 
   def index
-    @pagy, @movies = pagy Movie.incre_order, items: Settings.model.limited
+    @search = Movie.ransack params[:q]
+    @pagy, @movies = pagy @search.result.incre_order,
+                          items: Settings.model.limited
   end
 
   def new

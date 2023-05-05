@@ -2,7 +2,9 @@ class Admin::ShowTimesController < AdminController
   before_action :find_show, only: %i(edit update destroy)
 
   def index
-    @pagy, @shows = pagy ShowTime.incre_order, items: 10
+    @search = ShowTime.ransack params[:q]
+    @pagy, @shows = pagy @search.result,
+                          items: Settings.model.limited
   end
 
   def new

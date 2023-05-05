@@ -13,4 +13,12 @@ class Room < ApplicationRecord
 
     errors.add(:show_times, message: I18n.t("show_times_present"))
   end
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["cinema_id", "created_at", "id", "length", "name", "row", "updated_at"]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["cinema", "show_times"]
+  end
 end

@@ -1,9 +1,11 @@
-<% if movie.image %>
-  <div class="product__sidebar__view__item set-bg mix day years" data-setbg=<%= url_for movie.image_url %>>
-<% else %>
-  <div class="product__sidebar__view__item set-bg mix day years" data-setbg=<%= movie.img_link %>>
-<% end %>
-  <div class="ep"><%= movie.age_range %>+</div>
-  <div class="view" data-bs-toggle="tooltip" data-bs-placement="top" title="Số lượng suất chiếu"><i class="fa fa-eye"></i> <%= movie.show_times.size %></div>
-  <h5><%= link_to movie.title, movie_path(id: movie.id)%></h5>
+<div class="hot-movie">
+  <% if movie.image %>
+    <div class="product__sidebar__view__item set-bg mix day years" data-setbg=<%= url_for movie.image_url %>>
+    <% else %>
+      <div class="product__sidebar__view__item set-bg mix day years" data-setbg=<%= movie.img_link %>>
+      <% end %>
+      <div class="ep"><%= movie.age_range %>+</div>
+      <div class="view" data-bs-toggle="tooltip" data-bs-placement="top" title="Số lượng suất chiếu"><i class="fa fa-eye"></i> <%= movie.show_times.size %></div>
+    </div>
+    <h5 class="title-movie"><%= link_to movie.title, movie_path(id: movie.id)%></h5>
 </div>

@@ -45,5 +45,6 @@ class ApplicationController < ActionController::Base
 
   def hot_movie
     @hot_movies = Movie.left_joins(:show_times).group('movies.id').order('COUNT(show_times.id) DESC').limit 5
+    @banner_movies = Movie.left_joins(:show_times).group('movies.id').order('COUNT(show_times.id) DESC').limit 3
   end
 end
