@@ -24,6 +24,8 @@ en:
   time_overlap: Times overlap another showtime
   not_del: Not deleted!
   danger: "Please log in"
+  movie_chart: "Movie"
+  booked_number: "Revenue"
   genre_updated: "Category updated"
   genre_update_failed: "Update failed"
   genre_delete: "Category deleted"
@@ -349,6 +351,20 @@ en:
         shows: "Shows"
         revenue: "Revenue"
         signout: "Sign Out"
+    static_pages:
+      home:
+        welcome: "Welcome to admin pages"
+        movies_num: "Movies this month"
+        show_num: "Shows this month"
+        ticket_sold: "Tickets booked this month"
+        revenue: "Revenue this month"
+        charts: "Statistics"
+        top_seller: "Top Selling Movies"
+        up: "Up from month before"
+        down: "Down from month before"
+        top_seller_chart: "Top Movie's Revenue"
+        top_booking_chart: "Top movie been booked"
+        revenue_by_day_chart: "Revenue by day"
     show_times:
       edit:
         edit: "Edit show times"

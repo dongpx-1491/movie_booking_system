@@ -29,6 +29,7 @@ Rails.application.routes.draw do
       collection do
         get "top_movies_seller"
         get "top_movies_booking"
+        get "revenue_by_day"
       end
     end
 

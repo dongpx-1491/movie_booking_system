@@ -1,0 +1,11 @@
+<li>
+  <a>
+    <% if movie.image %>
+      <%= image_tag movie.image_url %>
+    <% else %>
+      <%= image_tag movie.img_link %>
+    <% end %>
+    <span class="product"><%= movie.title%></span>
+  </a>
+  <span class="price"><%= number_to_currency movie.revenue %></span>
+</li>

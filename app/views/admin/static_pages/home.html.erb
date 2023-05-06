@@ -1,4 +1,110 @@
-<div class="text-align-center">
-  <h1>Welcome to admin pages</h1>
-  <%= top_movies_seller_chart %>
+<div class="text-align-center welcome">
+  <h1><%= t ".welcome" %></h1>
+</div>
+<div class="overview-boxes">
+  <div class="box">
+    <div class="right-side">
+      <div class="box-topic"><%= t ".movies_num" %></div>
+      <div class="number"><%= @number_movies %></div>
+      <div class="indicator">
+        <% if @number_movies > @number_movies_before %>
+          <i class='bx bx-up-arrow-alt'></i>
+          <span class="text"><%= t ".up" %></span>
+        <% else %>
+          <i class='bx bx-down-arrow-alt down'></i>
+          <span class="text"><%= t ".down" %></span>
+        <% end %>
+      </div>
+    </div>
+    <i class='bx bxs-movie-play bx-tada cart' style='color:#4f54e2'  ></i>
+  </div>
+  <div class="box">
+    <div class="right-side">
+      <div class="box-topic"><%= t ".show_num" %></div>
+      <div class="number"><%= @number_shows %></div>
+      <div class="indicator">
+        <% if @number_shows > @number_shows_before %>
+          <i class='bx bx-up-arrow-alt'></i>
+          <span class="text"><%= t ".up" %></span>
+        <% else %>
+          <i class='bx bx-down-arrow-alt down'></i>
+          <span class="text"><%= t ".down" %></span>
+        <% end %>
+      </div>
+    </div>
+    <i class='bx bxs-slideshow bx-tada cart two' style='color:#7fef7e'  ></i>
+  </div>
+  <div class="box">
+    <div class="right-side">
+      <div class="box-topic"><%= t ".ticket_sold" %></div>
+      <div class="number"><%= @number_tickets %></div>
+      <div class="indicator">
+        <% if @number_tickets > @number_tickets_before %>
+          <i class='bx bx-up-arrow-alt'></i>
+          <span class="text"><%= t ".up" %></span>
+        <% else %>
+          <i class='bx bx-down-arrow-alt down'></i>
+          <span class="text"><%= t ".down" %></span>
+        <% end %>
+      </div>
+    </div>
+    <i class='bx bxs-purchase-tag-alt bx-spin cart three' style='color:#1c1c1c' ></i>
+  </div>
+  <div class="box">
+    <div class="right-side">
+      <div class="box-topic"><%= t ".revenue" %></div>
+      <div class="number"><%= number_to_currency @number_revenue %></div>
+      <div class="indicator">
+        <% if @number_revenue > @number_revenue_before %>
+          <i class='bx bx-up-arrow-alt'></i>
+          <span class="text"><%= t ".up" %></span>
+        <% else %>
+          <i class='bx bx-down-arrow-alt down'></i>
+          <span class="text"><%= t ".down" %></span>
+        <% end %>
+      </div>
+    </div>
+    <i class='bx bxs-wallet bx-tada cart four' ></i>
+  </div>
+</div>
+<div class="sales-boxes">
+  <div class="recent-sales box">
+    <div class="title padding-bottom-40"><%= t ".charts" %></div>
+    <div class="type-chart">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true"><%= t ".top_seller_chart" %></button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><%= t ".top_booking_chart" %></button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false"><%= t ".revenue_by_day_chart" %></button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="sales-details row justify-content-md-center">
+            <%= top_movies_seller_chart %>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <div class="sales-details row justify-content-md-center">
+            <%= top_movies_booking_chart %>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <div class="sales-details row justify-content-md-center">
+            <%= revenue_by_day_chart %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="top-sales box">
+    <div class="title"><%= t ".top_seller" %></div>
+    <ul class="top-sales-details">
+      <%= render partial: "top_movie", collection: @top_movies_revenue, as: :movie %>
+    </ul>
+  </div>
 </div>

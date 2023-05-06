@@ -25,6 +25,7 @@ class ShowTime < ApplicationRecord
   scope :not_out_of_date, ->{ where "(end_time > ? )", Time.now.beginning_of_day }
   scope :incre_order, ->{order id: :asc}
   scope :find_room, ->(room_id){where "room_id = ?", room_id}
+  scope :by_month, ->(month){where("MONTH(start_time) = ?", month)}
   scope :overlap, lambda {|start_time, end_time|
                     where "((start_time <= ? AND end_time > ?)
                             OR (end_time >= ? AND start_time < ?)
