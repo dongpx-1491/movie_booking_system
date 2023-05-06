@@ -108,6 +108,7 @@ GEM
       xpath (~> 3.2)
     case_transform (0.2)
       activesupport
+    chartkick (5.0.2)
     chronic (0.10.2)
     cocoon (1.2.15)
     coderay (1.1.3)
@@ -190,6 +191,8 @@ GEM
     globalid (1.1.0)
       activesupport (>= 5.0)
     hashie (5.0.0)
+    hightop (0.3.0)
+      activesupport (>= 5.2)
     htmlbeautifier (1.4.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
@@ -476,6 +479,7 @@ DEPENDENCIES
   bundler-audit
   byebug
   capybara (>= 3.26)
+  chartkick
   cocoon
   config
   database_cleaner
@@ -486,6 +490,7 @@ DEPENDENCIES
   faker
   figaro
   flex-slider-rails
+  hightop
   htmlbeautifier
   image_processing (~> 1.12)
   importmap-rails

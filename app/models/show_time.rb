@@ -14,12 +14,18 @@ class ShowTime < ApplicationRecord
   delegate :name, to: :room, prefix: :room
 
   scope :filter_date, lambda{|movie_id, date|
-    where "(movie_id = ? AND start_time > ? )",
+    where "(movie_id = ? AND start_time > ? AND start_time < ?)",
           movie_id,
-          date.to_datetime.beginning_of_day
+          Time.now,
+          date.to_datetime.end_of_day
   }
+  scope :date_available, (lambda do
+    where("start_time < AND start_time > ?", DateTime.now.end_of_day, Time.now)
+  end)
+  scope :not_out_of_date, ->{ where "(end_time > ? )", Time.now.beginning_of_day }
   scope :incre_order, ->{order id: :asc}
   scope :find_room, ->(room_id){where "room_id = ?", room_id}
+  scope :by_month, ->(month){where("MONTH(start_time) = ?", month)}
   scope :overlap, lambda {|start_time, end_time|
                     where "((start_time <= ? AND end_time > ?)
                             OR (end_time >= ? AND start_time < ?)
@@ -37,7 +43,7 @@ class ShowTime < ApplicationRecord
   def self.ransackable_attributes(auth_object = nil)
     ["created_at", "end_time", "id", "movie_id", "price", "room_id", "start_time", "updated_at"]
   end
-  
+
   def self.ransackable_associations(auth_object = nil)
     ["movie", "room", "tickets"]
   end

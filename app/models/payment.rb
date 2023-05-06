@@ -8,6 +8,7 @@ class Payment < ApplicationRecord
   scope :sort_list, ->{order created_at: :desc}
   scope :latest, ->{order activated_at: :desc}
   scope :show_active, ->{where status: :active}
+  scope :by_month, ->(month){where("MONTH(activated_at) = ?", month)}
   scope :incre_order, ->{order(status: :asc, created_at: :desc)}
   scope :check_expire, (lambda do |id, created_at|
     where("id = #{id} AND
@@ -25,6 +26,8 @@ class Payment < ApplicationRecord
 
   def activate_payment
     update_attribute :status, :active
+    total = tickets.inject(0){|sum, ticket| sum + ticket.show_time_price}
+    update_attribute :total_cost, total
     touch :activated_at
   end
 

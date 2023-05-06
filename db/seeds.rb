@@ -6,7 +6,7 @@ names.each {|name|
 title = Faker::Movie.unique.title
   description = Faker::Movie.quote
   rating = 4.2
-  duration_min = Faker::Number.between(from: 60, to: 300)
+  duration_min = Faker::Number.between(from: 60, to: 200)
   release_time = Faker::Date.between(from: "2023-04-01", to: "2023-06-01")
   language = Faker::Nation.language
   director = Faker::Artist.unique.name
@@ -30,7 +30,7 @@ title = Faker::Movie.unique.title
   title = Faker::Movie.unique.title
   description = Faker::Movie.quote
   rating = 4.2
-  duration_min = Faker::Number.between(from: 60, to: 300)
+  duration_min = Faker::Number.between(from: 60, to: 00)
   release_time = Faker::Date.between(from: "2023-04-01", to: "2023-05-01")
   language = Faker::Nation.language
   director = Faker::Artist.unique.name
@@ -104,7 +104,7 @@ movies = Movie.all
 rooms = Room.all
 
 rooms.sample(10).each{ |room|
-  @start_time = Time.now
+  @start_time = Time.now + 1.hours
   movies.each{ |movie|
     st = ShowTime.create!(
       start_time: @start_time, movie_id: movie.id, room_id: room.id, price: Settings.price.standard

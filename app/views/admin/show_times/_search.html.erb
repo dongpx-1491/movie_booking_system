@@ -4,8 +4,12 @@
       <%= search_form_for [:admin, @search], class: "input-group-form", method: "get" do |f| %>
       <div class="row justify-content-center width-100 padding-top-10">
         <div class="col-md-3 col-md-offset-3">
-        <%= f.label :movie_title_eq, t(".search_by_movie") %>
-        <%= f.select :movie_title_eq, Movie.all.pluck(:title), {:include_blank => true}, { class: "form-control title-input" } %>
+          <%= f.label :id_eq, t(".search_by_id") %>
+          <%= f.text_field :id_eq, placeholder: t(".search_by_id_show"), class: "form-control title-input" %>
+        </div>
+        <div class="col-md-3 col-md-offset-3">
+          <%= f.label :movie_title_eq, t(".search_by_movie") %>
+          <%= f.select :movie_title_eq, Movie.all.pluck(:title), {:include_blank => true}, { class: "form-control title-input" } %>
         </div>
       </div>
         <div class="row justify-content-center width-100 padding-top-10">

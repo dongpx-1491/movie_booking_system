@@ -203,6 +203,7 @@ nav .profile-details i {
 .home-section .home-content {
   position: relative;
   padding-top: 104px;
+  min-height: 1050px;
 }
 
 .home-content .overview-boxes {
@@ -225,6 +226,11 @@ nav .profile-details i {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
+.welcome {
+  padding-bottom: 25px;
+  color: #0A2558;
+}
+
 .overview-boxes .box-search {
 
   width: 100%;
@@ -236,7 +242,7 @@ nav .profile-details i {
 
 .overview-boxes .box-topic {
   font-size: 20px;
-  font-weight: 500;
+  font-weight: bolder;
 }
 
 .home-content .box .number {
@@ -279,7 +285,7 @@ nav .profile-details i {
   background: #cce5ff;
   line-height: 50px;
   text-align: center;
-  color: #66b0ff;
+  color: #f7d4d7;
   border-radius: 12px;
   margin: -15px 0 0 6px;
 }
@@ -296,7 +302,7 @@ nav .profile-details i {
 
 .home-content .box .cart.four {
   color: #e05260;
-  background: #f7d4d7;
+  background: #89e2ee;
 }
 
 .home-content .total-order {
@@ -307,6 +313,11 @@ nav .profile-details i {
 .home-content .sales-boxes {
   display: flex;
   justify-content: space-between;
+
+  .title {
+    font-weight: bolder !important;
+  }
+
   /* padding: 0 20px; */
 }
 
@@ -314,6 +325,15 @@ nav .profile-details i {
 .home-content .sales-boxes .admin-manager {
   width: 100%;
   min-height: 85vh;
+  background: #fff;
+  padding: 20px 30px;
+  margin: 0 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.home-content .sales-boxes .recent-sales {
+  width: 65%;
   background: #fff;
   padding: 20px 30px;
   margin: 0 20px;
@@ -727,8 +747,8 @@ a {
   padding-top: 10px;
 }
 
-.input-group-form{
-  label{
+.input-group-form {
+  label {
     font-weight: bolder;
   }
 }
@@ -742,3 +762,8 @@ a {
   text-decoration: none;
   color: #f08282;
 }
+
+.padding-bottom-40{
+  padding-bottom: 40px;
+}
+

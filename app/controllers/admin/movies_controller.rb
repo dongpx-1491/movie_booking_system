@@ -2,8 +2,8 @@ class Admin::MoviesController < AdminController
   before_action :find_movie, only: %i(edit update destroy)
 
   def index
-    @search = Movie.ransack params[:q]
-    @pagy, @movies = pagy @search.result.incre_order,
+    @search = Movie.all.ransack(params[:q])
+    @pagy, @movies = pagy @search.result,
                           items: Settings.model.limited
   end
 

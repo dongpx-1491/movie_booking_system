@@ -31,6 +31,8 @@ vi:
   genre_create: "Tạo thể loại thành công"
   genre_create_failed: "Tạo thất bại"
   not_found: "Không tìm thấy"
+  movie_chart: "Phim"
+  booked_number: "Doanh thu"
   movie_update: "Cập nhật phim thành công"
   movie_update_failed: "Cập nhật thất bại"
   movie_delete: "Xóa phim thành công"
@@ -371,6 +373,8 @@ vi:
       search:
         search_by_movie: "Tìm kiếm theo tên phim:"
         search: "Tìm kiếm"
+        search_by_id: "Tìm kiếm theo id:"
+        search_by_id_show: "Nhập id ..."
       update:
         show_update: "Cập nhật suất chiếu thành công"
         show_update_failed: "Cập nhật thất bại"
@@ -469,6 +473,20 @@ vi:
         action: "Các hành động"
         create: "Thêm mới rạp phim"
         cinema_management: "Quản lý Rạp Phim"
+    static_pages:
+      home:
+        welcome: "Welcome to admin pages"
+        movies_num: "Phim tháng này"
+        show_num: "Suất chiếu tháng này"
+        ticket_sold: "Vé được đặt tháng này"
+        revenue: "Doanh thu tháng này"
+        charts: "Biểu đồ thống kê"
+        top_seller: "Phim có doanh thu cao"
+        up: "Tăng với tháng trước"
+        down: "Giảm với tháng trước"
+        top_seller_chart: "Phim có doanh thu cao"
+        top_booking_chart: "Phim được đặt nhiều nhất"
+        revenue_by_day_chart: "Doanh thu từng ngày"
     movies:
       index:
         movie_management: "Quản lý phim"
@@ -483,6 +501,8 @@ vi:
         status: "Trạng thái"
         action: "Các hành động"
         age_range: "Độ tuổi"
+        tickets_sold: "Số vé được đặt"
+        revenue: "Doanh thu vé"
         create: "Tạo phim mới"
       edit:
         edit: "Chỉnh sửa Phim"

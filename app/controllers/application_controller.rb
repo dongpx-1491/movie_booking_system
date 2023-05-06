@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include TicketsHelper
   include PaymentsHelper
+  include ChartsHelper
+  include MoviesHelper
 
   before_action :set_locale, :ransack_movie
 

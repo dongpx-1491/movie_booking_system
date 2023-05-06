@@ -5,9 +5,9 @@
   <td><%= movie.categories&.pluck(:name).join(", ") %></td>
   <td><%= movie.duration_min %></td>
   <td><%= movie.language %></td>
-  <td><%= movie.cast %></td>
-  <td><%= movie.director %></td>
   <td><%= movie.age_range %></td>
+  <td><%= movie.tickets.size %></td>
+  <td><%= number_to_currency movie.revenue %></td>
   <td>
     <%= link_to edit_admin_movie_path(movie) do %>
       <span class="fa fa-pencil"></span>

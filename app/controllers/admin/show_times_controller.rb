@@ -2,7 +2,7 @@ class Admin::ShowTimesController < AdminController
   before_action :find_show, only: %i(edit update destroy)
 
   def index
-    @search = ShowTime.ransack params[:q]
+    @search = ShowTime.not_out_of_date.ransack params[:q]
     @pagy, @shows = pagy @search.result,
                           items: Settings.model.limited
   end

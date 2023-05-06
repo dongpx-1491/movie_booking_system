@@ -25,6 +25,14 @@ Rails.application.routes.draw do
       resources :shows
     end
 
+    resources :charts, only: [] do
+      collection do
+        get "top_movies_seller"
+        get "top_movies_booking"
+        get "revenue_by_day"
+      end
+    end
+
     namespace :admin do
       root "static_pages#home"
       get "/home", to: "static_pages#home"
