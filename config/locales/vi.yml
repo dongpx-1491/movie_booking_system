@@ -36,6 +36,8 @@ vi:
   movie_update: "Cập nhật phim thành công"
   movie_update_failed: "Cập nhật thất bại"
   movie_delete: "Xóa phim thành công"
+  time_less_than: " phải lớn hơn thời gian hiện tại một ngày"
+  movie_update_denied: "Không thể thay đổi do phim đang tồn tại suất chiếu"
   movie_delete_failed: "Xóa thất bại"
   movie_create: "Tạo phim thành công"
   movie_create_failed: "Tạo thất bại"

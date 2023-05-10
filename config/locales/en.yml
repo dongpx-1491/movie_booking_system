@@ -33,6 +33,8 @@ en:
   genre_create: "Category create successfully"
   genre_create_failed: "Create failed"
   not_found: "Not found"
+  time_less_than: " Must greater than current time 1 days"
+  movie_update_denied: "Cannot update because there were shows associated to this movie"
   movie_update: "Movie updated"
   movie_update_failed: "Update failed"
   movie_delete: "Movie deleted"

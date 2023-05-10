@@ -23,10 +23,10 @@ set :output, "log/cron_log.log"
 env :PATH, ENV["PATH"]
 
 #check_expiration of payments every 5 minutes
-every 5.minutes do
+every 2.minutes do
   rake "delete_namespace:delete_payments_expired", environment: "development"
 end
 
-every 5.minutes do
+every 1.minutes do
   rake "update_namespace:update_movie_revenue", environment: "development"
 end

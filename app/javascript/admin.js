@@ -10,4 +10,8 @@ $(document).on('ready', function(){
       sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
     }
   }
+
+  $(document).on('click', 'input[class="form-check-input"]',function(){
+      $(this).closest('form').submit();
+    });
 });

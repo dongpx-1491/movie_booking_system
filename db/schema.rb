@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_30_103610) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_10_151605) do
   create_table "active_storage_attachments", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -82,7 +82,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_30_103610) do
     t.string "cast"
     t.integer "age_range"
     t.integer "revenue", default: 0, null: false
-    t.integer "status", default: 0
+    t.integer "status", default: 1
     t.text "banner_data"
     t.text "image_data"
     t.datetime "created_at", null: false

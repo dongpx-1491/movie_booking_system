@@ -18,6 +18,7 @@ namespace :db do
         ticket.save
       end
       payment.activate_payment
+      payment.update_attribute :activated_at, DateTime.now.next_day + 2.days
     end
   end
 end
