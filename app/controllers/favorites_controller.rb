@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
   before_action :logged_in_user
 
   def index
-    @search = current_user&.movies.ransack(params[:q])
+    @search = current_user&.movies.active.ransack(params[:q])
     @search.sorts = "release_time DESC" if @search.sorts.empty?
     @pagy, @movies = pagy @search.result, items: 8
   end
