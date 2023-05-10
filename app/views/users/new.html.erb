@@ -2,38 +2,14 @@
 <% provide :button_text, t(".submit") %>
 <% provide :class_name, "login-submit" %>
 <%= render partial: "shared/background_title", locals:{content: t(".sign_up"), description: t(".p") } %>
-<section class="signup spad">
+<section class="signup spad padding-top-20">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="login__form">
-          <h3><%= t ".sign_up" %></h3>
+    <div class="row justify-content-center">
+        <div class="login__form edit_form">
+          <h3 class="tex_align_center"><%= t ".sign_up" %></h3>
             <%= render "users/user_form" %>
           <h5><%= t ".have_account" %> <%= link_to t(".log_in"), login_path %></h5>
         </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="login__social__links">
-          <h3><%= t ".log_in_with" %></h3>
-          <ul>
-            <li>
-              <%= link_to "#", class: "facebook" do %>
-               </i> <%= t ".facebook" %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#", class: "google" do %>
-               <%= t ".google" %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#", class: "twitter" do %>
-                </i><%= t ".twitter" %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
   </div>
 </section>

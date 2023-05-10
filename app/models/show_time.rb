@@ -7,20 +7,20 @@ class ShowTime < ApplicationRecord
 
   before_validation :update_end_time
   validates :start_time, :price, :movie_id, :room_id, presence: true
-  validate :valid_overlap_showtime, :valid_start_time
+  validate :valid_overlap_showtime
 
   delegate :cinema_name, to: :room
   delegate :title, to: :movie, prefix: :movie
   delegate :name, to: :room, prefix: :room
 
   scope :filter_date, lambda{|movie_id, date|
-    where "(movie_id = ? AND start_time > ? AND start_time < ?)",
+    where "(movie_id = ? AND start_time BETWEEN ? AND ? )",
           movie_id,
-          Time.now,
+          date.to_datetime.to_date == DateTime.now.to_date ? DateTime.now : date.to_datetime.beginning_of_day,
           date.to_datetime.end_of_day
   }
   scope :date_available, (lambda do
-    where("start_time < AND start_time > ?", DateTime.now.end_of_day, Time.now)
+    where("start_time < AND end_time > ?", DateTime.now.end_of_day, Time.now)
   end)
   scope :not_out_of_date, ->{ where "(end_time > ? )", Time.now.beginning_of_day }
   scope :incre_order, ->{order id: :asc}
@@ -49,6 +49,7 @@ class ShowTime < ApplicationRecord
   end
 
   def valid_overlap_showtime
+    return unless start_time
     return if ShowTime.find_room(room_id).overlap(start_time, end_time).blank?
 
     errors.add(:start_time, message: I18n.t("time_overlap"))
@@ -65,6 +66,6 @@ class ShowTime < ApplicationRecord
   end
 
   def update_end_time
-    self.end_time = start_time + movie.duration_min.minutes
+    self.end_time = start_time + movie.duration_min.minutes if start_time
   end
 end

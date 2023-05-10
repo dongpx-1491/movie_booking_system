@@ -23,17 +23,21 @@
       <%= f.label :image, t(".image") %>
       <%= f.hidden_field :image, value: f.object.cached_image_data %>
       <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+      <% if f.object.image %>
+        <div>
+          <%= image_tag f.object.image_url %>
+        </div>
+      <% end %>
       <%= f.hidden_field :banner, value: f.object.cached_banner_data %>
       <%= f.label :banner, t(".banner") %>
       <%= f.file_field :banner, accept: "image/jpeg,image/gif,image/png" %>
-
       <%= f.submit t(".submit"), class: "button btn btn-primary" %>
     <% end %>
   </div>
 </div>
 <script>
-    $('#movie_category_ids').select2({
-    multiple: true,
-    allowClear: true
-  });
+  $('#movie_category_ids').select2({
+  multiple: true,
+  allowClear: true
+    });
 </script>

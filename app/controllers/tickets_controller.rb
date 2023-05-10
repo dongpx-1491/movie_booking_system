@@ -5,6 +5,11 @@ class TicketsController < ApplicationController
   def show; end
 
   def create
+    if current_payment&.payment_expired? || current_payment&.active?
+      delete_payment
+      @payment = Payment.create user_id: current_user.id
+      init_payment @payment
+    end
     @ticket = Ticket.new payment_id: current_payment.id, show_time_id: params[:show_time_id], seat_position: params[:seat_position]
     return respond_to :js if @ticket.save && total_price
 

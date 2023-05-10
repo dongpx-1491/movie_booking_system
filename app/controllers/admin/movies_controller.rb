@@ -74,7 +74,7 @@ class Admin::MoviesController < AdminController
 
   def update_all
     if @movie.update movie_params
-      flash[:success] = t(".movie_update")
+      flash[:success] = t("movie_update")
       redirect_to admin_movies_path
     else
       flash[:danger] = t("movie_update_failed")

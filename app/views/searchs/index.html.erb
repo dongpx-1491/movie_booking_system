@@ -22,8 +22,8 @@
               <div class="col-lg-8 col-md-8 col-sm-6">
                 <div class="section-title">
                   <h4>
-                    <% if @movies.present? %>
-                      <%= t ".have_result", number: @movies.size, key_word: params[:m]&.values&.first%>
+                    <% unless @result_number == 0 %>
+                      <%= t ".have_result", number: @result_number, key_word: params[:m]&.values&.first%>
                     <% else %>
                       <%= t ".none_result", key_word: params[:m]&.values&.first%>
                     <% end %>

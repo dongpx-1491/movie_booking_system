@@ -32,6 +32,10 @@ class User < ApplicationRecord
 
   scope :incre_order, ->{order(id: :asc)}
 
+  def self.ransackable_attributes(auth_object = nil)
+    ["activated", "activated_at", "activation_digest", "created_at", "dob", "email", "id", "password_digest", "phone", "remember_digest", "reset_digest", "reset_sent_at", "role", "updated_at", "user_name"]
+  end
+  
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost

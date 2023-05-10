@@ -14,7 +14,7 @@ class ShowsController < ApplicationController
   end
 
   def show
-    unless check_payment?
+    unless check_payment? ||current_payment&.payment_expired? || current_payment&.active?
       delete_payment
       @payment = Payment.create user_id: current_user.id
       init_payment @payment

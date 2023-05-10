@@ -3,17 +3,17 @@ namespace :db do
   desc "task description"
   task create_shows: :environment do
     p "start create shows"
-    movies = Movie.all
-    rooms = Room.all
+    movies = Movie.where id: [3, 9, 11]
 
-    rooms.sample(10).each{ |room|
-      @start_time = Time.now + 1.hours
-      movies.each{ |movie|
-        st = ShowTime.create!(
-          start_time: @start_time, movie_id: movie.id, room_id: room.id, price: Settings.price.standard
+    movies.each{ |movie|
+      @start_time = Time.now + 1.days
+      20.times do
+        st = ShowTime.new(
+          start_time: @start_time, movie_id: movie.id, room_id: 1, price: Settings.price.standard
         )
-        @start_time = st.end_time + 10.minutes
-      }
+        st.save
+        @start_time = st.end_time + 1.hours if st.valid?
+      end
     }
   end
 end

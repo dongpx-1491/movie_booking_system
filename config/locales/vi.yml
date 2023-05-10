@@ -121,9 +121,9 @@ vi:
       sign_up_now: "Đăng kí ngay !"
       forgot_password: "Quên mật khẩu ?"
       or: "Hoặc"
-      facebook: "Đăng nhập bằng Facebook"
-      google: "Đăng nhập bằng Google"
-      twitter: "Đăng nhập bằng Twitter"
+      facebook: "Đăng nhập bằng Facebook (Sắp ra mắt)"
+      google: "Đăng nhập bằng Google (Sắp ra mắt)"
+      twitter: "Đăng nhập bằng Twitter (Sắp ra mắt)"
       remember_me: "Ghi nhớ tài khoản của tôi"
     create:
       danger: "Tài khoản và Mật khẩu không hợp lệ"
@@ -145,6 +145,7 @@ vi:
       seat: Ghế
       time: "Thời gian"
       date: "Ngày"
+      sum: "Tổng tiền"
       screen: Màn hình
       seat_selected: Ghế đang chọn
       seat_unavailable: Ghế đã đặt
@@ -222,9 +223,9 @@ vi:
       have_account: "Bạn đã có tài khoản? "
       log_in: "Đăng nhập!"
       log_in_with: "Đăng nhập với:"
-      facebook: "Đăng nhập bằng Facebook"
-      google: "Đăng nhập bằng Google"
-      twitter: "Đăng nhập bằng Twitter"
+      facebook: "Đăng nhập bằng Facebook (Sắp ra mắt)"
+      google: "Đăng nhập bằng Google (Sắp ra mắt)"
+      twitter: "Đăng nhập bằng Twitter (Sắp ra mắt)"
     edit:
       h2: "Sửa thông tin"
       p: "Cập nhật thông tin của bạn"
@@ -400,6 +401,7 @@ vi:
         total: "Tổng tiền"
         action: "Các hành động"
         user_management: "Thông tin người dùng"
+        admin: "Quản trị viên"
       show:
         payment: "Danh sách hóa đơn"
         payment_id: "ID hóa đơn"
@@ -410,6 +412,15 @@ vi:
         total: "Tổng tiền"
       users_detail:
         pending: "đang chờ thanh toán ..."
+      update:
+        success: "Thay đổi vai trò người dùng thành công!"
+        danger: "Thay đổi vai trò người dùng thất bại!"
+      search:
+        search_by_name: "Tìm kiếm theo tên:"
+        search_by_name_place: "Nhập tên người dùng dể tìm ..."
+        search: "Tìm kiếm"
+        search_by_id: "Tìm kiếm theo id:"
+        search_by_id_user: "Nhập id người dùng để tìm  ..."
     payments:
       not_found_payment: "Không thể tìm thấy hóa đơn"
       not_found_ticket: "Không thể tìm thấy danh sách vé"

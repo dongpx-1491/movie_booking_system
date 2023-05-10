@@ -257,7 +257,8 @@ en:
       cinema: "Cinema"
       room: "Room"
       seat: "Seat"
-      time: "Timw"
+      time: "Time"
+      sum: "Cost"
       date: "Date"
       screen: "Screen"
       seat_selected: "Seat selected"
@@ -279,7 +280,7 @@ en:
       have_account: "Already have an account? "
       log_in: "Log in!"
       log_in_with: "Login With:"
-      facebook: "Sign in With Facebook"
+      facebook: "Sign in With Facebook (Coming soon)"
       google: "Sign in With Google"
       twitter: "Sign in With Twitter"
     edit:
@@ -417,6 +418,7 @@ en:
         total: "Total"
         action: "Action"
         user_management: "Users Infomation"
+        admin: "Admin"
       show:
         payment: "Payments"
         payment_id: "Payment ID"
@@ -427,6 +429,15 @@ en:
         total: "Total"
       users_detail:
         pending: "pending ..."
+      update:
+        success: "Change user's role successfully!"
+        danger: "Change user's role failed!"
+      search:
+        search_by_name: "Search by user name:"
+        search_by_name_place: "Enter user name to find ..."
+        search: "Search"
+        search_by_id: "Search by id:"
+        search_by_id_user: "Enter id to find ..."
     cinemas:
       not_found_cinema: "Cannot found cinema"
       update:

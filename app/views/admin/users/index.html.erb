@@ -1,4 +1,6 @@
 <% provide :title, t(".user_management") %>
+<%= render partial: "search"%>
+
 <div class="sales-boxes">
   <div class="admin-manager box">
     <div class="title">
@@ -13,6 +15,7 @@
             <th scope="col"><%= t ".email" %></th>
             <th scope="col"><%= t ".phone" %></th>
             <th scope="col"><%= t ".total" %></th>
+            <th scope="col"><%= t ".admin" %></th>
             <th scope="col"><%= t ".action" %></th>
           </tr>
         </thead>

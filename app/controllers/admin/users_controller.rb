@@ -1,12 +1,23 @@
 class Admin::UsersController < AdminController
-  before_action :find_user, :load_payment, only: %i(show)
+  before_action :find_user, :load_payment, only: %i(show update)
 
   def index
-    @pagy, @users = pagy User.customer.incre_order
+    @search = User.incre_order.ransack(params[:q])
+    @pagy, @users = pagy @search.result,
+                          items: Settings.model.limited
   end
 
   def show
     respond_to :js
+  end
+
+  def update
+    if @user.update_column(:role, params.dig(:user, :role_before_type_cast))
+      flash[:success] = t(".success")
+    else
+      flash[:danger] = t(".danger")
+    end
+    redirect_to admin_users_path
   end
 
   private

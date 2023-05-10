@@ -15,7 +15,7 @@ class ChartsController < ApplicationController
 
   def revenue_by_day
     revenue = {}
-    group = Payment.all.group_by { |p| p.activated_at.to_date }
+    group = Payment.where.not(activated_at: nil).group_by { |p| p.activated_at.to_date }
     group.each{|k, v|revenue[k] = v.sum {|p| p.total_cost}}
     @revenue_data = revenue
     render json: @revenue_data

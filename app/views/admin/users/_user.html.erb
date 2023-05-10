@@ -5,6 +5,14 @@
   <td><%= user.phone %></td>
   <td> <%= number_to_currency(total_payment(user)) %></td>
   <td>
+    <%= form_for [:admin, user], html: {class: "form-check form-switch"} do |f| %>
+      <label>
+        <%= f.check_box :role_before_type_cast, { class: "form-check-input"} %>
+        <span class="slider rounder left-70"></span>
+      </label>
+    <% end %>
+  </td>
+  <td>
     <%= link_to admin_user_path(user.id), remote: true do %>
       <span class="fa fa-eye"></span>
     <% end %>

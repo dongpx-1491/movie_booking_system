@@ -41,7 +41,7 @@ Rails.application.routes.draw do
       resources :show_times
       resources :cinemas
       resources :payments
-      resources :users, only: %i(index show)
+      resources :users, only: %i(index show update)
     end
     mount Sidekiq::Web => "/sidekiq"
   end
