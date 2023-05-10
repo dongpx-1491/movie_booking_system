@@ -7,7 +7,7 @@ class ShowTime < ApplicationRecord
 
   before_validation :update_end_time
   validates :start_time, :price, :movie_id, :room_id, presence: true
-  validate :valid_overlap_showtime
+  validate :valid_overlap_showtime, :valid_start_time
 
   delegate :cinema_name, to: :room
   delegate :title, to: :movie, prefix: :movie
@@ -52,6 +52,12 @@ class ShowTime < ApplicationRecord
     return if ShowTime.find_room(room_id).overlap(start_time, end_time).blank?
 
     errors.add(:start_time, message: I18n.t("time_overlap"))
+  end
+
+  def valid_start_time
+    return if start_time > (Time.now + 1.days)
+
+    errors.add(:start_time, message: I18n.t("time_less_than"))
   end
 
   def self.ransackable_scopes _auth_object = nil

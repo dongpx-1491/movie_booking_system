@@ -25,12 +25,10 @@ class Admin::MoviesController < AdminController
   def edit; end
 
   def update
-    if @movie.update(movie_params)
-      flash[:success] = t "movie_update"
-      redirect_to admin_movies_path
+    if params.dig(:movie, :status_before_type_cast)
+      update_active
     else
-      flash[:danger] = t "movie_update_failed"
-      render :edit
+      update_all
     end
   end
 
@@ -50,6 +48,38 @@ class Admin::MoviesController < AdminController
     params.require(:movie).permit(Movie::MOVIE_ATTRS, :image, :banner, category_ids: [],
       movie_categories_attributes:
           [:id, :movie_id, :category_id])
+  end
+
+  def update_active
+    if params.dig(:movie, :status_before_type_cast) == "0"
+      if @movie.show_times.not_out_of_date.size == 0
+        if @movie.update_column(:status,
+                                params.dig(:movie, :status_before_type_cast))
+          flash[:success] = t("movie_update")
+        else
+          flash[:danger] = t("movie_update_failed")
+        end
+      else
+        flash[:danger] = t("movie_update_denied")
+      end
+    else
+      if @movie.update_column(:status, params.dig(:movie, :status_before_type_cast))
+        flash[:success] = t("movie_update")
+      else
+        flash[:danger] = t("movie_update_failed")
+      end
+    end
+    redirect_to admin_movies_path
+  end
+
+  def update_all
+    if @movie.update movie_params
+      flash[:success] = t(".movie_update")
+      redirect_to admin_movies_path
+    else
+      flash[:danger] = t("movie_update_failed")
+      render :edit
+    end
   end
 
   def find_movie

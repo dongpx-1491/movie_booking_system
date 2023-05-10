@@ -1,7 +1,7 @@
 class SearchsController < ApplicationController
   before_action :hot_movie
   def index
-    return @movies = nil if params[:m].blank?
-    @pagy, @movies = pagy @search.result.sort_list, items: 9
+    @result_number = @search.result.active.size
+    @pagy, @movies = pagy @search.result.active.sort_list, items: 9
   end
 end

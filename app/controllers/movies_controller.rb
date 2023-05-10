@@ -19,6 +19,6 @@ class MoviesController < ApplicationController
 
   def related_movie
     @categories_ids = @movie.categories&.pluck :id
-    @related_movie = Movie.joins(:categories).where('categories.id IN (?)', @categories_ids).limit(5)
+    @related_movie = Movie.active.joins(:categories).where('categories.id IN (?)', @categories_ids).limit(5)
   end
 end

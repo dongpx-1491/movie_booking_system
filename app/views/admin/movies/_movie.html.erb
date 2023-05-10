@@ -9,6 +9,14 @@
   <td><%= movie.tickets.size %></td>
   <td><%= number_to_currency movie.revenue %></td>
   <td>
+    <%= form_for [:admin, movie], html: {class: "form-check form-switch"} do |f| %>
+      <label>
+        <%= f.check_box :status_before_type_cast, { class: "form-check-input"} %>
+        <span class="slider rounder"></span>
+      </label>
+    <% end %>
+  </td>
+  <td>
     <%= link_to edit_admin_movie_path(movie) do %>
       <span class="fa fa-pencil"></span>
     <% end %>
